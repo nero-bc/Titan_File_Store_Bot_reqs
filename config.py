@@ -17,7 +17,7 @@ CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002056765960"))
 
 # The Users Id Whoe Control Your Bot And Manage It For Further
 OWNER_ID = int(os.environ.get("OWNER_ID", "6529179563"))
-ADMINS = int(os.environ.get("ADMINS", "6529179563"))
+ADMINS = int(os.environ.get("ADMINS", "6409842915"))
 
 # This Is Where It Controls All Here You Can Add The Database Url And Name At The Same Time
 PORT = os.environ.get("PORT", "8080")
@@ -26,7 +26,7 @@ DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://favorod148:srikar@cluster
 DB_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
 
 # kind of important
-CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
+CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", "📌 ᴍᴀɴᴛᴀɪɴᴇᴅ ʙʏ : @Titan_CInemas")
 PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "False") == "True" else False
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", "False") == 'True'
 BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
@@ -41,15 +41,18 @@ PICS = [
 
 # start Message And Texts
 START_MSG = os.environ.get("START_MESSAGE", """
-Hello... 💖 {first}\n ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ғɪʟᴇɢᴜᴀʀᴅ ʙᴏᴛ! 📂
-🌟 ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ sᴛᴏʀᴇ ғɪʟᴇs ᴀɴᴅ ᴄʀᴇᴀᴛᴇ ʟɪɴᴋs.
-🔐 ʏᴏᴜʀ ғɪʟᴇs ᴀʀᴇ sᴇᴄᴜʀᴇ – ᴜsᴇʀs ᴄᴀɴ ᴍᴀᴋᴇ ᴄʜᴀɴɢᴇs.
-💬 ɴᴇᴇᴅ ᴀᴄᴄᴇss? ᴊᴜsᴛ ᴀsᴋ ᴀɴ ᴀᴅᴍɪɴ ғᴏʀ ᴛʜᴇ ʟɪɴᴋ.\n\n ʜᴀᴘᴘʏ sᴛᴏʀɪɴɢ! 🚀""")
+
+🚀 ʜᴇʟʟᴏ ᴍᴀᴛᴇ!!! {first}
+
+ɪ ᴀᴍ ᴀ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ ᴡʜᴏ ᴄᴀɴ sᴛᴏʀᴇ ғɪʟᴇs 
+ᴀɴᴅ ɢɪᴠᴇ ᴄᴜsᴛᴏᴍ ʟɪɴᴋs ɴᴏ ᴄᴏᴘʏʀɪɢʜᴛs ɪɴᴛᴇɴᴅᴇᴅ ⚡
+
+📌 ᴍᴀɴᴛᴀɪɴᴇᴅ ʙʏ : <a href="https://t.me/Titan_CInemas">ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs</a>""")
 
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE","""
 </b>🌟 ɢʀᴇᴇᴛɪɴɢs, {first}! 
 
- ✨ᴇɴɢʟɪsʜ👇👇
+✨ᴇɴɢʟɪsʜ👇👇
 ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ ᴊᴏɪɴ ɪɴ ᴍʏ ᴄʜᴀɴɴᴇʟ/ɢʀᴏᴜᴘ ᴛᴏ ᴜsᴇ ᴍᴇ
 ᴋɪɴᴅʟʏ ᴘʟᴇᴀsᴇ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ
 ᴄʟɪᴄᴋ ᴏɴ ᴛʀʏ ᴀɢᴀɪɴ
@@ -57,13 +60,15 @@ FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE","""
 ✨ʜɪɴᴅɪ👇👇
 मेरा उपयोग करने के लिए आपको मेरे Channel में Join
 होगा, कृपया Channel मैं Join करे
-ᴛʀʏ ᴀɢᴀɪɴ ᴘᴇ ᴄʟɪᴄᴋ ᴋᴀʀᴏ</b>""")
+ᴛʀʏ ᴀɢᴀɪɴ ᴘᴇ ᴄʟɪᴄᴋ ᴋᴀʀᴏ</b>
+
+📌 ᴍᴀɴᴛᴀɪɴᴇᴅ ʙʏ : <a href="https://t.me/Titan_CInemas">ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs</a>""")
 
 disable_web_page_prewiew = True
 
 try:
     ADMINS = []
-    for x in (os.environ.get("ADMINS", "1314613615").split()):
+    for x in (os.environ.get("ADMINS", "6409842915").split()):
         ADMINS.append(int(x))
 except ValueError:
     raise Exception("Your Admins list does not contain valid integers.")
