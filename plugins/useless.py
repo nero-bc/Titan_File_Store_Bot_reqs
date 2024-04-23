@@ -14,13 +14,14 @@ async def stats(bot: Bot, message: Message):
 
 contact_button = [
     [
-        InlineKeyboardButton("Button 1", url="https://example.com/button1")
+        InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
     ],
     [
-        InlineKeyboardButton("Button 2", url="https://example.com/button2"),
-        InlineKeyboardButton("Button 3", url="https://example.com/button3")
+        InlineKeyboardButton("🚀 ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ", callback_data="about"),
+        InlineKeyboardButton("📝 ᴄᴏᴘɪʀɪɢʜᴛs", url="https://t.me/Titan_Cinemas_Support_bot")
     ]
 ]
+
 
 keyboard = InlineKeyboardMarkup([[contact_button]])
 
