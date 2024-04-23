@@ -38,14 +38,14 @@ async def cb_handler_func(client, query: CallbackQuery):
             ],
             [
                 InlineKeyboardButton("🚀 ᴀʙᴏᴜᴛ", callback_data="about"),
-                InlineKeyboardButton("📝 ᴄᴏᴘɪʀɪɢʜᴛs", callback_data="button2")
+                InlineKeyboardButton("📝 ᴄᴏᴘɪʀɪɢʜᴛs", url="https://t.me/Titan_Cinemas_Support_bot")
             ],
             [
-                InlineKeyboardButton("📝 ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ", callback_data="premium"),
-                InlineKeyboardButton("🌟 ʟɪɴᴋ ʙʟᴏᴄᴋᴇᴅ?", url="https://t.me/Titan_Association_bot")
+                InlineKeyboardButton("📝 ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ", url="https://t.me/Titan_Cinemas_Support_bot"),
+                InlineKeyboardButton("🌟 ʟɪɴᴋ ʙʟᴏᴄᴋᴇᴅ?", url="https://t.me/Titan_Cinemas_Support_bot")
             ],
             [
-                InlineKeyboardButton("🔥 ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ 🔥", callback_data="tutorial")
+                InlineKeyboardButton("🔥 ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ 🔥", url="https://t.me/howtoopentitan/4")
             ]   
         ]
 
@@ -71,7 +71,7 @@ async def cb_handler_func(client, query: CallbackQuery):
                     InlineKeyboardButton("🔥 ᴀʙᴏᴜᴛ", callback_data="about")
                 ],
                 [
-                    InlineKeyboardButton("🚀 ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ 🚀", url="https://t.me/titan_cinemas")
+                    InlineKeyboardButton("🚀 ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ 🚀", url="https://t.me/Titan_Cinemas_Support_bot")
                 ]
             ]
         )
