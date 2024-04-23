@@ -7,8 +7,17 @@ from pyrogram.enums import ParseMode
 import sys
 from datetime import datetime, date
 import pytz
-from script import RESTART_TXT 
 from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT, LOG_CHANNEL
+
+RESTART_TXT = """
+<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
+
+📅 Dᴀᴛᴇ : <code>{date}</code>
+⏰ Tɪᴍᴇ : <code>{time}</code>
+🌐 Tɪᴍᴇᴢᴏɴᴇ : <code>Asia/Kolkata</code>
+🛠️ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: <code>v4.2 [ Sᴛᴀʙʟᴇ ]</code>
+
+📌 ᴍᴀɴᴛᴀɪɴᴇᴅ ʙʏ : <a href="https://t.me/Titan_CInemas">ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs</a></b>"""
 
 class Bot(Client):
     def __init__(self):
