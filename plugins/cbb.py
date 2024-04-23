@@ -1,18 +1,10 @@
 from pyrogram import __version__
 from bot import Bot
 import random
-from config import OWNER_ID, START_MSG
+from config import OWNER_ID, START_MSG, PICS
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
-PICS = [
-    "https://telegra.ph/file/c3de5660d279f49966064.jpg",
-    "https://telegra.ph/file/a9bca7d6c17cc964a03bc.jpg",
-    "https://telegra.ph/file/62f8b5d073e5e73242c60.jpg",
-    "https://telegra.ph/file/adeaee8c1c7fdb4b90d34.jpg",
-    "https://telegra.ph/file/41e39fa3afd743ab993c2.jpg",
-]
-
-contact_button = InlineKeyboardButton("ᴄᴏɴᴛᴀᴄᴛ ᴜs ❤️", url="https://t.me/Titan_Association")
+contact_button = InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
 keyboard = InlineKeyboardMarkup([[contact_button]])
 
 @Bot.on_callback_query()
@@ -22,14 +14,14 @@ async def cb_handler_func(client, query: CallbackQuery):
     if data == "about":
         await query.message.edit_text(
             text=(
-                f"<b>──────[ 🚀 sʀᴍ ᴛᴇʟᴇ ᴍɪx 🚀 ]───────────\n"
-                f"├🌟 ᴍʏ ɴᴀᴍᴇ : <a href=https://t.me/Srm_Tele_Mix_Bot>sʀᴍ ᴛᴇʟᴇ ᴍɪx</a>\n"
+                f"<b>──────[ 🚀 ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs 🚀 ]───────────\n"
+                f"├🌟 ᴍʏ ɴᴀᴍᴇ : <a href=https://t.me/Titan_Link_Store_Bot>ᴛɪᴛᴀɴ ʟɪɴᴋ ᴘʀᴏᴠɪᴅᴇʀ</a>\n"
                 f"├💻 ʟᴀɴɢᴜᴀɢᴇ: <a href=https://aka.ms/vs/17/release/vc_redist.x64.exe>ᴄ++ & ᴊᴀᴠᴀ</a>\n"
                 f"├🌐 ʜᴏsᴛᴇᴅ ᴏɴ: <a href=www.hostinger.in>ʜᴏsᴛɪɴɢᴇʀ ᴠᴘs</a>\n"
-                f"├👨‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ: <a href=https://t.me/TITAN_OWNER_INDIA>ᴛɪᴛᴀɴ ɪɴᴅɪᴀ</a>\n"
-                f"├🛠️ ʙᴏᴛ sᴜᴘᴘᴏʀᴛ: <a href=https://t.me/SRMk_Chat>sʀᴍ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ</a>\n"
-                f"├📢 ʙᴏᴛ ᴜᴘᴅᴀᴛᴇs: <a href=https://t.me/SRMkMiX>ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴊᴏɪɴ</a>\n"
-                f"╰──────[ 🇮🇳 ᴋɪɴɢ ᴏғ ᴋᴅʀᴀᴍᴀs 🇮🇳 ]───────────</b>"
+                f"├👨‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ: <a href=https://t.me/Titan_Cinemas_Support_bot>ᴛɪᴛᴀɴ ᴏᴡɴᴇʀ</a>\n"
+                f"├🛠️ ʙᴏᴛ sᴜᴘᴘᴏʀᴛ: <a href=https://t.me/Titan_Cinemas_Support_bot>ᴛɪᴛᴀɴ sᴜᴘᴘᴏʀᴛ</a>\n"
+                f"├📢 ʙᴏᴛ ᴜᴘᴅᴀᴛᴇs: <a href=https://t.me/Titan_Bots_India>ʙᴏᴛ ᴜᴘᴅᴀᴛᴇs</a>\n"
+                f"╰──────[ 🇮🇳 ᴛɪᴛᴀɴ ᴄᴏᴍᴍᴜɴɪᴛʏ 🇮🇳 ]───────────</b>"
             ),
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -42,23 +34,23 @@ async def cb_handler_func(client, query: CallbackQuery):
     elif data == "help":
         buttons = [
             [
-                InlineKeyboardButton("🌐 ᴘʀᴏʙʟᴇᴍ ? ᴄᴏɴᴛᴀᴄᴛ  🌐", url="https://t.me/Titan_Association_bot")
+                InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
             ],
             [
                 InlineKeyboardButton("🚀 ᴀʙᴏᴜᴛ", callback_data="about"),
-                InlineKeyboardButton("📝 ᴄᴏᴘʏʀɪɢʜᴛs\ᴅᴄᴍᴀ", url="https://t.me/Titan_Association_bot")
+                InlineKeyboardButton("📝 ᴄᴏᴘɪʀɪɢʜᴛs", callback_data="button2")
             ],
             [
-                InlineKeyboardButton("📝 ᴛᴇʀᴀʙᴏx ᴅᴏᴡɴʟᴏᴀᴅ", url="https://play.google.com/store/apps/details?id=com.dubox.drive"),
+                InlineKeyboardButton("📝 ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ", callback_data="premium"),
                 InlineKeyboardButton("🌟 ʟɪɴᴋ ʙʟᴏᴄᴋᴇᴅ?", url="https://t.me/Titan_Association_bot")
             ],
             [
-                InlineKeyboardButton("🔥 ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ 🔥", url="https://t.me/Hindi_dubbed_korean_Drma/3042")
+                InlineKeyboardButton("🔥 ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ 🔥", callback_data="tutorial")
             ]   
         ]
 
         await query.message.edit_text(
-            text="This is a new option! Click the buttons for more information.",
+            text="ᴛʜɪs ɪs ᴀ ɴᴇᴡ ᴏᴘᴛɪᴏɴ! ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.",
             reply_markup=InlineKeyboardMarkup(buttons)
         )
         await query.message.reply_photo(
@@ -72,18 +64,14 @@ async def cb_handler_func(client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🔥 sʀᴍ ᴛᴇʟᴇ ᴍɪx 🔥", url="https://t.me/SRMkMiX")
+                    InlineKeyboardButton("⚡ ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs ⚡", url="https://t.me/Titan_CInemas")
                 ],
                 [
-                    InlineKeyboardButton("🌐 ʜᴇʟᴘ", callback_data="help"),
-                    InlineKeyboardButton("❤️‍🩹 ᴀʙᴏᴜᴛ", callback_data="about")
+                    InlineKeyboardButton("🧿 ʜᴇʟᴘ", callback_data="help"),
+                    InlineKeyboardButton("🔥 ᴀʙᴏᴜᴛ", callback_data="about")
                 ],
                 [
-                    InlineKeyboardButton("🎉 ɴᴇᴛғʟɪx ʜɪɴᴅɪ ᴅᴜʙʙᴇᴅ ᴅʀᴀᴍᴀ", url="https://t.me/Netflix_korean_drama_hindi"),
-                    InlineKeyboardButton("🎈 ʜɪɴᴅɪ ᴅᴜʙʙᴇᴅ ᴋᴅʀᴀᴍᴀ", url="https://t.me/Hindi_dubbed_korean_Drma")
-                ],
-                [
-                    InlineKeyboardButton("🇮🇳 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ 🇮🇳", url="https://t.me/SRMk_Chat")
+                    InlineKeyboardButton("🚀 ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ 🚀", url="https://t.me/titan_cinemas")
                 ]
             ]
         )
