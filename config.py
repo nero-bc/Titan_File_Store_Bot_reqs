@@ -37,11 +37,11 @@ DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", "False") == 'T
 BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
 USER_REPLY_TEXT = "Bhai This Is A Bot And Yeah Ye Programmed Hai And Surely Reply nehi Dega Tum Ko So Agar Problem Hai Tho /help Likko Agar Tutorial Chayie Tho /tutorial liiko"
 PICS = [
-    "https://telegra.ph/file/c3de5660d279f49966064.jpg",
-    "https://telegra.ph/file/a9bca7d6c17cc964a03bc.jpg",
-    "https://telegra.ph/file/62f8b5d073e5e73242c60.jpg",
-    "https://telegra.ph/file/adeaee8c1c7fdb4b90d34.jpg",
-    "https://telegra.ph/file/41e39fa3afd743ab993c2.jpg",
+    "https://telegra.ph/file/564a1b5c88ca8d3e3c453.jpg",
+    "https://telegra.ph/file/dea3f5330fcc97dee3042.jpg",
+    "https://telegra.ph/file/c57a7df479750521d3a33.jpg",
+    "https://telegra.ph/file/5b5bea15bedeaafedd18a.jpg",
+    "https://telegra.ph/file/f5039bcf2c931816018fa.jpg",
 ]
 
 # start Message And Texts
