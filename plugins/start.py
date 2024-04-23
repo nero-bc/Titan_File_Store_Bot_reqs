@@ -100,7 +100,7 @@ async def start_command(client: Client, message: Message):
                 reply_markup = msg.reply_markup
             else:
                 inline_keyboard = InlineKeyboardMarkup([
-                    [InlineKeyboardButton("🔥 sʀᴍ ᴛᴇʟᴇ ᴍɪx 🔥", url="https://t.me/SRMkMiX")]
+                    [InlineKeyboardButton("⚡ ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs ⚡", url="https://t.me/Titan_CInemas")]
                 ])
                 reply_markup = inline_keyboard
                 
@@ -109,7 +109,7 @@ async def start_command(client: Client, message: Message):
                                               reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
                 
                 warning_msg = await message.reply("ᴛʜᴇ ғɪʟᴇs ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ sʜᴏʀᴛʟʏ. ғᴏʀᴡᴀʀᴅɪɴɢ ᴛʜɪs ᴍᴇssᴀɢᴇ ғᴏʀ ʏᴏᴜʀ ʀᴇғᴇʀᴇɴᴄᴇ.")
-                await asyncio.sleep(global_timer_value)
+                await asyncio.sleep(180)
                 await warning_msg.delete()
                 await sent_message.delete()
 
@@ -119,7 +119,7 @@ async def start_command(client: Client, message: Message):
                                               reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
                 
                 warning_msg = await message.reply("ᴛʜᴇ ғɪʟᴇs ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ sʜᴏʀᴛʟʏ. ғᴏʀᴡᴀʀᴅɪɴɢ ᴛʜɪs ᴍᴇssᴀɢᴇ ғᴏʀ ʏᴏᴜʀ ʀᴇғᴇʀᴇɴᴄᴇ.")
-                await asyncio.sleep(global_timer_value)
+                await asyncio.sleep(180)
                 await warning_msg.delete()
                 await sent_message.delete()
 
@@ -130,18 +130,14 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🔥 sʀᴍ ᴛᴇʟᴇ ᴍɪx 🔥", url="https://t.me/SRMkMiX")
+                    InlineKeyboardButton("⚡ ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs ⚡", url="https://t.me/Titan_CInemas")
                 ],
                 [
-                    InlineKeyboardButton("🌐 ʜᴇʟᴘ", callback_data="help"),
-                    InlineKeyboardButton("❤️‍🩹 ᴀʙᴏᴜᴛ", callback_data="about")
+                    InlineKeyboardButton("🧿 ʜᴇʟᴘ", callback_data="help"),
+                    InlineKeyboardButton("🔥 ᴀʙᴏᴜᴛ", callback_data="about")
                 ],
                 [
-                    InlineKeyboardButton("🎉 ɴᴇᴛғʟɪx ʜɪɴᴅɪ ᴅᴜʙʙᴇᴅ ᴅʀᴀᴍᴀ", url="https://t.me/Netflix_korean_drama_hindi"),
-                    InlineKeyboardButton("🎈 ʜɪɴᴅɪ ᴅᴜʙʙᴇᴅ ᴋᴅʀᴀᴍᴀ", url="https://t.me/Hindi_dubbed_korean_Drma")
-                ],
-                [
-                    InlineKeyboardButton("🇮🇳 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ 🇮🇳", url="https://t.me/SRMk_Chat")
+                    InlineKeyboardButton("🚀 ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ 🚀", url="https://t.me/titan_cinemas")
                 ]
             ]
         )
@@ -189,7 +185,7 @@ async def not_joined(client: Client, message: Message):
             [
                 InlineKeyboardButton(
                     text = 'ᴛʀʏ ᴀɢᴀɪɴ',
-                    url = f"https://t.me/Titan_Cinemas_bot?start={message.command[1]}"
+                    url = f"https://t.me/Titan_Link_Store_Bot?start={message.command[1]}"
                 )
             ]
         )
@@ -212,7 +208,7 @@ async def not_joined(client: Client, message: Message):
 @Bot.on_message(filters.command("ban_user") & filters.private)
 async def ban_command(client: Client, message: Message):
     print("Received /ban command")
-    if message.from_user.id not in SUDO_USERS:
+    if message.from_user.id not in ADMINS:
         await message.reply_text("ʏ𝙾𝚄 ᴅᴏɴᴛ ʜᴀᴠᴇ ᴛʜᴇ ᴘᴇʀᴍɪssɪᴏɴ ᴛᴏ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ.")
         return
 
@@ -229,7 +225,7 @@ async def ban_command(client: Client, message: Message):
 @Bot.on_message(filters.command("unban_user") & filters.private)
 async def unban_command(client: Client, message: Message):
     print("Received /unban command")
-    if message.from_user.id not in SUDO_USERS:
+    if message.from_user.id not in ADMINS:
         await message.reply_text("ʏᴏᴜ ᴅᴏɴᴛ ʜᴀᴠᴇ ᴛʜᴇ ᴘᴇʀᴍɪssɪᴏɴ ᴛᴏ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ.")
         return
 
@@ -246,35 +242,23 @@ async def unban_command(client: Client, message: Message):
     else:
         await message.reply_text("ᴘʟᴇᴀsᴇ sᴘᴇᴄɪғʏ ᴀ ᴜsᴇʀ ɪᴅ ᴛᴏ ᴜɴʙᴀɴ.")
 
-@Bot.on_message(filters.command("banlist") & filters.private)
-async def all_banned_command(client: Client, message: Message):
-    print("Received /allbanned command")
-    if message.from_user.id not in SUDO_USERS:
-        await message.reply_text("𝚈𝙾𝚄 𝙳𝙾𝙽𝚃 𝙷𝙰𝚅𝙴 𝚃𝙷𝙴 𝙿𝙴𝚁𝙼𝙸𝚂𝚂𝙸𝙾𝙽 𝚃𝙾 𝚄𝚂𝙴 𝚃𝙷𝙸𝚂 𝙲𝙾𝙼𝙼𝙰𝙽𝙳.")
-        return
-
-    if BANNED_USERS:
-        banned_users_list = "\n".join([str(user_id) for user_id in BANNED_USERS])
-        await message.reply_text(f"📋 ʟɪsᴛ ᴏғ ᴀʟʟ ʙᴀɴɴᴇᴅ ᴜsᴇʀs:\n{banned_users_list}")
-    else:
-        await message.reply_text("👍 ɴᴏ ᴜsᴇʀs ᴀʀᴇ ᴄᴜʀʀᴇɴᴛʟʏ ʙᴀɴɴᴇᴅ.")
 
 @Bot.on_message(filters.command("help") & filters.private)
 async def report_command(client: Client, message: Message):
     buttons = [
         [
-            InlineKeyboardButton("🌐 𝚃𝙸𝚃𝙰𝙽 𝙾𝚆𝙽𝙴𝚁𝚂 🌐", url="https://t.me/Titan_Association_bot")
+            InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
         ],
         [
             InlineKeyboardButton("🚀 𝙰𝙱𝙾𝚄𝚃", callback_data="about"),
-            InlineKeyboardButton("📝 𝙲𝙾𝙿𝙸𝚁𝙸𝙶𝙷𝚃𝚂", callback_data="button2")
+            InlineKeyboardButton("📝 ᴄᴏᴘɪʀɪɢʜᴛs", callback_data="button2")
         ],
         [
-            InlineKeyboardButton("📝 𝚃𝙸𝚃𝙰𝙽 𝙿𝚁𝙴𝙼𝙸𝚄𝙼", callback_data="premium"),
-            InlineKeyboardButton("🌟 𝙻𝙸𝙽𝙺 𝙱𝙻𝙾𝙲𝙺𝙴𝙳?", url="https://t.me/Titan_Association_bot")
+            InlineKeyboardButton("📝 ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ", callback_data="premium"),
+            InlineKeyboardButton("🌟 ʟɪɴᴋ ʙʟᴏᴄᴋᴇᴅ?", url="https://t.me/Titan_Association_bot")
         ],
         [
-            InlineKeyboardButton("🔥 𝙷𝙾𝚆 𝚃𝙾 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳 🔥", callback_data="tutorial")
+            InlineKeyboardButton("🔥 ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ 🔥", callback_data="tutorial")
         ]   
     ]
 
@@ -282,77 +266,16 @@ async def report_command(client: Client, message: Message):
 
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption="🆘 𝗛𝗲𝗹𝗽 ? 𝗬𝗲𝗮𝗵 𝗪𝗲 𝗮𝗿𝗲 𝗵𝗲𝗿𝗲 𝘁𝗼 𝗵𝗲𝗹𝗽  🆘\n"
-                "𝚂𝙾 𝙲𝙻𝙸𝙲𝙺 𝚃𝙷𝙴 𝙱𝚄𝚃𝚃𝙾𝙽𝚂 𝙱𝙴𝙻𝙾𝚆 MOST 𝙰𝚂𝙺𝙴𝙳 𝚀𝚄𝙴𝚂𝚃𝙸𝙾𝙽𝚂.\n\n"
-                "𝚂𝚃𝙸𝙻𝙻 𝚂𝙾𝙻𝚅𝙴 𝙽𝙴𝙷𝙸 𝙷𝚄𝙰 𝙽𝙾 𝙿𝚁𝙾𝙱𝙻𝙴𝙼 𝙲𝙾𝙽𝚃𝙰𝙲𝚃 𝙱𝚄𝚃𝚃𝙾𝙽 𝙿𝙴 𝙲𝙻𝙸𝙲𝙺 𝙺𝙰𝚁𝙾 ✅",
+        caption="🆘 ʜᴇʟᴘ ? ʏᴇᴀʜ ᴡᴇ ᴀʀᴇ ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ  🆘\n"
+                "sᴏ ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴍᴏsᴛ ᴀsᴋᴇᴅ ǫᴜᴇsᴛɪᴏɴs.\n\n"
+                "sᴛɪʟʟ sᴏʟᴠᴇ ɴᴇʜɪ ʜᴜᴀ ɴᴏ ᴘʀᴏʙʟᴇᴍ ᴄᴏɴᴛᴀᴄᴛ ʙᴜᴛᴛᴏɴ ᴘᴇ ᴄʟɪᴄᴋ ᴋᴀʀᴏ ✅",
         reply_markup=reply_markup,
     )
-    
-@Bot.on_message(filters.command('settimer') & filters.private)
-async def set_timer_command(client: Bot, message: Message):
-    try:
-        if message.from_user.id in ADMINS:
-            global global_timer_value
-            timer_argument = message.text.split(" ", 1)[1]
-            
-            if 's' in timer_argument:
-                timer_value = int(timer_argument[:-1])
-            elif 'm' in timer_argument:
-                timer_value = int(timer_argument[:-1]) * 60
-            elif 'h' in timer_argument:
-                timer_value = int(timer_argument[:-1]) * 3600
-            else:
-                timer_value = int(timer_argument)
-            
-            if 1 <= timer_value <= 3600:
-                global_timer_value = timer_value
-                await message.reply(f"⏰ Global auto-delete timer set to {timer_value} seconds. ⏰")
-            else:
-                await message.reply("⚠️ Please enter a timer value between 1 and 3600 seconds. ⚠️")
-        else:
-            await message.reply("🚫 Sorry, only admins can set the auto-delete timer. 🚫")
-    except (IndexError, ValueError):
-        await message.reply("❌ Invalid command usage. Please use /settimer <value>s, /settimer <value>m, or /settimer <value>h. ❌")
-
-@Bot.on_message(filters.command('checktimer') & filters.private)
-async def check_timer_command(client: Bot, message: Message):
-    try:
-        if message.from_user.id in ADMINS:
-            global global_timer_value
-            
-            if global_timer_value is not None:
-                await message.reply(f"⏰ Global auto-delete timer is currently set to {global_timer_value} minutes. ⏰")
-            else:
-                await message.reply("⚠️ Global auto-delete timer hasn't been set yet. ⚠️")
-        else:
-            await message.reply("🚫 Sorry, only admins can check the auto-delete timer. 🚫")
-    except AttributeError:
-        await message.reply("❌ Please use /checktimer as a reply to a user's message. ❌")
-
-@Bot.on_message(filters.command('users') & filters.private & filters.user(ADMINS))
-async def get_users(client: Bot, message: Message):
-
-    if message.from_user.id not in SUDO_USERS:
-        await message.reply_text("ʏᴏᴜ ᴅᴏɴᴛ ʜᴀᴠᴇ ᴛʜᴇ ᴘᴇʀᴍɪssɪᴏɴ ᴛᴏ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ.")
-        return
-        
-    try:
-        msg = await client.send_message(chat_id=message.chat.id, text="🔄 Fetching user information. Please wait... ⏳")
-        
-        for i in range(5, 0, -1):
-            await asyncio.sleep(1)
-            await msg.edit_text(f"🔄 ғᴇᴛᴄʜɪɴɢ ᴜsᴇʀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ. ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ... {i} ⏳")
-
-        users = await full_userbase()
-        
-        await msg.edit(f"✅ ᴜsᴇʀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ғᴇᴛᴄʜᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ!\n\n👥 ɴᴜᴍʙᴇʀ ᴏғ ᴜsᴇʀs: {len(users)} 🌐")
-    except Exception as e:
-        await msg.edit(f"❌ ᴀɴ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ ᴡʜɪʟᴇ ғᴇᴛᴄʜɪɴɢ ᴜsᴇʀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.\n\n ᴇʀʀᴏʀ: {str(e)}")
 
 @Bot.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
 async def send_text(client: Bot, message: Message):
     
-    if message.from_user.id not in SUDO_USERS:
+    if message.from_user.id not in ADMINS:
         await message.reply_text("ʏᴏᴜ ᴅᴏɴᴛ ʜᴀᴠᴇ ᴛʜᴇ ᴘᴇʀᴍɪssɪᴏɴ ᴛᴏ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ.")
         return
 
