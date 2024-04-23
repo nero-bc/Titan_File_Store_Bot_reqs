@@ -6,7 +6,7 @@ from logging.handlers import RotatingFileHandler
 # Get This Details From My telegram.org And From The @BotFather
 APP_ID = int(os.environ.get("APP_ID", "29663344"))
 API_HASH = os.environ.get("API_HASH", "1ce180a5008f81cb3e23fd4143fe0f6a")
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "6345249534:AAH6S5jqe7FfjV9IyE4vN_ijpuRayb4tGag")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7052151160:AAFgtuGxrFlQiPaEkdYA5CTAMVB7HItt6iU")
 
 # All The Channel Variables That You Have To Fill Its Important For Furter Working Of Bot
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002129294563"))
@@ -27,7 +27,7 @@ RESTART_CAPTION = os.environ.get("RESTART_CAPTION", "Apologies for the interrupt
 # This Is Where It Controls All Here You Can Add The Database Url And Name At The Same Time
 PORT = os.environ.get("PORT", "8080")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
-DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://jikel79691:srikar@cluster0.ygp0lbv.mongodb.net/?retryWrites=true&w=majority")
+DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://favorod148:srikar@cluster0.3c3aldt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DB_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
 
 # kind of important
