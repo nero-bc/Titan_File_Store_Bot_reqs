@@ -80,7 +80,12 @@ class Bot(Client):
         now = datetime.now(tz)
         time = now.strftime("%H:%M:%S %p")
         restart_message = RESTART_TXT.format(date=today, time=time)
-        await self.send_message(chat_id=LOG_CHANNEL, text=restart_message)
+        
+        # Path to your image file
+        image_path = "https://telegra.ph/file/4369747f7f8ea14083feb.jpg"
+        
+        # Send message with picture
+        await self.send_photo(chat_id=LOG_CHANNEL, photo=image_path, caption=restart_message)
 
     async def stop(self, *args):
         await super().stop()
