@@ -10,19 +10,14 @@ TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7052151160:AAFgtuGxrFlQiPaEkdYA5C
 
 # All The Channel Variables That You Have To Fill Its Important For Furter Working Of Bot
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002129294563"))
-CONFIRM_ID_CHNL = int(os.environ.get("CONFIRM_ID_CHNL", "-1002112771713"))
-LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL_ID", "-1002033440783"))
-MAIN_LOG_CHNL = int(os.environ.get("MAIN_LOG_CHNL", "-1002045697706"))
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002025477526"))
+CONFIRM_ID_CHNL = int(os.environ.get("CONFIRM_ID_CHNL", "-1002056765960"))
+LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002056765960"))
+MAIN_LOG_CHNL = int(os.environ.get("MAIN_LOG_CHNL", "-1002056765960"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002056765960"))
 
 # The Users Id Whoe Control Your Bot And Manage It For Further
 OWNER_ID = int(os.environ.get("OWNER_ID", "6529179563"))
 ADMINS = int(os.environ.get("ADMINS", "6529179563"))
-
-# This Is Where You Can Add The Restart Message And Image Url That Will Send To The Admins
-RESTART_CHNL_ID = int(os.environ.get("RESTART_CHNL_ID", "-1002033440783"))
-RESTART_IMAGE_PATH = os.environ.get("RESTART_IMAGE_PATH", "https://graph.org/file/9f5c7ca64ae1c76b53914.jpg")
-RESTART_CAPTION = os.environ.get("RESTART_CAPTION", "Apologies for the interruption! I've just been given a quick recharge and I'm back online now. Let's continue where we left off!")
 
 # This Is Where It Controls All Here You Can Add The Database Url And Name At The Same Time
 PORT = os.environ.get("PORT", "8080")
