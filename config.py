@@ -11,7 +11,7 @@ TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "6345249534:AAH6S5jqe7FfjV9IyE4vN_
 # All The Channel Variables That You Have To Fill Its Important For Furter Working Of Bot
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002129294563"))
 CONFIRM_ID_CHNL = int(os.environ.get("CONFIRM_ID_CHNL", "-1002112771713"))
-LOG_CHANNEL_ID = int(os.environ.get("LOG_CHANNEL_ID", "-1002033440783"))
+LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL_ID", "-1002033440783"))
 MAIN_LOG_CHNL = int(os.environ.get("MAIN_LOG_CHNL", "-1002045697706"))
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002025477526"))
 
