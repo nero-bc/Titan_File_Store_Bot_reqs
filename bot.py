@@ -94,7 +94,7 @@ class Bot(Client):
         image_path = "https://telegra.ph/file/4369747f7f8ea14083feb.jpg"
         
         # Send message with picture
-        await self.send_photo(chat_id=LOG_CHANNEL, photo=image_path, caption=restart_message)
+        await self.send_photo(chat_id=LOG_CHANNEL, photo=image_path, caption=restart_message, disable_web_page_preview=True)
 
     async def stop(self, *args):
         await super().stop()
