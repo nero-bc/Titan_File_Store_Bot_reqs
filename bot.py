@@ -10,7 +10,7 @@ import pytz
 from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT, LOG_CHANNEL
 
 RESTART_TXT = """
-<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
+<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ ! @Titan_Link_Store_Bot
 
 📅 Dᴀᴛᴇ : <code>{date}</code>
 ⏰ Tɪᴍᴇ : <code>{time}</code>
@@ -91,10 +91,10 @@ class Bot(Client):
         restart_message = RESTART_TXT.format(date=today, time=time)
         
         # Path to your image file
-        image_path = "https://telegra.ph/file/4369747f7f8ea14083feb.jpg"
+        image_path = "https://te.legra.ph/file/adffa4e75e4b8c645a53d.jpg"
         
         # Send message with picture
-        await self.send_photo(chat_id=LOG_CHANNEL, photo=image_path, caption=restart_message, disable_web_page_preview=True)
+        await self.send_photo(chat_id=LOG_CHANNEL, photo=image_path, caption=restart_message)
 
     async def stop(self, *args):
         await super().stop()
