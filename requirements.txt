@@ -1,5 +1,6 @@
 # --- For-Bot-Working --------- #
 Pyrogram
+Pyrofork
 TgCrypto
 openai
 pytz
