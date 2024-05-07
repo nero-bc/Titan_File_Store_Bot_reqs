@@ -9,11 +9,16 @@ API_HASH = os.environ.get("API_HASH", "1ce180a5008f81cb3e23fd4143fe0f6a")
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7052151160:AAFgtuGxrFlQiPaEkdYA5CTAMVB7HItt6iU")
 
 # All The Channel Variables That You Have To Fill Its Important For Furter Working Of Bot
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002129294563"))
 CONFIRM_ID_CHNL = int(os.environ.get("CONFIRM_ID_CHNL", "-1002137428245"))
 LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002137428245"))
 MAIN_LOG_CHNL = int(os.environ.get("MAIN_LOG_CHNL", "-1002137428245"))
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002139915064"))
+
+FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002007887810"))
+FORCE_SUB_CHANNEL2 = int(os.environ.get("FORCE_SUB_CHANNEL2", "-1002035720026"))
+FORCE_SUB_CHANNEL3 = int(os.environ.get("FORCE_SUB_CHANNEL3", "-1002139547964"))
+FORCE_SUB_CHANNEL4 = int(os.environ.get("FORCE_SUB_CHANNEL4", "-1002146715556"))
+FORCE_SUB_CHANNEL5 = int(os.environ.get("FORCE_SUB_CHANNEL5", "-1002129294563"))
 
 # The Users Id Whoe Control Your Bot And Manage It For Further
 OWNER_ID = int(os.environ.get("OWNER_ID", "6529179563"))
