@@ -168,41 +168,48 @@ REPLY_ERROR = """<code>ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴀs ᴀ ʀᴇᴘʟ
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
     id = message.from_user.id
-    
-    if id in BANNED_USERS:
-        await message.reply_text("Sorry, you are banned.")
+
+    if id in await list_banned_users():
+        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Official_Snowball")
         return
         
     buttons = [
         [
-            InlineKeyboardButton(
-                "🇮🇳 ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ [ ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs ] 🇮🇳",
-                url = client.invitelink)
+            InlineKeyboardButton("⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 1",url = client.invitelink),
+            InlineKeyboardButton("⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 2",url = client.invitelink2)
+        ],
+        [
+            InlineKeyboardButton("⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 3",url = client.invitelink3),
+            InlineKeyboardButton("⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 4",url = client.invitelink4)
+        ],
+        [
+            InlineKeyboardButton("⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 5",url = client.invitelink5)
         ]
+    
     ]
     try:
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text = 'ᴛʀʏ ᴀɢᴀɪɴ',
-                    url = f"https://t.me/Titan_Link_Store_Bot?start={message.command[1]}"
+                    text = '💞 ᴛʀʏ ᴀɢᴀɪɴ 💞',
+                    url = f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
         )
     except IndexError:
         pass
 
-    await message.reply(
-        text = FORCE_MSG.format(
+    await message.reply_photo(
+        photo=random.choice(PICS),
+        caption = FORCE_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
                 username = None if not message.from_user.username else '@' + message.from_user.username,
                 mention = message.from_user.mention,
                 id = message.from_user.id
-            ),
+        ),
         reply_markup = InlineKeyboardMarkup(buttons),
-        quote = True,
-        disable_web_page_preview = True
+        quote = True
     )
 
 @Bot.on_message(filters.command("ban_user") & filters.private)
