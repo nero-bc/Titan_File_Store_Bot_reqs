@@ -15,11 +15,7 @@ from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 
 from bot import Bot
 from helper_func import subscribed, encode, decode, get_messages
-from database.database import add_user, del_user, full_userbase, present_user
-
-global_timer_value = None
-
-BANNED_USERS = set()
+from database.database import *
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
@@ -175,11 +171,7 @@ async def not_joined(client: Client, message: Message):
             InlineKeyboardButton("⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 2",url = client.invitelink2)
         ],
         [
-            InlineKeyboardButton("⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 3",url = client.invitelink3),
-            InlineKeyboardButton("⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 4",url = client.invitelink4)
-        ],
-        [
-            InlineKeyboardButton("⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 5",url = client.invitelink5)
+            InlineKeyboardButton("⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 3",url = client.invitelink5)
         ]
     
     ]
