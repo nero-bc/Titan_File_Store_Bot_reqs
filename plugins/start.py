@@ -267,6 +267,18 @@ async def report_command(client: Client, message: Message):
         reply_markup=reply_markup,
     )
 
+@Bot.on_message(filters.command('users') & filters.private & filters.user(ADMINS))
+async def get_users(client: Bot, message: Message):
+    id = message.from_user.id
+
+    if id in await list_banned_users():
+        await message.reply("It Looks Like Your Are Banned From Using Me Contact Now @Official_Snowball")
+        return
+        
+    msg = await client.send_message(chat_id=message.chat.id, text=WAIT_MSG)
+    users = await full_userbase()
+    await msg.edit(f"{len(users)} users are using this bot")
+
 @Bot.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
 async def send_text(client: Bot, message: Message):
     
