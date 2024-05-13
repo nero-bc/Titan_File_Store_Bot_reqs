@@ -10,7 +10,7 @@ import time
 from pyrogram import Client, filters,enums, __version__
 from pyrogram.enums import ParseMode
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, PICS, CONFIRM_ID_CHNL, BOT_USERS
+from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, PICS, CONFIRM_ID_CHNL, BOT_USERS, HELP_TXT
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 
 from bot import Bot
@@ -297,9 +297,7 @@ async def report_command(client: Client, message: Message):
 
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption="🆘 ʜᴇʟᴘ ? ʏᴇᴀʜ ᴡᴇ ᴀʀᴇ ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ  🆘\n"
-                "sᴏ ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ʙᴇʟᴏᴡ ᴍᴏsᴛ ᴀsᴋᴇᴅ ǫᴜᴇsᴛɪᴏɴs.\n\n"
-                "sᴛɪʟʟ sᴏʟᴠᴇ ɴᴇʜɪ ʜᴜᴀ ɴᴏ ᴘʀᴏʙʟᴇᴍ ᴄᴏɴᴛᴀᴄᴛ ʙᴜᴛᴛᴏɴ ᴘᴇ ᴄʟɪᴄᴋ ᴋᴀʀᴏ ✅",
+        caption="""""",
         reply_markup=reply_markup,
     )
 
