@@ -26,6 +26,18 @@ async def full_userbase():
         
     return user_ids
 
+async def add_banned_user(user_id: int):
+    user_data.update_one({'_id': user_id}, {'$set': {'banned': True}}, upsert=True)
+    return
+
+async def remove_banned_user(user_id: int):
+    user_data.update_one({'_id': user_id}, {'$unset': {'banned': ''}})
+    return
+
+async def list_banned_users():
+    banned_users = user_data.find({'banned': True})
+    return [user['_id'] for user in banned_users]
+
 async def del_user(user_id: int):
     user_data.delete_one({'_id': user_id})
     return
