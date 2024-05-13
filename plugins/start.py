@@ -7,10 +7,10 @@ import random
 import re
 import string
 import time
-from pyrogram import Client, filters, __version__
+from pyrogram import Client, filters,enums, __version__
 from pyrogram.enums import ParseMode
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, PICS, CONFIRM_ID_CHNL
+from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, PICS, CONFIRM_ID_CHNL, BOT_USERS
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 
 from bot import Bot
@@ -20,9 +20,9 @@ from database.database import *
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     id = message.from_user.id
-
-    if id in BANNED_USERS:
-        await message.reply_text("Sorry, you are banned.")
+    
+    if id in await list_banned_users():
+        await message.reply("It Looks Like Your Are Banned From Using Me Contact Now @Official_Snowball")
         return
 
     if not await present_user(id):
@@ -164,6 +164,10 @@ REPLY_ERROR = """<code>ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴀs ᴀ ʀᴇᴘʟ
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
     id = message.from_user.id
+    
+    if id in await list_banned_users():
+        await message.reply("It Looks Like Your Are Banned From Using Me Contact Now @Official_Snowball")
+        return
         
     buttons = [
         [
@@ -202,44 +206,76 @@ async def not_joined(client: Client, message: Message):
 
 @Bot.on_message(filters.command("ban_user") & filters.private)
 async def ban_command(client: Client, message: Message):
-    print("Received /ban command")
+    id = message.from_user.id
+    
+    if id in await list_banned_users():
+        await message.reply("It Looks Like Your Are Banned From Using Me Contact Now @Official_Snowball")
+        return
+        
     if message.from_user.id not in ADMINS:
-        await message.reply_text("ʏ𝙾𝚄 ᴅᴏɴᴛ ʜᴀᴠᴇ ᴛʜᴇ ᴘᴇʀᴍɪssɪᴏɴ ᴛᴏ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ.")
+        await message.reply_text("You don't have the permission to use this command.")
         return
 
     if len(message.command) == 2:
         try:
             user_id = int(message.command[1])
-            BANNED_USERS.add(user_id)
-            await message.reply_text(f"ᴜsᴇʀ ᴡɪᴛʜ ɪᴅ {user_id} ʜᴀs ʙᴇᴇɴ ʙᴀɴɴᴇᴅ.")
+            await add_banned_user(user_id)
+            await message.reply_text(f"User with ID {user_id} has been banned.")
         except ValueError:
-            await message.reply_text("ɪɴᴠᴀʟɪᴅ ᴜsᴇʀ ɪᴅ.")
+            await message.reply_text("Invalid user ID.")
     else:
-        await message.reply_text("ᴘʟᴇᴀsᴇ sᴘᴇᴄɪғʏ ᴀ ᴜsᴇʀ ɪᴅ ᴛᴏ ʙᴀɴ.")
+        await message.reply_text("Please specify a user ID to ban.")
 
 @Bot.on_message(filters.command("unban_user") & filters.private)
 async def unban_command(client: Client, message: Message):
-    print("Received /unban command")
+    id = message.from_user.id
+
+    if id in await list_banned_users():
+        await message.reply("It Looks Like Your Are Banned From Using Me Contact Now @Official_Snowball")
+        return
+        
     if message.from_user.id not in ADMINS:
-        await message.reply_text("ʏᴏᴜ ᴅᴏɴᴛ ʜᴀᴠᴇ ᴛʜᴇ ᴘᴇʀᴍɪssɪᴏɴ ᴛᴏ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ.")
+        await message.reply_text("You don't have the permission to use this command.")
         return
 
     if len(message.command) == 2:
         try:
             user_id = int(message.command[1])
-            if user_id in BANNED_USERS:
-                BANNED_USERS.remove(user_id)
-                await message.reply_text(f"ᴜsᴇʀ ᴡɪᴛʜ ɪᴅ {user_id} ʜᴀs ʙᴇᴇɴ ᴜɴʙᴀɴɴᴇᴅ.")
-            else:
-                await message.reply_text(f"ᴜsᴇʀ ᴡɪᴛʜ ɪᴅ {user_id} ɪs ɴᴏᴛ ᴄᴜʀʀᴇɴᴛʟʏ ʙᴀɴɴᴇᴅ.")
+            await remove_banned_user(user_id)
+            await message.reply_text(f"User with ID {user_id} has been unbanned.")
         except ValueError:
-            await message.reply_text("ɪɴᴠᴀʟɪᴅ ᴜsᴇʀ ɪᴅ.")
+            await message.reply_text("Invalid user ID.")
     else:
-        await message.reply_text("ᴘʟᴇᴀsᴇ sᴘᴇᴄɪғʏ ᴀ ᴜsᴇʀ ɪᴅ ᴛᴏ ᴜɴʙᴀɴ.")
+        await message.reply_text("Please specify a user ID to unban.")
+      
+@Bot.on_message(filters.command("banlist") & filters.private)
+async def banlist_command(client: Client, message: Message):
+    id = message.from_user.id
+
+    if id in await list_banned_users():
+        await message.reply("It Looks Like Your Are Banned From Using Me Contact Now @Official_Snowball")
+        return
+        
+    if message.from_user.id not in ADMINS:
+        await message.reply_text("You don't have the permission to use this command.")
+        return
+
+    banned_users = await list_banned_users()
+    if banned_users:
+        users_list = "\n".join(str(user_id) for user_id in banned_users)
+        await message.reply_text(f"Banned Users:\n{users_list}")
+    else:
+        await message.reply_text("No users are currently banned.")
 
 
 @Bot.on_message(filters.command("help") & filters.private)
 async def report_command(client: Client, message: Message):
+    id = message.from_user.id
+
+    if id in await list_banned_users():
+        await message.reply("It Looks Like Your Are Banned From Using Me Contact Now @Official_Snowball")
+        return
+    
     buttons = [
         [
             InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
@@ -281,9 +317,14 @@ async def get_users(client: Bot, message: Message):
 
 @Bot.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
 async def send_text(client: Bot, message: Message):
+    id = message.from_user.id
     
     if message.from_user.id not in ADMINS:
         await message.reply_text("ʏᴏᴜ ᴅᴏɴᴛ ʜᴀᴠᴇ ᴛʜᴇ ᴘᴇʀᴍɪssɪᴏɴ ᴛᴏ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ.")
+        return
+
+    if id in await list_banned_users():
+        await message.reply("It Looks Like Your Are Banned From Using Me Contact Now @Official_Snowball")
         return
 
     if message.reply_to_message:
@@ -329,6 +370,43 @@ async def send_text(client: Bot, message: Message):
         msg = await message.reply(REPLY_ERROR)
         await asyncio.sleep(8)
         await msg.delete()
+
+@Bot.on_message(filters.command("info") & filters.private)
+async def showid(client: Client, message: Message):
+    user = message.from_user
+    id = message.from_user.id
+
+    if id in await list_banned_users():
+        await message.reply("It Looks Like Your Are Banned From Using Me Contact Now @Official_Snowball")
+        return
+        
+    user_id = user.id
+    username = user.username or "Not Available"
+    first_name = user.first_name
+    last_name = user.last_name or "Not Available"
+    
+    is_premium = user_id in await list_premium_users()
+    premium_status = "Premium ✅" if is_premium else "Not Premium ❌"
+
+    user_link = f"<a href='tg://user?id={user_id}'>Click Here</a>"
+    
+    caption = (
+        f"👤 User ID: <code>{user_id}</code>\n"
+        f"👤 Username: <code>{username}</code>\n"
+        f"👤 First Name: <code>{first_name}</code>\n"
+        f"👤 Last Name: <code>{last_name}</code>\n"
+        f"👤 Premium Status: <code>{premium_status}</code>\n"
+        f"🔗 User Link: {user_link}"
+    )
+
+    button = InlineKeyboardButton(
+        "Click Here", url=f"tg://user?id={user_id}"
+    )
+    keyboard = InlineKeyboardMarkup([[button]])
+
+    await message.reply_photo(
+        photo=BOT_USERS, caption=caption, reply_markup=keyboard
+    )
 
 @Bot.on_message(filters.command('restart') & filters.private & filters.user(ADMINS))
 async def restart_bot(client: Bot, message: Message):
