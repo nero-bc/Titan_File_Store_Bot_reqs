@@ -9,7 +9,7 @@ from bot import Bot
 from config import ADMINS, CHANNEL_ID, DISABLE_CHANNEL_BUTTON
 from helper_func import encode
 
-@Bot.on_message(filters.private & filters.user(ADMINS) & ~filters.command(['start','users','broadcast','batch','genlink','stats','ban_user','unban_user','banlist', 'help', 'settimer', 'checktimer', 'restart']))
+@Bot.on_message(filters.private & filters.user(ADMINS) & ~filters.command(['start','info','plans','users','broadcast','batch','genlink','stats','ban_user','unban_user','banlist', 'help', 'restart']))
 async def channel_post(client: Client, message: Message):
     reply_text = await message.reply_text("ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...!", quote = True)
     try:
