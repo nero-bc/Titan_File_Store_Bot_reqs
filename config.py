@@ -41,6 +41,7 @@ PICS = [
     "https://telegra.ph/file/5b5bea15bedeaafedd18a.jpg",
     "https://telegra.ph/file/f5039bcf2c931816018fa.jpg",
 ]
+BOT_USERS = os.environ.get('BOT_USERS', 'https://te.legra.ph/file/81bd8053e505e45bdfe8f.jpg')
 
 # start Message And Texts
 START_MSG = os.environ.get("START_MESSAGE", """
