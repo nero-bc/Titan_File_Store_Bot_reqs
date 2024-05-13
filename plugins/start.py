@@ -10,7 +10,7 @@ import time
 from pyrogram import Client, filters,enums, __version__
 from pyrogram.enums import ParseMode
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, PICS, CONFIRM_ID_CHNL, BOT_USERS, HELP_TXT
+from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, PICS, CONFIRM_ID_CHNL, BOT_USERS, HELP_MSG
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 
 from bot import Bot
@@ -270,7 +270,13 @@ async def banlist_command(client: Client, message: Message):
 
 @Bot.on_message(filters.command("help") & filters.private)
 async def report_command(client: Client, message: Message):
+    user = message.from_user
     id = message.from_user.id
+
+    user_id = user.id
+    username = user.username or "Not Available"
+    first_name = user.first_name
+    last_name = user.last_name or "Not Available"
 
     if id in await list_banned_users():
         await message.reply("It Looks Like Your Are Banned From Using Me Contact Now @Official_Snowball")
@@ -297,7 +303,7 @@ async def report_command(client: Client, message: Message):
 
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption="""""",
+        caption=HELP_MSG,
         reply_markup=reply_markup,
     )
 
@@ -383,9 +389,6 @@ async def showid(client: Client, message: Message):
     first_name = user.first_name
     last_name = user.last_name or "Not Available"
     
-    is_premium = user_id in await list_premium_users()
-    premium_status = "Premium ✅" if is_premium else "Not Premium ❌"
-
     user_link = f"<a href='tg://user?id={user_id}'>Click Here</a>"
     
     caption = (
@@ -393,7 +396,6 @@ async def showid(client: Client, message: Message):
         f"👤 Username: <code>{username}</code>\n"
         f"👤 First Name: <code>{first_name}</code>\n"
         f"👤 Last Name: <code>{last_name}</code>\n"
-        f"👤 Premium Status: <code>{premium_status}</code>\n"
         f"🔗 User Link: {user_link}"
     )
 
