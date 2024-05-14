@@ -326,22 +326,17 @@ async def report_command(client: Client, message: Message):
         return
     
     buttons = [
-        [
-            InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
-        ],
-        [
-            InlineKeyboardButton("🚀 ᴀʙᴏᴜᴛ", callback_data="about"),
-            InlineKeyboardButton("📝 ᴄᴏᴘɪʀɪɢʜᴛs", url="https://t.me/Titan_Cinemas_Support_bot")
-        ],
-        [
-            InlineKeyboardButton("📝 ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ", url="https://t.me/Titan_Cinemas_Support_bot"),
-            InlineKeyboardButton("🌟 ʟɪɴᴋ ʙʟᴏᴄᴋᴇᴅ?", url="https://t.me/Titan_Cinemas_Support_bot")
-        ],
-        [
-            InlineKeyboardButton("🔥 ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ 🔥", url="https://t.me/howtoopentitan/4")
-        ]   
+            [
+                InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
+            ],
+            [
+                InlineKeyboardButton("📌 ᴀʙᴏᴜᴛ", callback_data="about"),
+                InlineKeyboardButton("📌 ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ", callback_data="premium")
+            ],
+            [
+                InlineKeyboardButton("🔥 ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ 🔥", url="https://t.me/howtoopentitan")
+            ]   
     ]
-
     reply_markup = InlineKeyboardMarkup(buttons)
 
     await message.reply_photo(
