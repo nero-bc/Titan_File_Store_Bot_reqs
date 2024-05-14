@@ -36,12 +36,12 @@ async def useless(bot: Bot, message: Message):
     text_message = """
 ʜᴇʏ ᴘʀᴏʙʟᴇᴍ ʜᴀɪ ᴋʏᴀ ? 💔
     
-✪ ʜᴀᴀᴍ ʜᴀɪ ɴᴀ ᴊᴜsᴛ ʜᴀᴀᴍ ᴋᴏ ᴍᴇssᴀɢᴇ ᴋᴀʀᴏ
-✪ sᴄʀᴇᴇɴ sʜᴏᴛ sᴇɴᴅ ᴋᴀʀᴏ ᴋʏᴀ ᴘʀᴏʙʟᴇᴍs ʜᴀɪ ?
-✪ ᴛʜᴇɴ ᴊᴜsᴛ ᴡᴀɪᴛ ᴡᴇ ᴡᴇ ᴄᴏɴᴛᴀᴄᴛ ʏᴏᴜ 🥰
+<blockquote>✪ ᴊᴜsᴛ sᴇɴᴅ ᴀ ᴍᴇssᴀɢᴇ
+✪ ᴀʟsᴏ sᴇɴᴅ ᴛʜᴇ sᴄʀᴇᴇɴ sʜᴏᴛ ?
+✪ ᴀɴᴅ ᴛʜᴀᴛ's ɪᴛ ᴘʟs ᴡᴀɪᴛ ᴡᴇ ᴡɪʟʟ ʜᴇʟᴘ 🥰</blockquote>
         
-🚀 ᴄᴏɴᴛᴀᴄᴛ ᴜs ʜᴇʀᴇ - @Titan_Cinemas_Support_bot
-ᴏʀ ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟʟᴏᴡ ᴛᴏ ᴄᴏɴᴛᴀᴄᴛ ᴜs ❤️"""
+🚀 ᴄᴏɴᴛᴀᴄᴛ ᴜs ʜᴇʀᴇ - <a href='https://t.me/Titan_Cinemas_Support_bot'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
+ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟʟᴏᴡ ᴛᴏ ᴄᴏɴᴛᴀᴄᴛ ᴜs ❤️"""
 
     await bot.send_message(
         chat_id=user_id,
