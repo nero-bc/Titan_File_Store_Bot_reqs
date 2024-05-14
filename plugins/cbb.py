@@ -68,6 +68,22 @@ async def cb_handler_func(client, query: CallbackQuery):
             caption=HELP_MSG,
             reply_markup=reply_markup,
         )
+    elif data == "premium":
+        buttons = [
+            [
+                InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
+            ]  
+        ]
+
+        await query.message.edit_text(
+            text=PREMIUM_TXT,
+            reply_markup=InlineKeyboardMarkup(buttons)
+        )
+        await query.message.reply_photo(
+            photo=random.choice(PICS),
+            caption=PREMIUM_TXT,
+            reply_markup=reply_markup,
+        )
     elif data == "start":
         reply_markup = InlineKeyboardMarkup(
             [
