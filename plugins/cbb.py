@@ -13,9 +13,27 @@ PREMIUM_TXT = """<b>⚡ ᴡʜᴀᴛ ɪs ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ ?
 🚀 ᴅɪʀᴇᴄᴛ ғɪʟᴇs ᴡɪᴛʜ ғᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋs
 🚀 ᴘʀᴇᴍɪᴜᴍ ʀᴇǫᴜᴇsᴛ ɢʀᴏᴜᴘ
 🚀 ᴘʀᴇᴍɪᴜᴍ ᴀʟʟ ᴀʀᴏᴜɴᴅ ᴏᴜʀ ʙᴏᴛs 💞
+🚀 ᴀᴅᴠᴀɴᴄᴇ 24x7 sᴜᴘᴘᴏʀᴛ 
+🚀 ᴘʀɪᴏʀɪᴛʏ ᴛᴏ ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛs
 🚀 ᴘʀᴇᴍɪᴜᴍ ᴄʜᴀɴɴᴇʟs ᴡɪᴛʜ ᴅɪʀᴇᴄᴛ ғɪʟᴇs ᴇᴠᴇʀʏ ᴅᴀʏ 100+ ғɪʟᴇs ᴡɪʟʟ ʙᴇ ᴜᴘʟᴏᴀᴅᴇᴅ
     
 <blockquote>📌 ɴᴏᴛᴇ : ᴡᴇ ᴋɴᴏᴡ ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ sᴇʀᴠɪᴄᴇ ᴡɪʟʟ ʜᴀᴠᴇ ʟɪᴍɪᴛs ғᴏʀ sᴜʀᴇ ᴄᴀᴜsᴇ ᴡᴇ ᴀʀᴇ sᴛɪʟʟ ɪɴ ᴅᴇᴠᴇʟᴏᴘᴍᴇɴᴛ sᴛᴀɢᴇ sᴏ ɪғ ʏᴏᴜ ɢᴇᴛ ᴜs ᴛɪᴍᴇ ᴀɴᴅ sᴜᴘᴘᴏʀᴛ ᴜs ᴡᴇ ᴡɪʟʟ sᴜʀᴇʟʏ ᴄᴏᴍᴇ ᴜᴘ ᴛᴏ ʏᴏᴜʀ ᴛʜᴏᴜɢʜᴛs ᴀɴᴅ ᴇxᴘᴇᴄᴛᴀᴛɪᴏɴs ᴛʜᴀɴᴋs~ᴛɪᴛᴀɴ</blockquote></b>"""
+
+PREPREMIUM = """
+ᴏᴏᴏᴏ ᴛʜᴀɴᴋs ғᴏʀ ᴍᴀᴋɪɴɢ ʏᴏᴜʀ ᴄʜᴏɪᴄᴇ ᴛᴏ ʙᴇ ᴡɪᴛʜ ᴜs ᴀɴᴅ ᴛʜᴀɴᴋs ғᴏʀ sᴜᴘᴘᴏʀᴛɪɴɢ
+
+🎖️ <u>ᴀᴠᴀɪʟᴀʙʟᴇ ᴘʟᴀɴs</u>
+
+● <code>10₹</code> ➛ <u>ʙʀᴏɴᴢᴇ ᴘʟᴀɴ</u> » <code>7 ᴅᴀʏꜱ</code>
+● <code>29₹</code> ➛ <u>ꜱɪʟᴠᴇʀ ᴘʟᴀɴ</u> » <code>30 ᴅᴀʏꜱ</code>
+● <code>129₹</code> ➛ <u>ɢᴏʟᴅ ᴘʟᴀɴ</u> » <code>90 ᴅᴀʏꜱ</code>
+● <code>370₹</code> ➛ <u>ᴘʟᴀᴛɪɴᴜᴍ ᴘʟᴀɴ</u> » <code>180 ᴅᴀʏꜱ</code>
+● <code>500₹</code> ➛ <u>ᴅɪᴀᴍᴏɴᴅ ᴘʟᴀɴ</u> » <code>365 ᴅᴀʏꜱ</code>
+
+💵 ᴜᴘɪ ɪᴅ - <code>soon...</code>
+
+‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.
+<blockquote>⚡ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://t.me/Titan_Cinemas_Support_bot'>⚡ ᴛɪᴛᴀɴ ɪɴᴅɪᴀ</a></blockquote>"""
 
 @Bot.on_callback_query()
 async def cb_handler_func(client, query: CallbackQuery):
@@ -26,7 +44,7 @@ async def cb_handler_func(client, query: CallbackQuery):
             text=(
                 f"<b>──────[ 🚀 ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs 🚀 ]───────────\n"
                 f"├🌟 ᴍʏ ɴᴀᴍᴇ : <a href=https://t.me/Titan_Link_Store_Bot>ᴛɪᴛᴀɴ ʟɪɴᴋ ᴘʀᴏᴠɪᴅᴇʀ</a>\n"
-                f"├💻 ʟᴀɴɢᴜᴀɢᴇ: <a href=https://aka.ms/vs/17/release/vc_redist.x64.exe>ᴄ++ & ᴊᴀᴠᴀ</a>\n"
+                f"├💻 ʟᴀɴɢᴜᴀɢᴇ: <a href=https://python.org/>ᴘʏᴛʜᴏɴ & ᴘʏʀᴏɢʀᴀᴍ</a>\n"
                 f"├🌐 ʜᴏsᴛᴇᴅ ᴏɴ: <a href=www.hostinger.in>ʜᴏsᴛɪɴɢᴇʀ ᴠᴘs</a>\n"
                 f"├👨‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ: <a href=https://t.me/Titan_Cinemas_Support_bot>ᴛɪᴛᴀɴ ᴏᴡɴᴇʀ</a>\n"
                 f"├🛠️ ʙᴏᴛ sᴜᴘᴘᴏʀᴛ: <a href=https://t.me/Titan_Cinemas_Support_bot>ᴛɪᴛᴀɴ sᴜᴘᴘᴏʀᴛ</a>\n"
