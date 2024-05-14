@@ -68,10 +68,10 @@ async def cb_handler_func(client, query: CallbackQuery):
             ],
             [
                 InlineKeyboardButton("📌 ᴀʙᴏᴜᴛ", callback_data="about"),
-                InlineKeyboardButton("📌 ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ", url="https://t.me/Titan_Cinemas_Support_bot")
+                InlineKeyboardButton("📌 ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ", callback_data="premium")
             ],
             [
-                InlineKeyboardButton("🔥 ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ 🔥", url="https://t.me/howtoopentitan/4")
+                InlineKeyboardButton("🔥 ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ 🔥", url="https://t.me/howtoopentitan")
             ]   
         ]
 
