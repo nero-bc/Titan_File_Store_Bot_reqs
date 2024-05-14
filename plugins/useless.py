@@ -22,8 +22,7 @@ contact_button = [
     ]
 ]
 
-
-keyboard = InlineKeyboardMarkup([[contact_button]])
+keyboard = InlineKeyboardMarkup(contact_button)
 
 @Bot.on_message(filters.private & filters.incoming)
 async def useless(bot: Bot, message: Message):
