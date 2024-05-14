@@ -65,12 +65,8 @@ async def cb_handler_func(client, query: CallbackQuery):
                 InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
             ],
             [
-                InlineKeyboardButton("🚀 ᴀʙᴏᴜᴛ", callback_data="about"),
-                InlineKeyboardButton("📝 ᴄᴏᴘɪʀɪɢʜᴛs", url="https://t.me/Titan_Cinemas_Support_bot")
-            ],
-            [
-                InlineKeyboardButton("📝 ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ", url="https://t.me/Titan_Cinemas_Support_bot"),
-                InlineKeyboardButton("🌟 ʟɪɴᴋ ʙʟᴏᴄᴋᴇᴅ?", url="https://t.me/Titan_Cinemas_Support_bot")
+                InlineKeyboardButton("📌 ᴀʙᴏᴜᴛ", callback_data="about"),
+                InlineKeyboardButton("📌 ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ", url="https://t.me/Titan_Cinemas_Support_bot")
             ],
             [
                 InlineKeyboardButton("🔥 ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ 🔥", url="https://t.me/howtoopentitan/4")
@@ -89,7 +85,7 @@ async def cb_handler_func(client, query: CallbackQuery):
     elif data == "premium":
         buttons = [
             [
-                InlineKeyboardButton("⚡ ᴡᴀɴɴᴀ ʙᴇ ᴀ ᴘʀᴇᴍɪᴜᴍ ᴍᴇᴍʙᴇʀ? ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
+                InlineKeyboardButton("⚡ ᴡᴀɴɴᴀ ʙᴇ ᴀ ᴘʀᴇᴍɪᴜᴍ ᴍᴇᴍʙᴇʀ? ⚡", callback_data="preplan")
             ],
             [
                 InlineKeyboardButton("🎉 ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ 🎉", callback_data="start")
@@ -102,6 +98,25 @@ async def cb_handler_func(client, query: CallbackQuery):
         )
         await query.message.reply_photo(
             photo=random.choice(PICS),
+            caption=PREMIUM_TXT,
+            reply_markup=reply_markup,
+        )
+    elif data == "preplan":
+        buttons = [
+            [
+                InlineKeyboardButton("🔥 sᴇɴᴅ sᴄʀᴇᴇɴ sʜᴏᴛ ɴᴏᴡ 🔥", url="https://t.me/Titan_Cinemas_Support_bot")
+            ],
+            [
+                InlineKeyboardButton("🎉 ʙᴀᴄᴋ 🎉", callback_data="premium")
+            ]
+        ]
+
+        await query.message.edit_text(
+            text=PREMIUM_TXT,
+            reply_markup=InlineKeyboardMarkup(buttons)
+        )
+        await query.message.reply_photo(
+            photo=PLAN_PIC,
             caption=PREMIUM_TXT,
             reply_markup=reply_markup,
         )
