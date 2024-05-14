@@ -33,14 +33,15 @@ async def useless(bot: Bot, message: Message):
     if user_id in ADMINS:
         return
 
-    text_message = """ ʜᴇʏ ᴘʀᴏʙʟᴇᴍ ʜᴀɪ ᴋʏᴀ ? 💔
+    text_message = """
+ʜᴇʏ ᴘʀᴏʙʟᴇᴍ ʜᴀɪ ᴋʏᴀ ? 💔
     
-    ✪ ʜᴀᴀᴍ ʜᴀɪ ɴᴀ ᴊᴜsᴛ ʜᴀᴀᴍ ᴋᴏ ᴍᴇssᴀɢᴇ ᴋᴀʀᴏ
-    ✪ sᴄʀᴇᴇɴ sʜᴏᴛ sᴇɴᴅ ᴋᴀʀᴏ ᴋʏᴀ ᴘʀᴏʙʟᴇᴍs ʜᴀɪ ?
-    ✪ ᴛʜᴇɴ ᴊᴜsᴛ ᴡᴀɪᴛ ᴡᴇ ᴡᴇ ᴄᴏɴᴛᴀᴄᴛ ʏᴏᴜ 🥰
+✪ ʜᴀᴀᴍ ʜᴀɪ ɴᴀ ᴊᴜsᴛ ʜᴀᴀᴍ ᴋᴏ ᴍᴇssᴀɢᴇ ᴋᴀʀᴏ
+✪ sᴄʀᴇᴇɴ sʜᴏᴛ sᴇɴᴅ ᴋᴀʀᴏ ᴋʏᴀ ᴘʀᴏʙʟᴇᴍs ʜᴀɪ ?
+✪ ᴛʜᴇɴ ᴊᴜsᴛ ᴡᴀɪᴛ ᴡᴇ ᴡᴇ ᴄᴏɴᴛᴀᴄᴛ ʏᴏᴜ 🥰
         
-    🚀 ᴄᴏɴᴛᴀᴄᴛ ᴜs ʜᴇʀᴇ - @Titan_Association_bot
-    ᴏʀ ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟʟᴏᴡ ᴛᴏ ᴄᴏɴᴛᴀᴄᴛ ᴜs ❤️"""
+🚀 ᴄᴏɴᴛᴀᴄᴛ ᴜs ʜᴇʀᴇ - @Titan_Cinemas_Support_bot
+ᴏʀ ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟʟᴏᴡ ᴛᴏ ᴄᴏɴᴛᴀᴄᴛ ᴜs ❤️"""
 
     await bot.send_message(
         chat_id=user_id,
