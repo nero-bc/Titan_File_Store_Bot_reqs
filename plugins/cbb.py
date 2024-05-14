@@ -1,7 +1,7 @@
 from pyrogram import __version__
 from bot import Bot
 import random
-from config import OWNER_ID, START_MSG, PICS, HELP_MSG
+from config import OWNER_ID, START_MSG, PICS, HELP_MSG, PLAN_PIC
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
 contact_button = InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
@@ -112,12 +112,12 @@ async def cb_handler_func(client, query: CallbackQuery):
         ]
 
         await query.message.edit_text(
-            text=PREMIUM_TXT,
+            text=PREPREMIUM,
             reply_markup=InlineKeyboardMarkup(buttons)
         )
         await query.message.reply_photo(
             photo=PLAN_PIC,
-            caption=PREMIUM_TXT,
+            caption=PREPREMIUM,
             reply_markup=reply_markup,
         )
     elif data == "start":
