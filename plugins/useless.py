@@ -41,7 +41,7 @@ async def useless(bot: Bot, message: Message):
 ✪ ᴀɴᴅ ᴛʜᴀᴛ's ɪᴛ ᴘʟs ᴡᴀɪᴛ ᴡᴇ ᴡɪʟʟ ʜᴇʟᴘ 🥰</blockquote>
         
 🚀 ᴄᴏɴᴛᴀᴄᴛ ᴜs ʜᴇʀᴇ - <a href='https://t.me/Titan_Cinemas_Support_bot'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
-ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟʟᴏᴡ ᴛᴏ ᴄᴏɴᴛᴀᴄᴛ ᴜs ❤️"""
+ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟʟᴏᴡ ᴛᴏ ᴄᴏɴᴛᴀᴄᴛ ᴜs"""
 
     await bot.send_message(
         chat_id=user_id,
