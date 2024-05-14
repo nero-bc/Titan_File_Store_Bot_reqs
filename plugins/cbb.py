@@ -7,24 +7,15 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 contact_button = InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
 keyboard = InlineKeyboardMarkup([[contact_button]])
 
-PREMIUM_TXT = """<b>👋 ʜᴇʏ ,
+PREMIUM_TXT = """<b>⚡ ᴡʜᴀᴛ ɪs ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ ?
+ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ ɪs ᴀ ᴘʀᴇᴍɪᴜᴍ sᴇʀᴠɪᴄᴇ ᴊʜᴏ ɪss ᴋᴏ sᴜʙsᴄʀɪʙᴇ ᴋᴀʀᴇɢᴀ ᴜss ᴋᴏ ᴘʀᴇᴍɪᴜᴍ ᴘʀᴇᴋs ᴍɪʟᴇɢᴀ ʟɪᴋᴇ
+
+🚀 ᴅɪʀᴇᴄᴛ ғɪʟᴇs ᴡɪᴛʜ ғᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ ʟɪɴᴋs
+🚀 ᴘʀᴇᴍɪᴜᴍ ʀᴇǫᴜᴇsᴛ ɢʀᴏᴜᴘ
+🚀 ᴘʀᴇᴍɪᴜᴍ ᴀʟʟ ᴀʀᴏᴜɴᴅ ᴏᴜʀ ʙᴏᴛs 💞
+🚀 ᴘʀᴇᴍɪᴜᴍ ᴄʜᴀɴɴᴇʟs ᴡɪᴛʜ ᴅɪʀᴇᴄᴛ ғɪʟᴇs ᴇᴠᴇʀʏ ᴅᴀʏ 100+ ғɪʟᴇs ᴡɪʟʟ ʙᴇ ᴜᴘʟᴏᴀᴅᴇᴅ
     
-🎁 <u>ᴘʀᴇᴍɪᴜᴍ ғᴇᴀᴛᴜʀᴇs</u> :
-
-○ ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴏᴘᴇɴ ʟɪɴᴋꜱ
-○ ᴅɪʀᴇᴄᴛ ғɪʟᴇs   
-○ ᴀᴅ-ғʀᴇᴇ ᴇxᴘᴇʀɪᴇɴᴄᴇ
-○ ᴘʀᴇᴍɪᴜᴍ ɪs ᴀᴄʀᴏss ᴀʟʟ ᴛʜᴇ ʙᴏᴛs                           
-○ ᴜɴʟɪᴍɪᴛᴇᴅ ᴍᴏᴠɪᴇs & sᴇʀɪᴇs
-○ ᴘʀᴇᴍɪᴜᴍ ᴄʜᴀɴɴᴇʟs ᴀᴄᴄᴇss
-○ ꜰᴜʟʟ ᴀᴅᴍɪɴ sᴜᴘᴘᴏʀᴛ                              
-○ ʀᴇǫᴜᴇsᴛ ᴡɪʟʟ ʙᴇ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ɪɴ 1ʜ [ ɪꜰ ᴀᴠᴀɪʟᴀʙʟᴇ ]
-
-➛ ᴜꜱᴇ /plans ᴛᴏ ꜱᴇᴇ ᴀʟʟ ᴏᴜʀ ᴘʟᴀɴꜱ ᴀᴛ ᴏɴᴄᴇ.
-
-‼️ ᴀғᴛᴇʀ sᴇɴᴅɪɴɢ ᴀ sᴄʀᴇᴇɴsʜᴏᴛ ᴘʟᴇᴀsᴇ ɢɪᴠᴇ ᴜs sᴏᴍᴇ ᴛɪᴍᴇ ᴛᴏ ᴀᴅᴅ ʏᴏᴜ ɪɴ ᴛʜᴇ ᴘʀᴇᴍɪᴜᴍ ʟɪsᴛ.</b>
-
-<blockquote>⚡ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='http://t.me/Official_Snowball'>sɴᴏᴡ ʙᴀʟʟ 🧿</a></blockquote>"""
+<blockquote>📌 ɴᴏᴛᴇ : ᴡᴇ ᴋɴᴏᴡ ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ sᴇʀᴠɪᴄᴇ ᴡɪʟʟ ʜᴀᴠᴇ ʟɪᴍɪᴛs ғᴏʀ sᴜʀᴇ ᴄᴀᴜsᴇ ᴡᴇ ᴀʀᴇ sᴛɪʟʟ ɪɴ ᴅᴇᴠᴇʟᴏᴘᴍᴇɴᴛ sᴛᴀɢᴇ sᴏ ɪғ ʏᴏᴜ ɢᴇᴛ ᴜs ᴛɪᴍᴇ ᴀɴᴅ sᴜᴘᴘᴏʀᴛ ᴜs ᴡᴇ ᴡɪʟʟ sᴜʀᴇʟʏ ᴄᴏᴍᴇ ᴜᴘ ᴛᴏ ʏᴏᴜʀ ᴛʜᴏᴜɢʜᴛs ᴀɴᴅ ᴇxᴘᴇᴄᴛᴀᴛɪᴏɴs ᴛʜᴀɴᴋs~ᴛɪᴛᴀɴ</blockquote></b>"""
 
 @Bot.on_callback_query()
 async def cb_handler_func(client, query: CallbackQuery):
