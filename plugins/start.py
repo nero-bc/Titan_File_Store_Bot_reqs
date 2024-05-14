@@ -204,6 +204,35 @@ async def not_joined(client: Client, message: Message):
         quote = True
     )
 
+@Bot.on_message(filters.command('plans') & filters.private)
+async def plans_command(bot: Bot, message: Message):
+    user_id = message.from_user.id
+    username = message.from_user.username
+
+    if user_id in await list_banned_users():
+        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Official_Snowball")
+        return
+    
+    # Premium plans and features explanation
+    text_message = PREMIUM_TEXT
+
+    # Button to contact owner's DM for sharing a screenshot
+    contact_owner_button = InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton("Contact Owner 📩", url=f"https://t.me/Official_Snowball")
+            ]
+        ]
+    )
+
+    # Send the premium plans text as a caption along with the photo
+    await bot.send_photo(
+        chat_id=user_id,
+        photo=PREMIUM_PIC,  # Add the URL of the image explaining premium plans
+        caption=text_message,
+        reply_markup=contact_owner_button
+    )
+
 @Bot.on_message(filters.command("ban_user") & filters.private)
 async def ban_command(client: Client, message: Message):
     id = message.from_user.id
