@@ -17,6 +17,24 @@ from bot import Bot
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import *
 
+PREMIUM_PIC = os.environ.get('PREMIUM_PIC', 'https://te.legra.ph/file/abcf32b7c864caac94c9b.jpg')
+
+PREMIUM_TEXT = """<b>👋 ʜᴇʏ {},
+    
+🎖️ <u>ᴀᴠᴀɪʟᴀʙʟᴇ ᴘʟᴀɴs</u>
+
+● <code>10₹</code> ➛ <u>ʙʀᴏɴᴢᴇ ᴘʟᴀɴ</u> » <code>7 ᴅᴀʏꜱ</code>
+● <code>60₹</code> ➛ <u>ꜱɪʟᴠᴇʀ ᴘʟᴀɴ</u> » <code>30 ᴅᴀʏꜱ</code>
+● <code>180₹</code> ➛ <u>ɢᴏʟᴅ ᴘʟᴀɴ</u> » <code>90 ᴅᴀʏꜱ</code>
+● <code>250₹</code> ➛ <u>ᴘʟᴀᴛɪɴᴜᴍ ᴘʟᴀɴ</u> » <code>180 ᴅᴀʏꜱ</code>
+● <code>400₹</code> ➛ <u>ᴅɪᴀᴍᴏɴᴅ ᴘʟᴀɴ</u> » <code>365 ᴅᴀʏꜱ</code>
+
+💵 ᴜᴘɪ ɪᴅ - <code>soon...</code>
+📸 ǫʀ ᴄᴏᴅᴇ - <a href='http://t.me/Official_Snowball'>soon...</a>
+
+‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.
+<blockquote>⚡ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='http://t.me/Official_Snowball'>sɴᴏᴡ ʙᴀʟʟ 🧿</a></blockquote>"""
+
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     id = message.from_user.id
@@ -213,10 +231,6 @@ async def plans_command(bot: Bot, message: Message):
         await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Official_Snowball")
         return
     
-    # Premium plans and features explanation
-    text_message = PREMIUM_TEXT
-
-    # Button to contact owner's DM for sharing a screenshot
     contact_owner_button = InlineKeyboardMarkup(
         [
             [
@@ -229,7 +243,7 @@ async def plans_command(bot: Bot, message: Message):
     await bot.send_photo(
         chat_id=user_id,
         photo=PREMIUM_PIC,  # Add the URL of the image explaining premium plans
-        caption=text_message,
+        caption=PREMIUM_TEXT,
         reply_markup=contact_owner_button
     )
 
