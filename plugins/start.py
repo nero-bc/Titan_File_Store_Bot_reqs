@@ -303,7 +303,7 @@ async def report_command(client: Client, message: Message):
 
     await message.reply_photo(
         photo=random.choice(PICS),
-        caption=HELP_MSG,
+        caption=HELP_MSG.format(first_name=first_name, last_name=last_name, user_id=user_id, username=username),
         reply_markup=reply_markup,
     )
 
