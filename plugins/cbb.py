@@ -62,6 +62,15 @@ async def cb_handler_func(client, query: CallbackQuery):
             ),
         )
     elif data == "help":
+        
+        user = message.from_user
+        id = message.from_user.id
+        
+        user_id = user.id
+        username = user.username or "Not Available"
+        first_name = user.first_name
+        last_name = user.last_name or "Not Available"
+        
         buttons = [
             [
                 InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
@@ -81,7 +90,7 @@ async def cb_handler_func(client, query: CallbackQuery):
         )
         await query.message.reply_photo(
             photo=random.choice(PICS),
-            caption=HELP_MSG,
+            caption=HELP_MSG.format(first_name=first_name, last_name=last_name, user_id=user_id, username=username),
             reply_markup=reply_markup,
         )
     elif data == "premium":
