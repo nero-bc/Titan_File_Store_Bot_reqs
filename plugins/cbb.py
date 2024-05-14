@@ -71,8 +71,11 @@ async def cb_handler_func(client, query: CallbackQuery):
     elif data == "premium":
         buttons = [
             [
-                InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
-            ]  
+                InlineKeyboardButton("⚡ ᴡᴀɴɴᴀ ʙᴇ ᴀ ᴘʀᴇᴍɪᴜᴍ ᴍᴇᴍʙᴇʀ? ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
+            ],
+            [
+                InlineKeyboardButton("🎉 ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ 🎉", callback_data="start")
+            ]
         ]
 
         await query.message.edit_text(
