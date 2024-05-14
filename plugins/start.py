@@ -19,18 +19,18 @@ from database.database import *
 
 PREMIUM_PIC = os.environ.get('PREMIUM_PIC', 'https://te.legra.ph/file/abcf32b7c864caac94c9b.jpg')
 
-PREMIUM_TEXT = """<b>👋 ʜᴇʏ {},
+PREMIUM_TEXT = """<b>👋 ʜᴇʏ {first},
     
 🎖️ <u>ᴀᴠᴀɪʟᴀʙʟᴇ ᴘʟᴀɴs</u>
 
 ● <code>10₹</code> ➛ <u>ʙʀᴏɴᴢᴇ ᴘʟᴀɴ</u> » <code>7 ᴅᴀʏꜱ</code>
-● <code>60₹</code> ➛ <u>ꜱɪʟᴠᴇʀ ᴘʟᴀɴ</u> » <code>30 ᴅᴀʏꜱ</code>
-● <code>180₹</code> ➛ <u>ɢᴏʟᴅ ᴘʟᴀɴ</u> » <code>90 ᴅᴀʏꜱ</code>
-● <code>250₹</code> ➛ <u>ᴘʟᴀᴛɪɴᴜᴍ ᴘʟᴀɴ</u> » <code>180 ᴅᴀʏꜱ</code>
-● <code>400₹</code> ➛ <u>ᴅɪᴀᴍᴏɴᴅ ᴘʟᴀɴ</u> » <code>365 ᴅᴀʏꜱ</code>
+● <code>29₹</code> ➛ <u>ꜱɪʟᴠᴇʀ ᴘʟᴀɴ</u> » <code>30 ᴅᴀʏꜱ</code>
+● <code>129₹</code> ➛ <u>ɢᴏʟᴅ ᴘʟᴀɴ</u> » <code>90 ᴅᴀʏꜱ</code>
+● <code>370₹</code> ➛ <u>ᴘʟᴀᴛɪɴᴜᴍ ᴘʟᴀɴ</u> » <code>180 ᴅᴀʏꜱ</code>
+● <code>500₹</code> ➛ <u>ᴅɪᴀᴍᴏɴᴅ ᴘʟᴀɴ</u> » <code>365 ᴅᴀʏꜱ</code>
 
-💵 ᴜᴘɪ ɪᴅ - <code>soon...</code>
-📸 ǫʀ ᴄᴏᴅᴇ - <a href='http://t.me/Official_Snowball'>soon...</a>
+💵 ᴜᴘɪ ɪᴅ - <code>titanindia@ibl</code>
+⚡ ǫʀ ᴄᴏᴅᴇ - <a href='https://te.legra.ph/file/c2aa509df2e82077c7a0d.jpg'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
 
 ‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.
 <blockquote>⚡ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='http://t.me/Official_Snowball'>sɴᴏᴡ ʙᴀʟʟ 🧿</a></blockquote>"""
@@ -224,8 +224,10 @@ async def not_joined(client: Client, message: Message):
 
 @Bot.on_message(filters.command('plans') & filters.private)
 async def plans_command(bot: Bot, message: Message):
+    user = message.from_user
     user_id = message.from_user.id
     username = message.from_user.username
+    first = user.first_name
 
     if user_id in await list_banned_users():
         await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Official_Snowball")
@@ -243,7 +245,7 @@ async def plans_command(bot: Bot, message: Message):
     await bot.send_photo(
         chat_id=user_id,
         photo=PREMIUM_PIC,  # Add the URL of the image explaining premium plans
-        caption=PREMIUM_TEXT,
+        caption=PREMIUM_TEXT.format(first=first),
         reply_markup=contact_owner_button
     )
 
