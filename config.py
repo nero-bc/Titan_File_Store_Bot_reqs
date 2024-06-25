@@ -15,7 +15,6 @@ MAIN_LOG_CHNL = int(os.environ.get("MAIN_LOG_CHNL", "-1002137428245"))
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002139915064"))
 
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002129294563"))
-FORCE_SUB_CHANNEL2 = int(os.environ.get("FORCE_SUB_CHANNEL2", "-1002102387312"))
 
 # The Users Id Whoe Control Your Bot And Manage It For Further
 OWNER_ID = int(os.environ.get("OWNER_ID", "6529179563"))
