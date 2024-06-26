@@ -47,7 +47,7 @@ class Bot(Client):
                 self.LOGGER(__name__).warning(a)
                 self.LOGGER(__name__).warning("Bot can't Export Invite link from Force Sub Channel!")
                 self.LOGGER(__name__).warning(f"Please Double check the FORCE_SUB_CHANNEL value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {FORCE_SUB_CHANNEL}")
-                self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/CodeXBotzSupport for support")
+                self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/Titan_Cinemas for support")
                 sys.exit()
         try:
             db_channel = await self.get_chat(CHANNEL_ID)
@@ -57,11 +57,11 @@ class Bot(Client):
         except Exception as e:
             self.LOGGER(__name__).warning(e)
             self.LOGGER(__name__).warning(f"Make Sure bot is Admin in DB Channel, and Double check the CHANNEL_ID Value, Current Value {CHANNEL_ID}")
-            self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/CodeXBotzSupport for support")
+            self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/Titan_Cinemas for support")
             sys.exit()
 
         self.set_parse_mode(ParseMode.HTML)
-        self.LOGGER(__name__).info(f"Bot Running..!\n\nCreated by \nhttps://t.me/CodeXBotz")
+        self.LOGGER(__name__).info(f"Bot Running..!\n\nCreated by \https://t.me/Titan_Cinemas")
         self.LOGGER(__name__).info(f""" \n\n       
 ████████╗██╗████████╗ █████╗ ███╗   ██╗    ██████╗  ██████╗ ████████╗███████╗
 ╚══██╔══╝██║╚══██╔══╝██╔══██╗████╗  ██║    ██╔══██╗██╔═══██╗╚══██╔══╝╚══███╔╝
@@ -70,13 +70,11 @@ class Bot(Client):
    ██║   ██║   ██║   ██║  ██║██║ ╚████║    ██████╔╝╚██████╔╝   ██║   ███████╗
    ╚═╝   ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝    ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝""")
 
-        # Sending restart message
         try:
             await self.send_restart_message()
         except Exception as e:
             self.LOGGER(__name__).warning(f"Failed to send restart message: {e}")
 
-        # Setting up web server
         app = web.AppRunner(await web_server())
         await app.setup()
         bind_address = "0.0.0.0"
@@ -88,11 +86,7 @@ class Bot(Client):
         now = datetime.now(tz)
         time = now.strftime("%H:%M:%S %p")
         restart_message = RESTART_TXT.format(date=today, time=time)
-        
-        # Path to your image file
         image_path = "https://te.legra.ph/file/adffa4e75e4b8c645a53d.jpg"
-        
-        # Send message with picture
         await self.send_photo(chat_id=LOG_CHANNEL, photo=image_path, caption=restart_message)
 
     async def stop(self, *args):
