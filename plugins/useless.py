@@ -1,7 +1,7 @@
 from bot import Bot
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram import filters
-from config import ADMINS, BOT_STATS_TEXT, USER_REPLY_TEXT, MAIN_LOG_CHNL
+from config import *
 from datetime import datetime
 from helper_func import get_readable_time
 
