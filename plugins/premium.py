@@ -1,5 +1,10 @@
+import os
+import logging
+import random
+import asyncio
 from bot import Bot
 from config import *
+from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, InputMediaPhoto
 from database.premium_db import db1
 
