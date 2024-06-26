@@ -16,8 +16,8 @@ REQUEST_CHANNEL = int(os.environ.get("REQUEST_CHANNEL", "-1002225499005"))
 REQUEST_CHANNEL2 = int(os.environ.get("REQUEST_CHANNEL2", "-1002228798973"))
 
 # The Users Id Whoe Control Your Bot And Manage It For Further
-OWNER_ID = int(os.environ.get("OWNER_ID", "6529179563"))
-ADMINS = int(os.environ.get("ADMINS", "6409842915"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "7158245271"))
+ADMINS = int(os.environ.get("ADMINS", "6405622540"))
 
 # This Is Where It Controls All Here You Can Add The Database Url And Name At The Same Time
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://titan_file_store1:titan@cluster0.zi2lp2f.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
