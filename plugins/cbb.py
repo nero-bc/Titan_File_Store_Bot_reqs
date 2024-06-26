@@ -1,7 +1,7 @@
 from pyrogram import __version__
 from bot import Bot
 import random
-from config import OWNER_ID, START_MSG, PICS, HELP_MSG
+from config import *
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 
 contact_button = InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
