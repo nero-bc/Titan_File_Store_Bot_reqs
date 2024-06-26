@@ -2,6 +2,7 @@
 git+https://github.com/KurimuzonAkuma/pyrogram
 TgCrypto
 pytz
+aiohttp 
 pyromod==1.5
 motor==2.5.1
 # --- For-Database ------------ #
