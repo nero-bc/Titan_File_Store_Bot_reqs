@@ -10,6 +10,7 @@ from datetime import timedelta
 from pyrogram import Client, filters, enums
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, InputMediaPhoto
+from database.database import *
 from database.premium_db import db1
 
 async def get_seconds(time_string):
