@@ -10,7 +10,7 @@ import pytz
 from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT, LOG_CHANNEL
 
 RESTART_TXT = """
-<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ ! @Titan_Link_Store_Bot
+<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ ! @Titan_Files_Ind_Bot
 
 📅 Dᴀᴛᴇ : <code>{date}</code>
 ⏰ Tɪᴍᴇ : <code>{time}</code>
