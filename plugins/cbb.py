@@ -143,13 +143,13 @@ async def cb_handler_func(client, query: CallbackQuery):
         await client.edit_message_media(
                 query.message.chat.id, 
                 query.message.id, 
-                InputMediaPhoto(random.choice(PICS))
-            )
-            await query.message.edit_text(
-                text=script.START_MSG.format(first=query.from_user.first_name),
-                reply_markup=reply_markup,
-                parse_mode=enums.ParseMode.HTML
-            )
+                InputMediaPhoto(random.choice(PICS))   
+        )
+        await query.message.edit_text(
+            text=script.START_MSG.format(first=query.from_user.first_name),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
     elif data == "close":
         await query.message.delete()
         try:
