@@ -129,7 +129,7 @@ async def premium_user(client, message):
     aa = await message.reply_text("<i>ꜰᴇᴛᴄʜɪɴɢ...</i>")
     new = f"⚜️ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀꜱ ʟɪꜱᴛ :\n\n"
     user_count = 1
-    users = await db.get_all_users()
+    users = await full_userbase()
     async for user in users:
         data = await db1.get_user(user['id'])
         if data and data.get("expiry_time"):
