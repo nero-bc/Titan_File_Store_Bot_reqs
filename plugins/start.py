@@ -46,7 +46,7 @@ async def start_command(client: Client, message: Message):
     id = message.from_user.id
     user_first_name = message.from_user.first_name
 
-    is_req = await Force_Sub(client: Client, message: Message)
+    is_req = await Force_Sub(client, message)
     if not is_req:
         return
     
