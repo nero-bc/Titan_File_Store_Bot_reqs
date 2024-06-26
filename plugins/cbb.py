@@ -2,7 +2,7 @@ from pyrogram import __version__
 from bot import Bot
 import random
 from config import OWNER_ID, START_MSG, PICS, HELP_MSG
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 
 contact_button = InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
 keyboard = InlineKeyboardMarkup([[contact_button]])
@@ -75,7 +75,11 @@ async def cb_handler_func(client, query: CallbackQuery):
                 InlineKeyboardButton("🔥 ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ 🔥", url="https://t.me/howtoopentitan")
             ]   
         ]
-
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
             text=HELP_MSG.format(
                 first_name=query.from_user.first_name,
@@ -84,16 +88,6 @@ async def cb_handler_func(client, query: CallbackQuery):
                 username=None if not query.from_user.username else '@' + query.from_user.username or "Not Available",
             ),
             reply_markup=InlineKeyboardMarkup(buttons)
-        )
-        await query.message.reply_photo(
-            photo=random.choice(PICS),
-            caption=HELP_MSG.format(
-                first_name=query.from_user.first_name,
-                last_name=query.from_user.last_name,
-                user_id=query.from_user.id, 
-                username=None if not query.from_user.username else '@' + query.from_user.username,
-            ),
-            reply_markup=reply_markup,
         )
     elif data == "premium":
         buttons = [
@@ -104,15 +98,14 @@ async def cb_handler_func(client, query: CallbackQuery):
                 InlineKeyboardButton("🎉 ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ 🎉", callback_data="start")
             ]
         ]
-
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
             text=PREMIUM_TXT,
             reply_markup=InlineKeyboardMarkup(buttons)
-        )
-        await query.message.reply_photo(
-            photo=random.choice(PICS),
-            caption=PREMIUM_TXT,
-            reply_markup=reply_markup,
         )
     elif data == "preplan":
         buttons = [
@@ -123,18 +116,17 @@ async def cb_handler_func(client, query: CallbackQuery):
                 InlineKeyboardButton("🎉 ʙᴀᴄᴋ 🎉", callback_data="premium")
             ]
         ]
-
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
             text=PREPREMIUM,
             reply_markup=InlineKeyboardMarkup(buttons)
         )
-        await query.message.reply_photo(
-            photo=PLAN_PIC,
-            caption=PREPREMIUM,
-            reply_markup=reply_markup,
-        )
     elif data == "start":
-        reply_markup = InlineKeyboardMarkup(
+        buttons = [
             [
                 [
                     InlineKeyboardButton("⚡ ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs ⚡", url="https://t.me/Titan_CInemas")
@@ -147,6 +139,11 @@ async def cb_handler_func(client, query: CallbackQuery):
                     InlineKeyboardButton("🚀 ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ 🚀", callback_data="premium")
                 ]
             ]
+        ]
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
         )
         await query.message.edit_text(
             text=START_MSG.format(
@@ -156,7 +153,7 @@ async def cb_handler_func(client, query: CallbackQuery):
                 mention=query.from_user.mention,
                 id=query.from_user.id
             ),
-            reply_markup=reply_markup
+            reply_markup=InlineKeyboardMarkup(buttons)
         )
     elif data == "close":
         await query.message.delete()
