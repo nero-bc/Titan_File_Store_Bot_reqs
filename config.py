@@ -25,7 +25,8 @@ ADMINS = int(os.environ.get("ADMINS", "6409842915"))
 
 # This Is Where It Controls All Here You Can Add The Database Url And Name At The Same Time
 DB_URI = os.environ.get("DATABASE_URL", "")
-DB_URI2 = os.environ.get("DATABASE_URL", "")
+DB_URI2 = os.environ.get("DATABASE_URL2", "")
+tempDict = {'indexDB': DATABASE_URL2}
 DB_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
 
 # kind of important
