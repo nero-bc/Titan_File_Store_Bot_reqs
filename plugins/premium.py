@@ -126,33 +126,46 @@ async def give_premium_cmd_handler(client, message):
         print(e)
 
 @Bot.on_message(filters.command("premium_users") & filters.user(ADMINS))
-async def premium_user(client, message):
-    aa = await message.reply_text("<i>ꜰᴇᴛᴄʜɪɴɢ...</i>")
-    new = f"⚜️ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀꜱ ʟɪꜱᴛ :\n\n"
+async def premium_user(client, message: Message):
+    aa = await message.reply_text("<i>Fetching...</i>")
+    new = "⚜️ Premium Users List:\n\n"
     user_count = 1
-    users = await full_userbase1()
-    async for user in users:
-        data = await db1.get_user(user['id'])
-        if data and data.get("expiry_time"):
-            expiry = data.get("expiry_time") 
-            expiry_ist = expiry.astimezone(pytz.timezone("Asia/Kolkata"))
-            expiry_str_in_ist = expiry.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y\n⏱️ ᴇxᴘɪʀʏ ᴛɪᴍᴇ : %I:%M:%S %p")            
-            current_time = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
-            time_left = expiry_ist - current_time
-            days = time_left.days
-            hours, remainder = divmod(time_left.seconds, 3600)
-            minutes, seconds = divmod(remainder, 60)
-            time_left_str = f"{days} days, {hours} hours, {minutes} minutes"	 
-            new += f"{user_count}. {(await client.get_users(user['id'])).mention}\n👤 ᴜꜱᴇʀ ɪᴅ : {user['id']}\n⏳ ᴇxᴘɪʀʏ ᴅᴀᴛᴇ : {expiry_str_in_ist}\n⏰ ᴛɪᴍᴇ ʟᴇꜰᴛ : {time_left_str}\n"
-            user_count += 1
-        else:
-            pass
-    try:    
+    try:
+        user_ids = await full_userbase()
+        for user_id in user_ids:
+            data = await db1.get_user(user_id)
+            if data and data.get("expiry_time"):
+                expiry_str_in_ist = data["expiry_time"].strftime("%d-%m-%Y\n⏱️ Expiry Time: %I:%M:%S %p")
+                
+                current_time = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
+                time_left = data["expiry_time"] - current_time
+                days = time_left.days
+                hours, remainder = divmod(time_left.seconds, 3600)
+                minutes, seconds = divmod(remainder, 60)
+                time_left_str = f"{days} days, {hours} hours, {minutes} minutes"
+                
+                user_mention = (await client.get_users(user_id)).mention
+                new += (
+                    f"{user_count}. {user_mention}\n"
+                    f"👤 User ID: {user_id}\n"
+                    f"⏳ Expiry Date: {expiry_str_in_ist}\n"
+                    f"⏰ Time Left: {time_left_str}\n\n"
+                )
+                user_count += 1
+            else:
+                pass
+        
         await aa.edit_text(new)
+    
     except MessageTooLong:
-        with open('usersplan.txt', 'w+') as outfile:
+        with open('usersplan.txt', 'w+', encoding='utf-8') as outfile:
             outfile.write(new)
         await message.reply_document('usersplan.txt', caption="Paid Users:")
+
+    except Exception as e:
+        print(f"Error in premium_user command: {e}")
+        await aa.edit_text("<i>Error fetching premium users list. Please try again later.</i>")
+
 
 @Bot.on_message(filters.command("myplan"))
 async def myplan(client, message):
