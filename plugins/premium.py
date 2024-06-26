@@ -197,4 +197,11 @@ async def myplan(client, message):
         await message.reply_photo(
             photo=random.choice(PICS),
             caption=f"ʜᴇʏ {user},\n\nʏᴏᴜ ᴅᴏ ɴᴏᴛ ʜᴀᴠᴇ ᴀɴʏ ᴀᴄᴛɪᴠᴇ ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴꜱ, ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴛᴀᴋᴇ ᴘʀᴇᴍɪᴜᴍ ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ 👇 \n\n <blockquote>💞 ʙᴏᴛ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ <a href=https://t.me/Titan_Cinemas_Support_bot>⚡ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs</a></b></blockquote>",
-            reply_markup=InlineKeyboardMarkup([[types.InlineKeyboardButton("💫 ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ 💫", callback_data='premium')]]))
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("💫 ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ 💫", callback_data='premium')
+                    ]
+                ]
+            )
+        )
