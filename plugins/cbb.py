@@ -126,7 +126,7 @@ async def cb_handler_func(client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(buttons)
         )
     elif data == "start":
-        buttons = [
+        reply_markup = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton("⚡ ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs ⚡", url="https://t.me/Titan_CInemas")
@@ -139,22 +139,17 @@ async def cb_handler_func(client, query: CallbackQuery):
                     InlineKeyboardButton("🚀 ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ 🚀", callback_data="premium")
                 ]
             ]
-        ]
+        )
         await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        await query.message.edit_text(
-            text=START_MSG.format(
-                first=query.from_user.first_name,
-                last=query.from_user.last_name,
-                username=None if not query.from_user.username else '@' + query.from_user.username,
-                mention=query.from_user.mention,
-                id=query.from_user.id
-            ),
-            reply_markup=InlineKeyboardMarkup(buttons)
-        )
+                query.message.chat.id, 
+                query.message.id, 
+                InputMediaPhoto(random.choice(PICS))
+            )
+            await query.message.edit_text(
+                text=script.START_MSG.format(first=query.from_user.first_name),
+                reply_markup=reply_markup,
+                parse_mode=enums.ParseMode.HTML
+            )
     elif data == "close":
         await query.message.delete()
         try:
