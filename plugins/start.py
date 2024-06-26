@@ -58,7 +58,7 @@ async def start_command(client: Client, message: Message):
     if not await present_user(id):
         try:
             await add_user(id)
-            await client.send_message(chat_id=LOG_CHANNEL, text=f"🔥 {user_first_name} ɢᴏᴛ ʜɪs ғɪʟᴇ ᴀɴᴅ ʜɪs ᴜsᴇʀ ɪᴅ ɪs {id}")
+            await client.send_message(chat_id=LOG_CHANNEL, text=f"📌 ᴀ ɴᴇᴡ ᴜsᴇʀ {user_first_name} sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴜsᴇʀ ɪᴅ - {id}")
         except:
             pass
 
@@ -95,7 +95,7 @@ async def start_command(client: Client, message: Message):
         temp_msg = await message.reply("ɢᴇᴛᴛɪɴɢ ʏᴏᴜʀ ғɪʟᴇs ɪɴғᴏ...💞")
 
         for progress in range(10, 101, 10):
-            await temp_msg.edit_text(f"ᴄᴏʟʟᴇᴄᴛɪɴɢ ʏᴏᴜʀ ғɪʟᴇs ɪɴғᴏ ᴘʟs ᴡᴀɪᴛ ⚡... {progress}%")
+            await temp_msg.edit_text(f"⚡ ᴄᴏʟʟᴇᴄᴛɪɴɢ ʏᴏᴜʀ ғɪʟᴇs ᴅᴇᴛᴀɪʟs... {progress}%")
             await asyncio.sleep(0.3)
             
         await temp_msg.edit_text("🚀 ᴅᴏɴᴇ sᴇɴᴅɪɴɢ ɴᴏᴡ @titan_Cinemas")
