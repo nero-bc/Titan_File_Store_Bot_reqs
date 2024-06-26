@@ -38,6 +38,11 @@ PREPREMIUM = """
 ‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.
 <blockquote>⚡ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://t.me/Titan_Cinemas_Support_bot'>⚡ ᴛɪᴛᴀɴ ɪɴᴅɪᴀ</a></blockquote>"""
 
+REQUEST_CHANNELS = [REQUEST_CHANNEL, REQUEST_CHANNEL2]
+from clone_plugins.fsub_db import Fsub_DB
+from clone_plugins.fsub import Force_Sub
+fsub_db = Fsub_DB()
+
 @Bot.on_callback_query()
 async def cb_handler_func(client, query: CallbackQuery):
     data = query.data
