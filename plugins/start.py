@@ -38,14 +38,16 @@ PREMIUM_TEXT = """<b>👋 ʜᴇʏ {first},
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     id = message.from_user.id
+    user_first_name = message.from_user.first_name
     
     if id in await list_banned_users():
-        await message.reply("It Looks Like Your Are Banned From Using Me Contact Now @Official_Snowball")
+        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Official_Snowball")
         return
 
     if not await present_user(id):
         try:
             await add_user(id)
+            await client.send_message(chat_id=LOG_CHANNEL, text=f"🔥 {user_first_name} ɢᴏᴛ ʜɪs ғɪʟᴇ ᴀɴᴅ ʜɪs ᴜsᴇʀ ɪᴅ ɪs {id}")
         except:
             pass
 
@@ -93,7 +95,7 @@ async def start_command(client: Client, message: Message):
         user_id = message.from_user.id
 
         await client.send_message(
-            chat_id=CONFIRM_ID_CHNL,
+            chat_id=LOG_CHANNEL,
             text=f"⚡ {user_first_name} ɢᴏᴛ ʜɪs ғɪʟᴇ ᴀɴᴅ ʜɪs ᴜsᴇʀ ɪᴅ ɪs {user_id}"
         )
 
