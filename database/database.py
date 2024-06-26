@@ -1,4 +1,5 @@
 import pymongo, os
+import motor.motor_asyncio
 from config import DB_URI, DB_NAME
 
 dbclient = pymongo.MongoClient(DB_URI)
@@ -19,7 +20,12 @@ async def full_userbase():
     user_ids = []
     for doc in user_docs:
         user_ids.append(doc['_id'])
-        
+    return user_ids
+
+async def full_userbase1():
+    user_ids = []
+    async for doc in user_data.find():
+        user_ids.append(doc['_id'])
     return user_ids
 
 async def add_banned_user(user_id: int):
