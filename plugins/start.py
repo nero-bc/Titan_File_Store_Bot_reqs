@@ -24,7 +24,7 @@ fsub_db = Fsub_DB()
 
 REQUEST_CHANNELS = [REQUEST_CHANNEL, REQUEST_CHANNEL2]
 
-PREMIUM_PIC = os.environ.get('PREMIUM_PIC', 'https://te.legra.ph/file/abcf32b7c864caac94c9b.jpg')
+PREMIUM_PIC = os.environ.get('PREMIUM_PIC', 'https://telegra.ph/file/96be180072e7e004bf3f1.jpg')
 
 PREMIUM_TEXT = """<b>👋 ʜᴇʏ {first},
     
