@@ -4,8 +4,8 @@ from pyrogram.types import Message, ChatJoinRequest, InlineKeyboardButton, Inlin
 from pyrogram.errors import UserNotParticipant, MessageTooLong, FloodWait
 from config import *
 import random
-from plugins.premium_db import db1
-from clone_plugins.fsub_db import Fsub_DB
+from database.premium_db import db1
+from database.fsub_db import Fsub_DB
 import logging
 
 logger = logging.getLogger(__name__)
@@ -149,7 +149,7 @@ async def fetch_all_reqs(client: Client , message: Message):
         await message.reply_document(document="Requests.txt", caption="List of all Join Requests saved on DB.")
 
 
-async def Force_Sub(client: Client , message: Message):
+async def Force_Sub(client: Client, message: Message):
     user = message.from_user
     user_id = message.from_user.id
     
