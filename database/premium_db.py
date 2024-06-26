@@ -1,10 +1,10 @@
 import motor.motor_asyncio
 import datetime
-from config import TEMP_DB_NAME, TEMP_DB_URL
+from config import TEMP_DB_NAME, DB_URI2
 
 class Database:
     def __init__(self, database_name):
-        self._client = motor.motor_asyncio.AsyncIOMotorClient(TEMP_DB_URL)
+        self._client = motor.motor_asyncio.AsyncIOMotorClient(DB_URI2)
         self.db = self._client[database_name]
         self.users = self.db.users
         self.groups = self.db.groups
