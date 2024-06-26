@@ -55,7 +55,7 @@ PREPREMIUM = """
 <blockquote>⚡ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://t.me/Titan_Cinemas_Support_bot'>⚡ ᴛɪᴛᴀɴ ɪɴᴅɪᴀ</a></blockquote>"""
 
 
-@Client.on_message(filters.command("plans") & filters.incoming)
+@Bot.on_message(filters.command("plans") & filters.incoming)
 async def plans(client, message):
     try:
         user_id = message.from_user.id 
@@ -67,7 +67,7 @@ async def plans(client, message):
     except Exception as e:
         print(e)
 
-@Client.on_message(filters.command("remove_premium") & filters.user(ADMINS))
+@Bot.on_message(filters.command("remove_premium") & filters.user(ADMINS))
 async def remove_premium(client, message):
     if len(message.command) == 2:
         user_id = int(message.command[1])  
@@ -83,7 +83,7 @@ async def remove_premium(client, message):
     else:
         await message.reply_text("ᴜꜱᴀɢᴇ : /remove_premium user_id")
 
-@Client.on_message(filters.command("add_premium") & filters.user(ADMINS))
+@Bot.on_message(filters.command("add_premium") & filters.user(ADMINS))
 async def give_premium_cmd_handler(client, message):
     try:
         if len(message.command) == 4:
@@ -115,8 +115,7 @@ async def give_premium_cmd_handler(client, message):
     except Exception as e:
         print(e)
 
-
-@Client.on_message(filters.command("premium_users") & filters.user(ADMINS))
+@Bot.on_message(filters.command("premium_users") & filters.user(ADMINS))
 async def premium_user(client, message):
     aa = await message.reply_text("<i>ꜰᴇᴛᴄʜɪɴɢ...</i>")
     new = f"⚜️ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀꜱ ʟɪꜱᴛ :\n\n"
@@ -145,7 +144,7 @@ async def premium_user(client, message):
             outfile.write(new)
         await message.reply_document('usersplan.txt', caption="Paid Users:")
 
-@Client.on_message(filters.command("myplan"))
+@Bot.on_message(filters.command("myplan"))
 async def myplan(client, message):
     user = message.from_user.mention 
     user_id = message.from_user.id
