@@ -1,6 +1,6 @@
 import motor.motor_asyncio
 import datetime
-from config import TEMP_DB_NAME, DB_URI2
+from config import DB_NAME, DB_URI2
 
 class Database:
     def __init__(self, database_name):
@@ -44,4 +44,4 @@ class Database:
             print(f"Error updating document: {e}")
             return False
 
-db1 = Database(TEMP_DB_NAME)
+db1 = Database(DB_NAME)
