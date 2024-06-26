@@ -40,12 +40,11 @@ PORT = os.environ.get("PORT", "8080")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 # start Message And Texts
-START_MSG = os.environ.get("START_MESSAGE", """
-🚀 ʜᴇʟʟᴏ ᴍᴀᴛᴇ!!! {first}
+START_MSG = os.environ.get("START_MESSAGE", """🚀 ʜᴇʟʟᴏ ᴍᴀᴛᴇ!!! {first}
 
-💞 ɪ ᴀᴍ ᴀ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ ᴡʜᴏ ᴄᴀɴ sᴛᴏʀᴇ ғɪʟᴇs ᴀɴᴅ ɢɪᴠᴇ ᴄᴜsᴛᴏᴍ ʟɪɴᴋs ɴᴏ ᴄᴏᴘʏʀɪɢʜᴛs ɪɴᴛᴇɴᴅᴇᴅ 	ᴡɪᴛʜ ғᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ ᴀɴᴅ sᴛʀᴇᴀᴍ ғᴇᴀᴛᴜʀᴇs
+💞 ɪ ᴀᴍ ᴀ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ ᴡʜᴏ ᴄᴀɴ sᴛᴏʀᴇ ғɪʟᴇs ᴀɴᴅ ɢɪᴠᴇ ᴄᴜsᴛᴏᴍ ʟɪɴᴋs ɴᴏ ᴄᴏᴘʏʀɪɢʜᴛs ɪɴᴛᴇɴᴅᴇᴅ
 
-<blockquote>📌 ɴᴏᴛᴇ : ᴛʜɪs ʙᴏᴛ ɪs ᴀ ᴘʀɪᴠᴀᴛᴇ ᴘʀᴏᴊᴇᴄᴛ ᴀɴᴅ ᴏɴʟʏ ᴛʜᴇ ᴀᴅᴍɪɴs ᴏғ ᴛʜᴇ ʙᴏᴛs ᴄᴀɴ sᴛᴏʀᴇ ғɪʟᴇs sᴏ ᴅᴏɴᴛ sᴘᴀᴍ ᴛʜᴇ ʙᴏᴛ ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴛʜɪs ᴋɪɴᴅ ᴏғ ʙᴏᴛ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴏᴡɴᴇʀs ᴛʜᴇʏ ᴡɪʟʟ ʜᴇʟᴘ ʏᴏᴜ</blockquote>""")
+<blockquote>📌 ɴᴏᴛᴇ : ᴛʜɪs ʙᴏᴛ ɪs ᴀ ᴘʀɪᴠᴀᴛᴇ ᴘʀᴏᴊᴇᴄᴛ ᴀɴᴅ ᴏɴʟʏ ᴛʜᴇ ᴀᴅᴍɪɴs ᴏғ ᴛʜᴇ ʙᴏᴛs ᴄᴀɴ sᴛᴏʀᴇ ғɪʟᴇs</blockquote>""")
 
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", """
 <b>ʜᴇʟʟᴏ ʙʜᴀɪ {first} 💞</b>
