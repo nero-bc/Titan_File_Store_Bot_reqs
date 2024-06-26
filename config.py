@@ -6,7 +6,7 @@ from logging.handlers import RotatingFileHandler
 # Get This Details From My telegram.org And From The @BotFather
 APP_ID = int(os.environ.get("APP_ID", "29663344"))
 API_HASH = os.environ.get("API_HASH", "1ce180a5008f81cb3e23fd4143fe0f6a")
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7335366863:AAHlTkgwNTjjWpbDuis5n25oQ3746FDz6Og")
 
 # All The Channel Variables That You Have To Fill Its Important For Furter Working Of Bot
 CONFIRM_ID_CHNL = int(os.environ.get("CONFIRM_ID_CHNL", ""))
