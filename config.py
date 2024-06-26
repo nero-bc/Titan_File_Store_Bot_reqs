@@ -6,24 +6,26 @@ from logging.handlers import RotatingFileHandler
 # Get This Details From My telegram.org And From The @BotFather
 APP_ID = int(os.environ.get("APP_ID", "29663344"))
 API_HASH = os.environ.get("API_HASH", "1ce180a5008f81cb3e23fd4143fe0f6a")
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7052151160:AAFgtuGxrFlQiPaEkdYA5CTAMVB7HItt6iU")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
 
 # All The Channel Variables That You Have To Fill Its Important For Furter Working Of Bot
-CONFIRM_ID_CHNL = int(os.environ.get("CONFIRM_ID_CHNL", "-1002137428245"))
-LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002137428245"))
-MAIN_LOG_CHNL = int(os.environ.get("MAIN_LOG_CHNL", "-1002137428245"))
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002139915064"))
+CONFIRM_ID_CHNL = int(os.environ.get("CONFIRM_ID_CHNL", ""))
+LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
+MAIN_LOG_CHNL = int(os.environ.get("MAIN_LOG_CHNL", ""))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
 
+# channels infomation
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002129294563"))
+REQUEST_CHANNEL = int(os.environ.get("REQUEST_CHANNEL", "-1002225499005"))
+REQUEST_CHANNEL2 = int(os.environ.get("REQUEST_CHANNEL2", "-1002228798973"))
 
 # The Users Id Whoe Control Your Bot And Manage It For Further
 OWNER_ID = int(os.environ.get("OWNER_ID", "6529179563"))
 ADMINS = int(os.environ.get("ADMINS", "6409842915"))
 
 # This Is Where It Controls All Here You Can Add The Database Url And Name At The Same Time
-PORT = os.environ.get("PORT", "8080")
-TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
-DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://favorod148:srikar@cluster0.3c3aldt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DB_URI = os.environ.get("DATABASE_URL", "")
+DB_URI2 = os.environ.get("DATABASE_URL", "")
 DB_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
 
 # kind of important
@@ -36,6 +38,8 @@ USER_REPLY_TEXT = "Bhai This Is A Bot And Yeah Ye Programmed Hai And Surely Repl
 PICS = os.environ.get('PICS', 'https://te.legra.ph/file/9a9526afcc0e956089c9f.jpg https://te.legra.ph/file/2ec748661e629c9b65f57.jpg https://te.legra.ph/file/1aedf0557544a162bfeb8.jpg https://te.legra.ph/file/b7afc886a0ee4289fcd8d.jpg https://te.legra.ph/file/fecb05e59eb69800e4cfe.jpg https://te.legra.ph/file/ddc3fa3872d9d338abce6.jpg https://te.legra.ph/file/52421435b5bbd4d1e3c17.jpg https://te.legra.ph/file/f535037421fc74d6203d7.jpg https://te.legra.ph/file/4f31fb9cb45fbe7c2f22e.jpg').split() #
 RSTART = os.environ.get('RSTART', 'https://te.legra.ph/file/d301eb1eac43a66390f91.jpg')
 BOT_USERS = os.environ.get('BOT_USERS', 'https://te.legra.ph/file/81bd8053e505e45bdfe8f.jpg')
+PORT = os.environ.get("PORT", "8080")
+TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 # start Message And Texts
 START_MSG = os.environ.get("START_MESSAGE", """
