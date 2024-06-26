@@ -79,26 +79,22 @@ async def start_command(client: Client, message: Message):
             except:
                 return
 
-        temp_msg = await message.reply("ᴘʀᴏᴄᴇssɪɴɢ, ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...")
+        temp_msg = await message.reply("ɢᴇᴛᴛɪɴɢ ʏᴏᴜʀ ғɪʟᴇs ɪɴғᴏ...💞")
 
         for progress in range(10, 101, 10):
-            await temp_msg.edit_text(f"ᴘʀᴏᴄᴇssɪɴɢ ɪɴғᴏʀᴍᴀᴛɪᴏɴ... {progress}%")
+            await temp_msg.edit_text(f"ᴄᴏʟʟᴇᴄᴛɪɴɢ ʏᴏᴜʀ ғɪʟᴇs ɪɴғᴏ ᴘʟs ᴡᴀɪᴛ ⚡... {progress}%")
             await asyncio.sleep(0.3)
-
+            
+        await temp_msg.edit_text("🚀 ᴅᴏɴᴇ sᴇɴᴅɪɴɢ ɴᴏᴡ @titan_Cinemas")
+        await asyncio.sleep(1)
         await temp_msg.delete()
 
         user_first_name = message.from_user.first_name
-        user_last_name = message.from_user.last_name
-        user_username = message.from_user.username
         user_id = message.from_user.id
 
         await client.send_message(
             chat_id=CONFIRM_ID_CHNL,
-            text=f"ᴜsᴇʀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ✅\n\n ᴘʀᴏᴄᴇssᴇᴅ {len(ids)} ᴍᴇssᴀɢᴇs ғʀᴏᴍ ᴜsᴇʀ:"
-                 f"\n ғɪʀsᴛ ɴᴀᴍᴇ: {user_first_name}"
-                 f"\n ʟᴀsᴛ ɴᴀᴍᴇ: {user_last_name}"
-                 f"\n ᴜsᴇʀɴᴀᴍᴇ: {user_username}"
-                 f"\n ᴜsᴇʀ ɪᴅ: {user_id}."
+            text=f"⚡ {user_first_name} ɢᴏᴛ ʜɪs ғɪʟᴇ ᴀɴᴅ ʜɪs ᴜsᴇʀ ɪᴅ ɪs {user_id}"
         )
 
         messages = await get_messages(client, ids)
@@ -122,8 +118,8 @@ async def start_command(client: Client, message: Message):
                 sent_message = await msg.copy(chat_id=message.from_user.id, caption=caption, parse_mode=ParseMode.HTML,
                                               reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
                 
-                warning_msg = await message.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>{AUTO_DELETE} minutes</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</b>")
-                await asyncio.sleep(180)
+                warning_msg = await message.reply("<b><u>❗️❗️❗️ɪᴍᴘᴏʀᴛᴀɴᴛ❗️️❗️❗️</u></b>\n\n ᴛʜɪs ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪɴ <b><u>10 ᴍɪɴᴜᴛᴇs</u> 🫥 <i></b>(ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs)</i>.\n\n<b><i>ᴘʟᴇᴀsᴇ ғᴏʀᴡᴀʀᴅ ᴛʜɪs ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴛᴏ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs ᴀɴᴅ sᴛᴀʀᴛ ᴅᴏᴡɴʟᴏᴀᴅ ᴛʜᴇʀᴇ</b>")
+                await asyncio.sleep(600)
                 await warning_msg.delete()
                 await sent_message.delete()
 
@@ -132,8 +128,8 @@ async def start_command(client: Client, message: Message):
                 sent_message = await msg.copy(chat_id=message.from_user.id, caption=caption, parse_mode=ParseMode.HTML,
                                               reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
                 
-                warning_msg = await message.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>{AUTO_DELETE} minutes</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</b>")
-                await asyncio.sleep(180)
+                warning_msg = await message.reply("<b><u>❗️❗️❗️ɪᴍᴘᴏʀᴛᴀɴᴛ❗️️❗️❗️</u></b>\n\n ᴛʜɪs ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪɴ <b><u>10 ᴍɪɴᴜᴛᴇs</u> 🫥 <i></b>(ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs)</i>.\n\n<b><i>ᴘʟᴇᴀsᴇ ғᴏʀᴡᴀʀᴅ ᴛʜɪs ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴛᴏ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs ᴀɴᴅ sᴛᴀʀᴛ ᴅᴏᴡɴʟᴏᴀᴅ ᴛʜᴇʀᴇ</b>")
+                await asyncio.sleep(600)
                 await warning_msg.delete()
                 await sent_message.delete()
 
