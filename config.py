@@ -25,7 +25,7 @@ ADMINS = int(os.environ.get("ADMINS", "6409842915"))
 
 # This Is Where It Controls All Here You Can Add The Database Url And Name At The Same Time
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://titan_file_store1:titan@cluster0.zi2lp2f.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-DB_URI2 = os.environ.get("DATABASE_URL2", "")
+DB_URI2 = os.environ.get("DATABASE_URL2", "mongodb+srv://titan_file_store2:titan@cluster0.3mhe4ar.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 tempDict = {'indexDB': DATABASE_URL2}
 DB_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
 
