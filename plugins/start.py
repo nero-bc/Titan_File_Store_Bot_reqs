@@ -39,6 +39,10 @@ PREMIUM_TEXT = """<b>👋 ʜᴇʏ {first},
 async def start_command(client: Client, message: Message):
     id = message.from_user.id
     user_first_name = message.from_user.first_name
+
+    is_req = await Force_Sub(client: Client, message: Message)
+    if not is_req:
+        return
     
     if id in await list_banned_users():
         await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Official_Snowball")
