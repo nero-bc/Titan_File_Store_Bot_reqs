@@ -1,5 +1,5 @@
 import motor.motor_asyncio
-from sample_info import tempDict
+from config import tempDict
 from config import REQUEST_CHANNEL, REQUEST_CHANNEL2
 from typing import Union, List
 
