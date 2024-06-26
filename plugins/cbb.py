@@ -8,7 +8,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 contact_button = InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
 keyboard = InlineKeyboardMarkup([[contact_button]])
 
-PLAN_PIC = "https://te.legra.ph/file/c2aa509df2e82077c7a0d.jpg"
+PLAN_PIC = "https://telegra.ph/file/96be180072e7e004bf3f1.jpg"
 
 PREMIUM_TXT = """<b>⚡ ᴡʜᴀᴛ ɪs ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ ?
 ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ ɪs ᴀ ᴘʀᴇᴍɪᴜᴍ sᴇʀᴠɪᴄᴇ ᴊʜᴏ ɪss ᴋᴏ sᴜʙsᴄʀɪʙᴇ ᴋᴀʀᴇɢᴀ ᴜss ᴋᴏ ᴘʀᴇᴍɪᴜᴍ ᴘʀᴇᴋs ᴍɪʟᴇɢᴀ ʟɪᴋᴇ
