@@ -2,6 +2,7 @@ from pyrogram import __version__
 from bot import Bot
 import random
 from config import *
+from pyrogram import Client, filters, enums
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 
 contact_button = InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
@@ -38,10 +39,12 @@ PREPREMIUM = """
 ‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.
 <blockquote>⚡ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://t.me/Titan_Cinemas_Support_bot'>⚡ ᴛɪᴛᴀɴ ɪɴᴅɪᴀ</a></blockquote>"""
 
-REQUEST_CHANNELS = [REQUEST_CHANNEL, REQUEST_CHANNEL2]
-from clone_plugins.fsub_db import Fsub_DB
-from clone_plugins.fsub import Force_Sub
+from database.database import *
+from database.premium_db import db1
+from database.fsub_db import Fsub_DB
 fsub_db = Fsub_DB()
+
+REQUEST_CHANNELS = [REQUEST_CHANNEL, REQUEST_CHANNEL2]
 
 @Bot.on_callback_query()
 async def cb_handler_func(client, query: CallbackQuery):
@@ -155,6 +158,40 @@ async def cb_handler_func(client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+
+    elif data == "checksub":
+            user_id = query.from_user.id
+
+            if await db1.has_premium_access(user_id) or user_id in ADMINS:
+                await query.message.reply_text("You have premium access.")
+                return True
+
+            if not all(REQUEST_CHANNELS):
+                await query.message.reply_text("Please provide the channels to check your subscription.")
+                return True
+
+            try:
+                user_in_channel1 = await fsub_db.get_user(REQUEST_CHANNELS[0], user_id)
+                user_in_channel2 = await fsub_db.get_user(REQUEST_CHANNELS[1], user_id)
+
+                if user_in_channel1 and user_in_channel2:
+                    await query.message.reply_text("⚡ ᴛʜᴀɴᴋs ғᴏʀ sᴜʙsᴄʀɪʙɪɴɢ ɢᴇᴛ ʙᴀᴄᴋ ᴛᴏ ᴛʜᴇ ᴘᴏsᴛ ᴀɴᴅ ᴇɴᴊᴏʏ")
+                    return True
+
+                elif user_in_channel1 or user_in_channel2:
+                    await query.message.reply_text("💫 ʏᴏᴜ ᴊᴏɪɴᴇᴅ 1 ᴄʜᴀɴɴᴇʟ ɢʀᴇᴀᴛ ɴᴏᴡ ᴊᴏɪɴ ᴀɴᴏᴛʜᴇʀ")
+                    return True
+
+                else:
+                    await query.message.reply_text("💞 ʏᴀᴀʀ ᴡʜᴇɴ ᴋɴᴏᴡ ʏᴏᴜ ᴅɪᴅɴ'ᴛ ᴊᴏɪɴ ᴀɴʏ ᴄʜᴀɴɴᴇʟ ᴅᴏɴᴛ ᴛʀʏ ᴛᴏ ʙᴇ sᴍᴀʀᴛ")
+                    return False
+
+            except Exception as e:
+                logger.error(f"Error: {e}")
+                await query.message.reply_text(f"Error: {e}")
+                await query.message.reply_text("There was an error checking your subscription. Please try again later.")
+                return False
+
     elif data == "close":
         await query.message.delete()
         try:
