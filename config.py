@@ -38,7 +38,7 @@ PICS = os.environ.get('PICS', 'https://te.legra.ph/file/9a9526afcc0e956089c9f.jp
 RSTART = os.environ.get('RSTART', 'https://te.legra.ph/file/d301eb1eac43a66390f91.jpg')
 BOT_USERS = os.environ.get('BOT_USERS', 'https://te.legra.ph/file/81bd8053e505e45bdfe8f.jpg')
 PORT = os.environ.get("PORT", "8080")
-TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
+TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "500"))
 
 # start Message And Texts
 START_MSG = os.environ.get("START_MESSAGE", """🚀 ʜᴇʟʟᴏ ᴍᴀᴛᴇ!!! {first}
