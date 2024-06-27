@@ -36,7 +36,7 @@ async def useless(bot: Bot, message: Message):
     )
 
     await bot.send_photo(
-        chat_id=MAIN_LOG_CHNL,
+        chat_id=LOG_CHANNEL,
         photo="https://telegra.ph/file/d2b162dca637ca9ff54fb.jpg",
         caption=f"User ID: {user_id}\nUsername: {username}\nContent: {content}"
     )
