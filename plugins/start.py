@@ -125,15 +125,10 @@ async def start_command(client: Client, message: Message):
             if DISABLE_CHANNEL_BUTTON:
                 reply_markup = msg.reply_markup
             else:
-                inline_keyboard = InlineKeyboardMarkup([
-                    [InlineKeyboardButton("⚡ ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs ⚡", url="https://t.me/Titan_CInemas")]
-                ])
-                reply_markup = inline_keyboard
+                reply_markup = None
                 
             try:
-                sent_message = await msg.copy(chat_id=message.from_user.id, caption=caption, parse_mode=ParseMode.HTML,
-                                              reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
-                
+                sent_message = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
                 warning_msg = await message.reply("<b><u>❗️❗️❗️ɪᴍᴘᴏʀᴛᴀɴᴛ❗️️❗️❗️</u></b>\n\n ᴛʜɪs ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪɴ <b><u>10 ᴍɪɴᴜᴛᴇs</u> 🫥 <i></b>(ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs)</i>.\n\n<b><i>ᴘʟᴇᴀsᴇ ғᴏʀᴡᴀʀᴅ ᴛʜɪs ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴛᴏ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs ᴀɴᴅ sᴛᴀʀᴛ ᴅᴏᴡɴʟᴏᴀᴅ ᴛʜᴇʀᴇ</b>")
                 await asyncio.sleep(600)
                 await warning_msg.delete()
@@ -141,9 +136,7 @@ async def start_command(client: Client, message: Message):
 
             except FloodWait as e:
                 await asyncio.sleep(e.x)
-                sent_message = await msg.copy(chat_id=message.from_user.id, caption=caption, parse_mode=ParseMode.HTML,
-                                              reply_markup=reply_markup, protect_content=PROTECT_CONTENT)
-                
+                sent_message = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
                 warning_msg = await message.reply("<b><u>❗️❗️❗️ɪᴍᴘᴏʀᴛᴀɴᴛ❗️️❗️❗️</u></b>\n\n ᴛʜɪs ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪɴ <b><u>10 ᴍɪɴᴜᴛᴇs</u> 🫥 <i></b>(ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs)</i>.\n\n<b><i>ᴘʟᴇᴀsᴇ ғᴏʀᴡᴀʀᴅ ᴛʜɪs ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴛᴏ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs ᴀɴᴅ sᴛᴀʀᴛ ᴅᴏᴡɴʟᴏᴀᴅ ᴛʜᴇʀᴇ</b>")
                 await asyncio.sleep(600)
                 await warning_msg.delete()
