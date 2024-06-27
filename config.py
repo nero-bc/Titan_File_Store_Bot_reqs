@@ -40,7 +40,7 @@ BOT_USERS = os.environ.get('BOT_USERS', 'https://te.legra.ph/file/81bd8053e505e4
 PORT = os.environ.get("PORT", "8080")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "500"))
 
-INCOMING_TXT = os.environ.get("INCOMING_TXT", """ʜᴇʏ ᴡᴀssᴜᴘ {user_first_name} 💞
+INCOMING_TXT = os.environ.get("INCOMING_TXT", """ʜᴇʏ ᴡᴀssᴜᴘ {first} 💞
 
 <blockquote> ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴ ʀᴇǫᴜᴇsᴛ ᴜsᴇ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴊᴏɪɴ ᴛʜᴇ ᴄʜᴀᴛ ᴀɴᴅ sᴇɴᴅ ᴛʜᴇ ɴᴀᴍᴇ ʙᴜᴛ ᴜsᴇ ᴀ ғᴏʀᴍᴀᴛᴇ</blockquote>
 
