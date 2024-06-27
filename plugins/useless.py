@@ -29,14 +29,11 @@ async def useless(bot: Bot, message: Message):
         return
 
     text_message = """
-ʜᴇʏ ᴘʀᴏʙʟᴇᴍ ʜᴀɪ ᴋʏᴀ ? 💔
-    
-<blockquote>✪ ᴊᴜsᴛ sᴇɴᴅ ᴀ ᴍᴇssᴀɢᴇ
-✪ ᴀʟsᴏ sᴇɴᴅ ᴛʜᴇ sᴄʀᴇᴇɴ sʜᴏᴛ ?
-✪ ᴀɴᴅ ᴛʜᴀᴛ's ɪᴛ ᴘʟs ᴡᴀɪᴛ ᴡᴇ ᴡɪʟʟ ʜᴇʟᴘ 🥰</blockquote>
-        
-🚀 ᴄᴏɴᴛᴀᴄᴛ ᴜs ʜᴇʀᴇ - <a href='https://t.me/Titan_Cinemas_Support_bot'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
-ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟʟᴏᴡ ᴛᴏ ᴄᴏɴᴛᴀᴄᴛ ᴜs"""
+ʜᴇʏ ᴡᴀssᴜᴘ {first} 
+
+<blockquote> ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴ ʀᴇǫᴜᴇsᴛ ᴜsᴇ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴊᴏɪɴ ᴛʜᴇ ᴄʜᴀᴛ ᴀɴᴅ sᴇɴᴅ ᴛʜᴇ ɴᴀᴍᴇ ʙᴜᴛ ᴜsᴇ ᴀ ғᴏʀᴍᴀᴛᴇ</blockquote>
+
+<code>/request {Your_movie_name/series_name}</code>"""
 
     await bot.send_message(
         chat_id=user_id,
