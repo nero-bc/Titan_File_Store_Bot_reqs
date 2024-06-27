@@ -15,13 +15,8 @@ async def stats(bot: Bot, message: Message):
 contact_button = [
     [
         InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
-    ],
-    [
-        InlineKeyboardButton("🚀 ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ", callback_data="about"),
-        InlineKeyboardButton("📝 ᴄᴏᴘɪʀɪɢʜᴛs", url="https://t.me/Titan_Cinemas_Support_bot")
     ]
 ]
-
 keyboard = InlineKeyboardMarkup(contact_button)
 
 @Bot.on_message(filters.private & filters.incoming)
