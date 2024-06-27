@@ -34,7 +34,7 @@ PREPREMIUM = """
 ● <code>500₹</code> ➛ <u>ᴅɪᴀᴍᴏɴᴅ ᴘʟᴀɴ</u> » <code>365 ᴅᴀʏꜱ</code>
 
 💵 ᴜᴘɪ ɪᴅ - <code>titanindia@ibl</code>
-⚡ ǫʀ ᴄᴏᴅᴇ - <a href='https://te.legra.ph/file/c2aa509df2e82077c7a0d.jpg'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
+⚡ ǫʀ ᴄᴏᴅᴇ - <a href='https://telegra.ph/file/96be180072e7e004bf3f1.jpg'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
 
 ‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.
 <blockquote>⚡ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://t.me/Titan_Cinemas_Support_bot'>⚡ ᴛɪᴛᴀɴ ɪɴᴅɪᴀ</a></blockquote>"""
@@ -65,8 +65,10 @@ async def cb_handler_func(client, query: CallbackQuery):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton("📝 ʙᴀᴄᴋ", callback_data="start")],
-                    [InlineKeyboardButton("🎉 ᴄʟᴏsᴇ", callback_data="close")]
+                    [
+                        InlineKeyboardButton("💞 ʙᴀᴄᴋ", callback_data="start"),
+                        InlineKeyboardButton("🌜 ᴄʟᴏsᴇ", callback_data="close")
+                    ]
                 ]
             ),
         )
@@ -175,15 +177,15 @@ async def cb_handler_func(client, query: CallbackQuery):
                 user_in_channel2 = await fsub_db.get_user(REQUEST_CHANNELS[1], user_id)
 
                 if user_in_channel1 and user_in_channel2:
-                    await query.message.reply_text("⚡ ᴛʜᴀɴᴋs ғᴏʀ sᴜʙsᴄʀɪʙɪɴɢ ɢᴇᴛ ʙᴀᴄᴋ ᴛᴏ ᴛʜᴇ ᴘᴏsᴛ ᴀɴᴅ ᴇɴᴊᴏʏ")
+                    await query.message.reply_text("⚡ ʏᴏᴜ ᴀʀᴇ ɴᴏᴡ ᴊᴏɪɴᴇᴅ ᴄʜᴀɴɴᴇʟs ᴘᴏsᴛ ᴘᴇ ᴊᴀᴏ ᴘʜɪʀ sᴇ ᴄʟɪᴄᴋ ᴋᴀʀᴏ ᴇɴᴊᴏʏ!!!")
                     return True
 
                 elif user_in_channel1 or user_in_channel2:
-                    await query.message.reply_text("💫 ʏᴏᴜ ᴊᴏɪɴᴇᴅ 1 ᴄʜᴀɴɴᴇʟ ɢʀᴇᴀᴛ ɴᴏᴡ ᴊᴏɪɴ ᴀɴᴏᴛʜᴇʀ")
+                    await query.message.reply_text("💫 ʟᴏᴏᴋɪɴɢ ɢᴏᴏᴅ sᴏ ғᴀʀ ʏᴏᴜ ᴊᴏɪɴᴇᴅ 1 ᴄʜᴀɴɴᴇʟ")
                     return True
 
                 else:
-                    await query.message.reply_text("💞 ʏᴀᴀʀ ᴡʜᴇɴ ᴋɴᴏᴡ ʏᴏᴜ ᴅɪᴅɴ'ᴛ ᴊᴏɪɴ ᴀɴʏ ᴄʜᴀɴɴᴇʟ ᴅᴏɴᴛ ᴛʀʏ ᴛᴏ ʙᴇ sᴍᴀʀᴛ")
+                    await query.message.reply_text("💞 ᴅᴏɴ'ᴛ ᴛʀʏ ᴛᴏ ʙᴇ ᴏᴠᴇʀ sᴍᴀʀᴛ ʙᴜᴅᴅʏ ᴊᴏɪɴ ᴛʜᴇ ᴄʜᴀɴɴᴇʟs ᴀʙᴏᴠᴇ")
                     return False
 
             except Exception as e:
