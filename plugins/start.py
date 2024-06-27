@@ -210,7 +210,7 @@ async def not_joined(client: Client, message: Message):
             [
                 InlineKeyboardButton(
                     text = '💞 ᴛʀʏ ᴀɢᴀɪɴ 💞',
-                    url = f"https://t.me/Titan_Link_Store_Bot?start={message.command[1]}"
+                    url = f"https://t.me/Titan_Files_Ind_Bot?start={message.command[1]}"
                 )
             ]
         )
