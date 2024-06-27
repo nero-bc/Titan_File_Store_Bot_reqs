@@ -104,26 +104,25 @@ async def start_command(client: Client, message: Message):
 
         user_first_name = message.from_user.first_name
         user_id = message.from_user.id
-
-        await client.send_message(
-            chat_id=LOG_CHANNEL,
-            text=f"⚡ {user_first_name} ɢᴏᴛ ʜɪs ғɪʟᴇ ᴀɴᴅ ʜɪs ᴜsᴇʀ ɪᴅ ɪs {user_id}"
-        )
+        
+        try:
+            await client.send_message(chat_id=LOG_CHANNEL, text=f"⚡ {user_first_name} ɢᴏᴛ ʜɪs ғɪʟᴇ ᴀɴᴅ ʜɪs ᴜsᴇʀ ɪᴅ ɪs {user_id}")
+            messages = await get_messages(client, ids)
+        except:
+            await message.reply_text("Something went wrong..!")
+            return
 
         messages = await get_messages(client, ids)
-
+        
         for msg in messages:
             if bool(CUSTOM_CAPTION) & bool(msg.document):
-                caption = CUSTOM_CAPTION.format(previouscaption="" if not msg.caption else msg.caption.html,
-                                                filename=msg.document.file_name)
+                caption = CUSTOM_CAPTION.format(previouscaption = "" if not msg.caption else msg.caption.html, filename = msg.document.file_name)
             else:
                 caption = "" if not msg.caption else msg.caption.html
-
             if DISABLE_CHANNEL_BUTTON:
                 reply_markup = msg.reply_markup
             else:
                 reply_markup = None
-                
             try:
                 sent_message = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
                 warning_msg = await message.reply("<b><u>❗️❗️❗️ɪᴍᴘᴏʀᴛᴀɴᴛ❗️️❗️❗️</u></b>\n\n ᴛʜɪs ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪɴ <b><u>10 ᴍɪɴᴜᴛᴇs</u> 🫥 <i></b>(ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs)</i>.\n\n<b><i>ᴘʟᴇᴀsᴇ ғᴏʀᴡᴀʀᴅ ᴛʜɪs ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴛᴏ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs ᴀɴᴅ sᴛᴀʀᴛ ᴅᴏᴡɴʟᴏᴀᴅ ᴛʜᴇʀᴇ</b>")
@@ -138,7 +137,6 @@ async def start_command(client: Client, message: Message):
                 await asyncio.sleep(600)
                 await warning_msg.delete()
                 await sent_message.delete()
-
             except:
                 pass
         return
