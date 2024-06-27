@@ -38,7 +38,7 @@ async def useless(bot: Bot, message: Message):
 
     await bot.send_message(
         chat_id=user_id,
-        text=text_message,
+        text=text_message.format(user_first_name=user_first_name),
         reply_markup=keyboard
     )
 
