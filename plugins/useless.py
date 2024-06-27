@@ -14,7 +14,7 @@ async def stats(bot: Bot, message: Message):
 
 contact_button = [
     [
-        InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
+        InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="http://t.me/Titan_Cinemas_Admin")
     ]
 ]
 keyboard = InlineKeyboardMarkup(contact_button)
