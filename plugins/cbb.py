@@ -75,7 +75,7 @@ async def cb_handler_func(client, query: CallbackQuery):
     elif data == "help":
         buttons = [
             [
-                InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
+                InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Community_India")
             ],
             [
                 InlineKeyboardButton("📌 ᴀʙᴏᴜᴛ", callback_data="about"),
