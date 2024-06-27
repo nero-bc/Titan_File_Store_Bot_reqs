@@ -24,12 +24,13 @@ async def useless(bot: Bot, message: Message):
     content = message.text
     user_id = message.from_user.id
     username = message.from_user.username
+    user_first_name = message.from_user.first_name
 
     if user_id in ADMINS:
         return
 
     text_message = """
-ʜᴇʏ ᴡᴀssᴜᴘ {first} 
+ʜᴇʏ ᴡᴀssᴜᴘ {user_first_name} 💞
 
 <blockquote> ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴ ʀᴇǫᴜᴇsᴛ ᴜsᴇ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴊᴏɪɴ ᴛʜᴇ ᴄʜᴀᴛ ᴀɴᴅ sᴇɴᴅ ᴛʜᴇ ɴᴀᴍᴇ ʙᴜᴛ ᴜsᴇ ᴀ ғᴏʀᴍᴀᴛᴇ</blockquote>
 
