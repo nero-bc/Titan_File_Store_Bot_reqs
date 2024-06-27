@@ -40,7 +40,7 @@ PREMIUM_TEXT = """<b>👋 ʜᴇʏ {first},
 ⚡ ǫʀ ᴄᴏᴅᴇ - <a href='https://te.legra.ph/file/c2aa509df2e82077c7a0d.jpg'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
 
 ‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.
-<blockquote>⚡ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='http://t.me/Official_Snowball'>sɴᴏᴡ ʙᴀʟʟ 🧿</a></blockquote>"""
+<blockquote>⚡ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='http://t.me/Titan_Cinemas_Admin'>sɴᴏᴡ ʙᴀʟʟ 🧿</a></blockquote>"""
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
