@@ -44,7 +44,7 @@ INCOMING_TXT = os.environ.get("INCOMING_TXT", """ʜᴇʏ ᴡᴀssᴜᴘ {user_fi
 
 <blockquote> ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴ ʀᴇǫᴜᴇsᴛ ᴜsᴇ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴊᴏɪɴ ᴛʜᴇ ᴄʜᴀᴛ ᴀɴᴅ sᴇɴᴅ ᴛʜᴇ ɴᴀᴍᴇ ʙᴜᴛ ᴜsᴇ ᴀ ғᴏʀᴍᴀᴛᴇ</blockquote>
 
-<code>/request {Your_movie_name/series_name}</code>""")
+<code>/request Your_movie_name/series_name</code>""")
 
 # start Message And Texts
 START_MSG = os.environ.get("START_MESSAGE", """🚀 ʜᴇʟʟᴏ ᴍᴀᴛᴇ!!! {first}
