@@ -29,16 +29,9 @@ async def useless(bot: Bot, message: Message):
     if user_id in ADMINS:
         return
 
-    text_message = """
-ʜᴇʏ ᴡᴀssᴜᴘ {user_first_name} 💞
-
-<blockquote> ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴ ʀᴇǫᴜᴇsᴛ ᴜsᴇ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴊᴏɪɴ ᴛʜᴇ ᴄʜᴀᴛ ᴀɴᴅ sᴇɴᴅ ᴛʜᴇ ɴᴀᴍᴇ ʙᴜᴛ ᴜsᴇ ᴀ ғᴏʀᴍᴀᴛᴇ</blockquote>
-
-<code>/request {Your_movie_name/series_name}</code>"""
-
     await bot.send_message(
         chat_id=user_id,
-        text=text_message.format(user_first_name=user_first_name),
+        text=INCOMING_TXT.format(user_first_name=user_first_name),
         reply_markup=keyboard
     )
 
