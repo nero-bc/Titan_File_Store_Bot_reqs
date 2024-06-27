@@ -37,7 +37,7 @@ PREPREMIUM = """
 ⚡ ǫʀ ᴄᴏᴅᴇ - <a href='https://telegra.ph/file/96be180072e7e004bf3f1.jpg'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
 
 ‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.
-<blockquote>⚡ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://t.me/Titan_Cinemas_Support_bot'>⚡ ᴛɪᴛᴀɴ ɪɴᴅɪᴀ</a></blockquote>"""
+<blockquote>⚡ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='http://t.me/Titan_Cinemas_Admin'>⚡ ᴛɪᴛᴀɴ ɪɴᴅɪᴀ</a></blockquote>"""
 
 from database.database import *
 from database.premium_db import db1
@@ -120,7 +120,7 @@ async def cb_handler_func(client, query: CallbackQuery):
     elif data == "preplan":
         buttons = [
             [
-                InlineKeyboardButton("🔥 sᴇɴᴅ sᴄʀᴇᴇɴ sʜᴏᴛ ɴᴏᴡ 🔥", url="https://t.me/Titan_Cinemas_Support_bot")
+                InlineKeyboardButton("🔥 sᴇɴᴅ sᴄʀᴇᴇɴ sʜᴏᴛ ɴᴏᴡ 🔥", url="http://t.me/Titan_Cinemas_Admin")
             ],
             [
                 InlineKeyboardButton("🎉 ʙᴀᴄᴋ 🎉", callback_data="premium")
