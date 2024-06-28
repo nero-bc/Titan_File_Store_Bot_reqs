@@ -91,7 +91,12 @@ async def start_command(client: Client, message: Message):
             except:
                 return
         temp_msg = await message.reply("ɢᴇᴛᴛɪɴɢ ʏᴏᴜʀ ғɪʟᴇs ɪɴғᴏ...💞")
-
+        try:
+            messages = await get_messages(client, ids)
+        except:
+            await message.reply_text("Something went wrong..!")
+            return
+            
         for progress in range(10, 101, 10):
             await temp_msg.edit_text(f"⚡ ᴄᴏʟʟᴇᴄᴛɪɴɢ ʏᴏᴜʀ ғɪʟᴇs ᴅᴇᴛᴀɪʟs... {progress}%")
             await asyncio.sleep(0.3)
@@ -112,7 +117,6 @@ async def start_command(client: Client, message: Message):
                 reply_markup = msg.reply_markup
             else:
                 reply_markup = None
-
             try:
                 snt_msg = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
                 await asyncio.sleep(1)
