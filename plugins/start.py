@@ -90,19 +90,12 @@ async def start_command(client: Client, message: Message):
                 ids = [int(int(argument[1]) / abs(client.db_channel.id))]
             except:
                 return
-        temp_msg = await message.reply("ɢᴇᴛᴛɪɴɢ ʏᴏᴜʀ ғɪʟᴇs ɪɴғᴏ...💞")
+        temp_msg = await message.reply("Wait A Second...")
         try:
             messages = await get_messages(client, ids)
         except:
-            await message.reply_text("Something went wrong..!")
+            await message.reply_text("​​​Something went wrong..!")
             return
-            
-        for progress in range(10, 101, 10):
-            await temp_msg.edit_text(f"⚡ ᴄᴏʟʟᴇᴄᴛɪɴɢ ʏᴏᴜʀ ғɪʟᴇs ᴅᴇᴛᴀɪʟs... {progress}%")
-            await asyncio.sleep(0.3)
-            
-        await temp_msg.edit_text("🚀 ᴅᴏɴᴇ sᴇɴᴅɪɴɢ ɴᴏᴡ @titan_Cinemas")
-        await asyncio.sleep(1)
         await temp_msg.delete()
 
         Codeflix = []
