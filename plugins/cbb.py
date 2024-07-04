@@ -16,12 +16,12 @@ fsub_db = Fsub_DB()
 REQUEST_CHANNELS = [REQUEST_CHANNEL, REQUEST_CHANNEL2]
 
 ABOUT_TXT = """╔════════════⦿
-├⋗ ᴄʀᴇᴀᴛᴏʀ :  Zoro 
-├⋗ ʟᴀɴɢᴜᴀɢᴇ : Python3
-├⋗ ʟɪʙʀᴀʀʏ : Pyrogram asyncio 2.0.106
-├⋗ ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : File Store Bot
-├⋗ Main Channel : Anime RTX
-├⋗ Support Group : Anime RTX Discission
+├⋗ ᴄʀᴇᴀᴛᴏʀ : <a href=https://t.me/Titan_Community_India>ᴛɪᴛᴀɴ 💞ᴛ</a>
+├⋗ ʟᴀɴɢᴜᴀɢᴇ : <a href=https://python.org/>ᴘʏᴛʜᴏɴ3</a>
+├⋗ ʟɪʙʀᴀʀʏ :  <a href=https://docs.pyrogram.org/>ᴘʏʀᴏɢʀᴀᴍ ᴀsʏɴᴄɪᴏ 2.0.106</a>
+├⋗ ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : <a href=https://github.com/SirishChowdary/Titan_File_Store/Paid_File_Store>ᴍᴏᴠɪᴇs ᴡᴇʙsᴇʀɪᴇs ʙᴏᴛ</a>
+├⋗ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/+4db4vuYykAw3YmE1>ɢʀ ʜᴀᴄᴋᴇʀ</a>
+├⋗ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ : <a href=https://t.me/+whP0B-ffw2hkZDU1ɢʀ ʜᴀᴄᴋᴇʀ sᴜᴘᴘᴏʀᴛᴇᴅ</a>
 ╚═════════════════⦿ """
 
 @Bot.on_callback_query()
@@ -30,16 +30,7 @@ async def cb_handler_func(client, query: CallbackQuery):
 
     if data == "about":
         await query.message.edit_text(
-            text=(
-                f"<b>─[ 🚀 ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs 🚀 ]──\n"
-                f"├🌟 ᴍʏ ɴᴀᴍᴇ : <a href=https://t.me/Titan_Files_Ind_Bot>ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs ᴘʀᴏᴠɪᴅᴇʀ 〜(^∇^〜）</a>\n"
-                f"├💻 ʟᴀɴɢᴜᴀɢᴇ: <a href=https://python.org/>ᴘʏᴛʜᴏɴ & ᴘʏʀᴏɢʀᴀᴍ</a>\n"
-                f"├🌐 ʜᴏsᴛᴇᴅ ᴏɴ: <a href=www.hostinger.in>ʜᴏsᴛɪɴɢᴇʀ ᴠᴘs</a>\n"
-                f"├👨‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ: <a href=https://t.me/Titan_Cinemas_Support_bot>ᴛɪᴛᴀɴ ᴏᴡɴᴇʀ</a>\n"
-                f"├🛠️ ʙᴏᴛ sᴜᴘᴘᴏʀᴛ: <a href=https://t.me/Titan_Community_India>ᴛɪᴛᴀɴ sᴜᴘᴘᴏʀᴛ</a>\n"
-                f"├📢 ʙᴏᴛ ᴜᴘᴅᴀᴛᴇs: <a href=https://t.me/Titan_Bots_India>ʙᴏᴛ ᴜᴘᴅᴀᴛᴇs</a>\n"
-                f"╰─[ 🇮🇳 ᴛɪᴛᴀɴ ᴄᴏᴍᴍᴜɴɪᴛʏ 🇮🇳 ]──</b>"
-            ),
+            text=ABOUT_TXT,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
