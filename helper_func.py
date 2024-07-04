@@ -4,7 +4,6 @@ import asyncio
 from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus
 from config import FORCE_SUB_CHANNEL, ADMINS
-from database.premium_db import db1
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.errors import FloodWait
 
@@ -12,7 +11,8 @@ async def is_subscribed(filter, client, update):
     if not FORCE_SUB_CHANNEL:
         return True
     user_id = update.from_user.id
-    if await db1.has_premium_access(user_id) or user_id in ADMINS:
+    
+    if user_id in ADMINS:
         return True
     try:
         member = await client.get_chat_member(chat_id = FORCE_SUB_CHANNEL, user_id = user_id)
