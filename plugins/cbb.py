@@ -15,7 +15,7 @@ fsub_db = Fsub_DB()
 REQUEST_CHANNELS = [REQUEST_CHANNEL, REQUEST_CHANNEL2]
 
 ABOUT_TXT = """╔════════════⦿
-├⋗ ᴄʀᴇᴀᴛᴏʀ : <a href=https://t.me/Titan_Community_India>ᴛɪᴛᴀɴ 💞ᴛ</a>
+├⋗ ᴄʀᴇᴀᴛᴏʀ : <a href=https://t.me/Titan_Cinemas_Support_bot>ᴛɪᴛᴀɴ 💞</a>
 ├⋗ ʟᴀɴɢᴜᴀɢᴇ : <a href=https://python.org/>ᴘʏᴛʜᴏɴ3</a>
 ├⋗ ʟɪʙʀᴀʀʏ :  <a href=https://docs.pyrogram.org/>ᴘʏʀᴏɢʀᴀᴍ ᴀsʏɴᴄɪᴏ 2.0.106</a>
 ├⋗ ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : <a href=https://github.com/SirishChowdary/Titan_File_Store/Paid_File_Store>ᴍᴏᴠɪᴇs ᴡᴇʙsᴇʀɪᴇs ʙᴏᴛ</a>
