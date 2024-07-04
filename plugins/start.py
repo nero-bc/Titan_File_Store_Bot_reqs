@@ -23,26 +23,7 @@ from plugins.fsub import Force_Sub
 fsub_db = Fsub_DB()
 
 REQUEST_CHANNELS = [REQUEST_CHANNEL, REQUEST_CHANNEL2]
-
-PREMIUM_PIC = os.environ.get('PREMIUM_PIC', 'https://telegra.ph/file/96be180072e7e004bf3f1.jpg')
-
-PREMIUM_TEXT = """<b>👋 ʜᴇʏ {first},
-    
-🎖️ <u>ᴀᴠᴀɪʟᴀʙʟᴇ ᴘʟᴀɴs</u>
-
-● <code>10₹</code> ➛ <u>ʙʀᴏɴᴢᴇ ᴘʟᴀɴ</u> » <code>7 ᴅᴀʏꜱ</code>
-● <code>29₹</code> ➛ <u>ꜱɪʟᴠᴇʀ ᴘʟᴀɴ</u> » <code>30 ᴅᴀʏꜱ</code>
-● <code>129₹</code> ➛ <u>ɢᴏʟᴅ ᴘʟᴀɴ</u> » <code>90 ᴅᴀʏꜱ</code>
-● <code>370₹</code> ➛ <u>ᴘʟᴀᴛɪɴᴜᴍ ᴘʟᴀɴ</u> » <code>180 ᴅᴀʏꜱ</code>
-● <code>500₹</code> ➛ <u>ᴅɪᴀᴍᴏɴᴅ ᴘʟᴀɴ</u> » <code>365 ᴅᴀʏꜱ</code>
-
-💵 ᴜᴘɪ ɪᴅ - <code>titanindia@ibl</code>
-⚡ ǫʀ ᴄᴏᴅᴇ - <a href='https://te.legra.ph/file/c2aa509df2e82077c7a0d.jpg'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
-
-‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.
-<blockquote>⚡ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='http://t.me/Titan_Cinemas_Admin'>Titan India 🧿</a></blockquote>"""
-
-SECONDS = int(os.getenv("SECONDS", "300"))
+SECONDS = int(os.getenv("SECONDS", "600"))
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
@@ -90,15 +71,15 @@ async def start_command(client: Client, message: Message):
                 ids = [int(int(argument[1]) / abs(client.db_channel.id))]
             except:
                 return
-        temp_msg = await message.reply("Wait A Second...")
+        temp_msg = await message.reply("ᴡᴀɪᴛ ᴀ sᴇᴄᴏɴᴅ ɢᴇᴛᴛɪɴɢ ʏᴏᴜʀ ғɪʟᴇs/ʟɪɴᴋs... ⚡")
         try:
             messages = await get_messages(client, ids)
         except:
-            await message.reply_text("​​​Something went wrong..!")
+            await message.reply_text("​​​sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ ᴄᴏɴᴛᴀᴄᴛ ᴏᴡɴᴇʀ....!")
             return
         await temp_msg.delete()
 
-        Codeflix = []
+        Titan = []
         for msg in messages:
 
             if bool(CUSTOM_CAPTION) & bool(msg.document):
@@ -113,21 +94,21 @@ async def start_command(client: Client, message: Message):
             try:
                 snt_msg = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
                 await asyncio.sleep(1)
-                Codeflix.append(snt_msg)
+                Titan.append(snt_msg)
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 snt_msg = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
-                Codeflix.append(snt_msg)
+                Titan.append(snt_msg)
             except:
                 pass
 
-        k = await message.reply_text("<b>❗️ <u>Important</u> ❗️</b>\n\n<b>This video / file will be deleted in 5 minutes (Due to copyright issues).\n\n📌 Please forward this video / file to somewhere else and start downloading there.</b>")
+        k = await message.reply_text("<b>❗️ <u>ɪᴍᴘᴏʀᴛᴀɴᴛ</u> ❗️</b>\n\n<b>ᴛʜɪs ᴠɪᴅᴇᴏ/ғɪʟᴇ/ʟɪɴᴋ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪɴ 10 ᴍɪɴᴜᴛᴇs (ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇs).\n\n📌 ᴘʟᴇᴀsᴇ ғᴏʀᴡᴀʀᴅ ᴛʜɪs ᴠɪᴅᴇᴏ/ғɪʟᴇ/ʟɪɴᴋ ᴛᴏ sᴏᴍᴇᴡʜᴇʀᴇ ᴇʟsᴇ ᴀɴᴅ sᴛᴀʀᴛ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴛʜᴇʀᴇ.</b>")
         await asyncio.sleep(SECONDS)
 
-        for data in Codeflix:
+        for data in Titan:
             try:
                 await data.delete()
-                await k.edit_text("<b>Your video / file is successfully deleted !</b>")
+                await k.edit_text("<b>ʏᴏᴜʀ ᴠɪᴅᴇᴏ/ғɪʟᴇ/ʟɪɴᴋ ɪs sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ !</b>")
             except:
                 pass
 
@@ -136,14 +117,14 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⚡ ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs ⚡", url="https://t.me/Titan_CInemas")
+                    InlineKeyboardButton("ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs", url="https://t.me/Titan_CInemas")
                 ],
                 [
-                    InlineKeyboardButton("🧿 ʜᴇʟᴘ", callback_data="help"),
-                    InlineKeyboardButton("🔥 ᴀʙᴏᴜᴛ", callback_data="about")
+                    InlineKeyboardButton("ʜᴇʟᴘ", callback_data="help"),
+                    InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data="about")
                 ],
                 [
-                    InlineKeyboardButton("🚀 ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ 🚀", callback_data="premium")
+                    InlineKeyboardButton("ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ", callback_data="premium")
                 ]
             ]
         )
@@ -375,39 +356,6 @@ async def send_text(client: Bot, message: Message):
         msg = await message.reply(REPLY_ERROR)
         await asyncio.sleep(8)
         await msg.delete()
-
-@Bot.on_message(filters.command("info") & filters.private)
-async def showid(client: Client, message: Message):
-    user = message.from_user
-    id = message.from_user.id
-    
-    if id in await list_banned_users():
-        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Titan_Cinemas_Admin")
-        return
-        
-    user_id = user.id
-    username = user.username or "Not Available"
-    first_name = user.first_name
-    last_name = user.last_name or "Not Available"
-    
-    user_link = f"<a href='tg://user?id={user_id}'>Click Here</a>"
-    
-    caption = (
-        f"👤 User ID: <code>{user_id}</code>\n"
-        f"👤 Username: <code>{username}</code>\n"
-        f"👤 First Name: <code>{first_name}</code>\n"
-        f"👤 Last Name: <code>{last_name}</code>\n"
-        f"🔗 User Link: {user_link}"
-    )
-
-    button = InlineKeyboardButton(
-        "Click Here", url=f"tg://user?id={user_id}"
-    )
-    keyboard = InlineKeyboardMarkup([[button]])
-
-    await message.reply_photo(
-        photo=BOT_USERS, caption=caption, reply_markup=keyboard
-    )
 
 @Bot.on_message(filters.command('restart') & filters.private & filters.user(ADMINS))
 async def restart_bot(client: Bot, message: Message):
