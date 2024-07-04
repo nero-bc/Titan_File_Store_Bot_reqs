@@ -18,11 +18,9 @@ FSUB_TEMP = {}
 fsub_db = Fsub_DB()
 
 FSUB_TXT = """
-<b> ʜᴇʏ {first} 💞
+<b> ʜᴇʏ {first} ᴡᴀssᴜᴘ 💫
 
-ᴛᴜᴍ ɴᴇ ʜᴀᴍᴀʀᴇ ᴄʜᴀɴɴᴇʟs ᴍᴀɪ ᴊᴏɪɴ ɴᴇʜɪ ᴋɪʏᴀ ᴊᴏɪɴ ᴋᴀʀᴏ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ ʙᴜᴛᴛᴏɴ ᴘᴇʀ ᴄʟɪᴄᴋ ᴋᴀʀᴏ 
-
-<blockquote>💞 ʙᴏᴛ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ <a href=https://t.me/Titan_Cinemas_Support_bot>⚡ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs</a></b></blockquote>"""   
+ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ ᴅɪᴅɴ'ᴛ ᴊᴏɪɴᴇᴅ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs """   
 
 @Bot.on_chat_join_request(filters.chat(REQUEST_CHANNELS))
 async def fetch_reqs(client: Client, request: ChatJoinRequest):
