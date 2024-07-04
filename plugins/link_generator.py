@@ -43,25 +43,25 @@ async def batch(client: Client, message: Message):
     link = f"https://t.me/Titan_Files_Ind_Bot?start={base64_string}"
     slink = await short_url(link)
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("⚡ sʜᴀʀᴇ ᴏʀɪɢɪɴᴀʟ ʟɪɴᴋ ⚡", url=f'https://telegram.me/share/url?url={link}')]])
-    await second_message.reply_text(f"<b>⭕ ʜᴇʀᴇ ɪs ʏᴏᴜʀ ᴏʀɪɢɪɴᴀʟ ʟɪɴᴋ - <code>{link}</code></b>\n\n⭕ ʜᴇʀᴇ ɪs ʏᴏᴜʀ sʜᴏʀᴛ ʟɪɴᴋ :- <code>{slink}</code>", quote=True, reply_markup=reply_markup)
+    await second_message.reply_text(f"<b>⭕ ʜᴇʀᴇ ɪs ʏᴏᴜʀ ᴏʀɪɢɪɴᴀʟ ʟɪɴᴋ - <code>{link}</code>\n\n⭕ ʜᴇʀᴇ ɪs ʏᴏᴜʀ sʜᴏʀᴛ ʟɪɴᴋ :- <code>{slink}</code></b>", quote=True, reply_markup=reply_markup)
 
 
 @Bot.on_message(filters.private & filters.user(ADMINS) & filters.command('genlink'))
 async def link_generator(client: Client, message: Message):
     while True:
         try:
-            channel_message = await client.ask(text = "Forward Message from the DB Channel (with Quotes)..\nor Send the DB Channel Post link", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
+            channel_message = await client.ask(text = "ғᴏʀᴡᴀʀᴅ ᴍᴇssᴀɢᴇ ғʀᴏᴍ ᴛʜᴇ ᴅʙ ᴄʜᴀɴɴᴇʟ (ᴡɪᴛʜ ǫᴜᴏᴛᴇs)..\n ᴏʀ sᴇɴᴅ ᴛʜᴇ ᴅʙ ᴄʜᴀɴɴᴇʟ ᴘᴏsᴛ ʟɪɴᴋ", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
         except:
             return
         msg_id = await get_message_id(client, channel_message)
         if msg_id:
             break
         else:
-            await channel_message.reply("❌ Error\n\nthis Forwarded Post is not from my DB Channel or this Link is not taken from DB Channel", quote = True)
+            await channel_message.reply("❌ ᴇʀʀᴏʀ\n\n ᴛʜɪs ғᴏʀᴡᴀʀᴅᴇᴅ ᴘᴏsᴛ ɪs ɴᴏᴛ ғʀᴏᴍ my ᴅʙ ᴄʜᴀɴɴᴇʟ or ᴛʜɪs ʟɪɴᴋ ɪs ɴᴏᴛ ᴛᴀᴋᴇɴ ғʀᴏᴍ ᴅʙ ᴄʜᴀɴɴᴇʟ", quote = True)
             continue
 
     base64_string = await encode(f"get-{msg_id * abs(client.db_channel.id)}")
     link = f"https://t.me/Titan_Files_Ind_Bot?start={base64_string}"
     slink = await short_url(link)
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://telegram.me/share/url?url={link}')]])
-    await channel_message.reply_text(f"<b>Here is your link</b>\n\n{link}\n\nShort Link:- {slink}", quote=True, reply_markup=reply_markup)
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("⚡ sʜᴀʀᴇ ᴏʀɪɢɪɴᴀʟ ʟɪɴᴋ ⚡", url=f'https://telegram.me/share/url?url={link}')]])
+    await channel_message.reply_text(f"<b>⭕ ʜᴇʀᴇ ɪs ʏᴏᴜʀ ᴏʀɪɢɪɴᴀʟ ʟɪɴᴋ - <code>{link}</code>\n\n⭕ ʜᴇʀᴇ ɪs ʏᴏᴜʀ sʜᴏʀᴛ ʟɪɴᴋ :- <code>{slink}</code></b>", quote=True, reply_markup=reply_markup)
