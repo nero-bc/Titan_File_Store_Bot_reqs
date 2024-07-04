@@ -20,7 +20,7 @@ fsub_db = Fsub_DB()
 FSUB_TXT = """
 <b> ʜᴇʏ {first} ᴡᴀssᴜᴘ 💫
 
-ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ ᴅɪᴅɴ'ᴛ ᴊᴏɪɴᴇᴅ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs """   
+ᴀᴄᴄᴏʀᴅɪɴɢ ᴛᴏ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs ᴘʟs ᴊᴏɪɴ ᴛʜᴇ ᴄʜᴀɴɴᴇʟs ʙᴇʟᴏᴡ ᴀɴᴅ ᴄʟɪᴄᴋ ᴄʜᴇᴄᴋ ᴀɢᴀɪɴ 🚀 """   
 
 @Bot.on_chat_join_request(filters.chat(REQUEST_CHANNELS))
 async def fetch_reqs(client: Client, request: ChatJoinRequest):
