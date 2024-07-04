@@ -15,6 +15,15 @@ fsub_db = Fsub_DB()
 
 REQUEST_CHANNELS = [REQUEST_CHANNEL, REQUEST_CHANNEL2]
 
+ABOUT_TXT = """╔════════════⦿
+├⋗ ᴄʀᴇᴀᴛᴏʀ :  Zoro 
+├⋗ ʟᴀɴɢᴜᴀɢᴇ : Python3
+├⋗ ʟɪʙʀᴀʀʏ : Pyrogram asyncio 2.0.106
+├⋗ ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : File Store Bot
+├⋗ Main Channel : Anime RTX
+├⋗ Support Group : Anime RTX Discission
+╚═════════════════⦿ """
+
 @Bot.on_callback_query()
 async def cb_handler_func(client, query: CallbackQuery):
     data = query.data
@@ -35,8 +44,8 @@ async def cb_handler_func(client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("💞 ʙᴀᴄᴋ", callback_data="start"),
-                        InlineKeyboardButton("🌜 ᴄʟᴏsᴇ", callback_data="close")
+                        InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="start"),
+                        InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close")
                     ]
                 ]
             ),
@@ -66,42 +75,6 @@ async def cb_handler_func(client, query: CallbackQuery):
                 user_id=query.from_user.id, 
                 username=None if not query.from_user.username else '@' + query.from_user.username or "Not Available",
             ),
-            reply_markup=InlineKeyboardMarkup(buttons)
-        )
-    elif data == "premium":
-        buttons = [
-            [
-                InlineKeyboardButton("⚡ ᴡᴀɴɴᴀ ʙᴇ ᴀ ᴘʀᴇᴍɪᴜᴍ ᴍᴇᴍʙᴇʀ? ⚡", callback_data="preplan")
-            ],
-            [
-                InlineKeyboardButton("🎉 ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ 🎉", callback_data="start")
-            ]
-        ]
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        await query.message.edit_text(
-            text=PREMIUM_TXT,
-            reply_markup=InlineKeyboardMarkup(buttons)
-        )
-    elif data == "preplan":
-        buttons = [
-            [
-                InlineKeyboardButton("🔥 sᴇɴᴅ sᴄʀᴇᴇɴ sʜᴏᴛ ɴᴏᴡ 🔥", url="http://t.me/Titan_Cinemas_Admin")
-            ],
-            [
-                InlineKeyboardButton("🎉 ʙᴀᴄᴋ 🎉", callback_data="premium")
-            ]
-        ]
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        await query.message.edit_text(
-            text=PREPREMIUM,
             reply_markup=InlineKeyboardMarkup(buttons)
         )
     elif data == "start":
