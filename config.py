@@ -48,28 +48,26 @@ BOT_USERS = os.environ.get('BOT_USERS', 'https://te.legra.ph/file/81bd8053e505e4
 PORT = os.environ.get("PORT", "8080")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "500"))
 
-INCOMING_TXT = os.environ.get("INCOMING_TXT", """ʜᴇʏ ʙʜᴀɪ {first} 💞
+INCOMING_TXT = os.environ.get("INCOMING_TXT", """<b>ʜᴇʏ ʙʜᴀɪ {first} 💞
 
-<blockquote> ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴ ʀᴇǫᴜᴇsᴛ ᴜsᴇ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴊᴏɪɴ ᴛʜᴇ ᴄʜᴀᴛ ᴀɴᴅ sᴇɴᴅ ᴛʜᴇ ɴᴀᴍᴇ ʙᴜᴛ ᴜsᴇ ᴀ ғᴏʀᴍᴀᴛᴇ</blockquote>
-
-<code>/request Your_movie_name/series_name</code>""")
+<blockquote>ʏᴇ ʙᴀss ᴇᴋᴋ ʙᴏᴛ ʜᴀɪ sᴏ ᴅᴏɴᴛ sᴘᴀᴍ ᴀɢᴀʀ ᴋᴏɪ ᴘʀᴏʙʟᴇᴍ ʜᴀɪ ᴀᴜʀ ʀᴇǫᴜᴇsᴛ ᴋᴀʀ ɴᴀ ʜᴀɪ ᴛʜᴏ ɴᴇᴄʜᴇ ʙᴜᴛᴛᴏɴ ᴘᴇʀ ᴄʟɪᴄᴋ ᴋᴀʀ ᴋᴇ ᴊᴏɪɴ ʜᴏᴊᴀᴏ</blockquote></b>""")
 
 # start Message And Texts
-START_MSG = os.environ.get("START_MESSAGE", """🚀 ʜᴇʟʟᴏ ʙʜᴀɪ!!! {first}
+START_MSG = os.environ.get("START_MESSAGE", """<b>🚀 ʜᴇʟʟᴏ ʙʜᴀɪ!!! {first}
 
-💞 ɪ ᴀᴍ ᴀ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ ᴡʜᴏ ᴄᴀɴ sᴛᴏʀᴇ ғɪʟᴇs ᴀɴᴅ ɢɪᴠᴇ ᴄᴜsᴛᴏᴍ ʟɪɴᴋs ᴏɴʟʏ ᴀᴅᴍɪɴs ᴏғ ᴛʜᴇ ʙᴏᴛ ᴄᴀɴ ᴜsᴇ ʙᴇ sᴏ ᴅᴏɴᴛ sᴘᴀᴍ ;)""")
+💞 ɪ ᴀᴍ ᴀ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ ᴡʜᴏ ᴄᴀɴ sᴛᴏʀᴇ ғɪʟᴇs ᴀɴᴅ ɢɪᴠᴇ ᴄᴜsᴛᴏᴍ ʟɪɴᴋs ᴏɴʟʏ ᴀᴅᴍɪɴs ᴏғ ᴛʜᴇ ʙᴏᴛ ᴄᴀɴ ᴜsᴇ ʙᴇ sᴏ ᴅᴏɴᴛ sᴘᴀᴍ ;)</b>""")
 
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", """
 <b>ʜᴇʟʟᴏ ʙʜᴀɪ {first} 💞</b>
 
 <b>📌 ᴇɴɢʟɪsʜ :
-ʙʜᴀɪ ʏᴏᴜʀ ɴᴇᴇᴅ ᴛᴏ ᴊᴏɪɴ this ᴄʜᴀɴɴᴇʟ ɪɴ ᴏʀᴅᴇʀ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇs/ʟɪɴᴋs ɪᴛs ɴᴇᴇᴅᴇᴅ sᴏ ᴘʟs ᴊᴏɪɴ !!</b>"
+ʙʜᴀɪ ʏᴏᴜʀ ɴᴇᴇᴅ ᴛᴏ ᴊᴏɪɴ this ᴄʜᴀɴɴᴇʟ ɪɴ ᴏʀᴅᴇʀ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇs/ʟɪɴᴋs ɪᴛs ɴᴇᴇᴅᴇᴅ sᴏ ᴘʟs ᴊᴏɪɴ !!</b>
 
 <b>📌 ʜɪɴᴅɪ : 
 हम उन सभी लोगों के लिए हैं जो अपने जीवन में कई बार/सभी अवसरों पर एक दूसरे के पूरक हैं !!!</b>""")
 
 HELP_MSG = os.environ.get("HELP_MSG", """
-ʜᴇʟʟᴏ ʙʜᴀɪ 💞 {first_name}, ᴋɪsᴇ ʜᴏ
+<b>ʜᴇʟʟᴏ ʙʜᴀɪ 💞 {first_name}, ᴋɪsᴇ ʜᴏ
 
 ⚡ ʏᴏᴜʀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ⚡
 
@@ -78,12 +76,8 @@ HELP_MSG = os.environ.get("HELP_MSG", """
 🚀 ʏᴏᴜʀ ɪᴅ - <code>{user_id}</code>
 🚀 ᴜsᴇʀɴᴀᴍᴇ - <code>{username}</code>
 
-sᴏʀʀʏ ᴛᴏ ʜᴇʀᴇ ʜᴀᴍᴀʀᴇ ʙᴏᴛ ᴘᴇ ᴀᴘᴘ ᴋᴏ ᴘʀᴏʙʟᴇᴍ ʜᴜᴀ ᴘʟs ɴᴇᴄʜᴇ ᴅɪʏᴀ ɢᴀʏᴇ ʙᴜᴛᴛᴏɴs ᴋᴏ ᴄʟɪᴄᴋ ᴋᴀʀᴏ ᴀɴᴅ ᴠɪᴅᴇᴏs ᴋᴏ ᴅᴇᴋᴋᴏ ᴀɢᴀʀ ᴘʀᴏʙʟᴇᴍ sᴏʟᴠᴇ ɴᴇʜɪ ʜᴜᴀ ᴛʜᴏ ᴘʟs ɴᴇᴇᴄʜᴇ ᴄᴏɴᴛᴀᴄᴛ ʙᴜᴛᴛᴏɴ ᴄʟɪᴄᴋ ᴋᴀʀ ᴋᴇ ᴍᴇssᴀɢᴇ ᴋᴀʀᴏ ʜᴀᴀᴍ ᴋᴏ ʜᴀᴀᴍ sʟᴏᴠᴇ ᴋᴀʀ ɴᴇ ᴋᴀ ᴛʀʏ ᴋᴀʀɢᴇᴇ
-
-<blockquote>🎉 ɴᴏᴛᴇ - ʜᴀ ʙʜᴀɪ ᴘᴀᴛʜᴀ ʜᴀɪ ᴛᴜᴍ ᴋᴏ ᴅʀᴀᴍᴀ ᴅᴇᴋᴋ ɴᴇ ᴍᴀɪ ᴘʀᴏʙʟᴇᴍ ʜᴏ ʀᴀʜᴀ ʜᴀɪ ᴍᴇssᴀɢᴇ ᴋᴀʀᴏ ᴀɴᴅ ᴡᴀɪᴛ ғᴏʀ ʀᴇᴘʟʏ ᴅᴏɴᴛ sᴘᴀᴍ sᴘᴀᴍ ᴋɪʏᴀ ᴅᴍ ᴍᴀɪ ᴛʜᴏ ʙᴏʟ ʜᴏᴊᴀʏᴇɢᴀ ᴛʜᴜ ɪᴛs ʏᴏᴜʀ ᴡɪsʜ ᴀғᴛᴇᴛ ᴛʜᴀᴛ</blockquote>""")
+<blockquote>sᴇᴇᴍs ʟɪᴋᴇ ᴋᴏɪ ᴘʀᴏʙʟᴇᴍ ʜᴀɪ ɴᴇᴄʜᴇ ᴅɪʏᴀ ʜᴀɪ ʙᴜᴛᴛᴏɴ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ᴜss ᴘᴇ ʙᴏʟᴏ ʜᴀᴀᴍ ᴛʜɪᴋ ᴋᴀʀ ᴅᴇɢᴇ</blockqoute></b>""")
 disable_web_page_prewiew = True
-
-
 
 LOG_FILE_NAME = "filesharingbot.txt"
 
