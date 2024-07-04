@@ -35,7 +35,7 @@ CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", "📌 ᴍᴀɴᴛᴀɪɴᴇᴅ
 PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "False") == "True" else False
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", "False") == 'True'
 BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
-PICS = os.environ.get('PICS', 'https://te.legra.ph/file/9a9526afcc0e956089c9f.jpg https://te.legra.ph/file/2ec748661e629c9b65f57.jpg https://te.legra.ph/file/1aedf0557544a162bfeb8.jpg https://te.legra.ph/file/b7afc886a0ee4289fcd8d.jpg https://te.legra.ph/file/fecb05e59eb69800e4cfe.jpg https://te.legra.ph/file/ddc3fa3872d9d338abce6.jpg https://te.legra.ph/file/52421435b5bbd4d1e3c17.jpg https://te.legra.ph/file/f535037421fc74d6203d7.jpg https://te.legra.ph/file/4f31fb9cb45fbe7c2f22e.jpg').split() #
+PICS = os.environ.get('PICS', 'https://telegra.ph/file/c8fe690794fa983af828c.jpg').split() #
 RSTART = os.environ.get('RSTART', 'https://te.legra.ph/file/d301eb1eac43a66390f91.jpg')
 BOT_USERS = os.environ.get('BOT_USERS', 'https://te.legra.ph/file/81bd8053e505e45bdfe8f.jpg')
 PORT = os.environ.get("PORT", "8080")
