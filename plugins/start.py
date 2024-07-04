@@ -17,7 +17,6 @@ from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 from bot import Bot
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import *
-from database.premium_db import db1
 from database.fsub_db import Fsub_DB
 from plugins.fsub import Force_Sub
 fsub_db = Fsub_DB()
