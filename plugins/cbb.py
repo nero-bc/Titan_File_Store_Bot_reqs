@@ -8,37 +8,6 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 contact_button = InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Community_India")
 keyboard = InlineKeyboardMarkup([[contact_button]])
 
-PLAN_PIC = "https://telegra.ph/file/96be180072e7e004bf3f1.jpg"
-
-PREMIUM_TXT = """<b>⚡ ᴡʜᴀᴛ ɪs ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ ?
-ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ ɪs ᴀ ᴘʀᴇᴍɪᴜᴍ sᴇʀᴠɪᴄᴇ ᴊʜᴏ ɪss ᴋᴏ sᴜʙsᴄʀɪʙᴇ ᴋᴀʀᴇɢᴀ ᴜss ᴋᴏ ᴘʀᴇᴍɪᴜᴍ ᴘʀᴇᴋs ᴍɪʟᴇɢᴀ ʟɪᴋᴇ
-
-🚀 ᴅɪʀᴇᴄᴛ ғɪʟᴇs ᴡɪᴛʜ ғᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ
-🚀 ᴘʀᴇᴍɪᴜᴍ ʀᴇǫᴜᴇsᴛ ɢʀᴏᴜᴘ
-🚀 ᴘʀᴇᴍɪᴜᴍ ᴀʟʟ ᴀʀᴏᴜɴᴅ ᴏᴜʀ ʙᴏᴛs 💞
-🚀 ᴀᴅᴠᴀɴᴄᴇ 24x7 sᴜᴘᴘᴏʀᴛ 
-🚀 ᴘʀɪᴏʀɪᴛʏ ᴛᴏ ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛs
-🚀 ᴘʀᴇᴍɪᴜᴍ ᴄʜᴀɴɴᴇʟs ᴡɪᴛʜ ᴅɪʀᴇᴄᴛ ғɪʟᴇs ᴇᴠᴇʀʏ ᴅᴀʏ 100+ ғɪʟᴇs ᴡɪʟʟ ʙᴇ ᴜᴘʟᴏᴀᴅᴇᴅ
-    
-<blockquote>📌 ɴᴏᴛᴇ : ᴡᴇ ᴋɴᴏᴡ ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ sᴇʀᴠɪᴄᴇ ᴡɪʟʟ ʜᴀᴠᴇ ʟɪᴍɪᴛs ғᴏʀ sᴜʀᴇ ᴄᴀᴜsᴇ ᴡᴇ ᴀʀᴇ sᴛɪʟʟ ɪɴ ᴅᴇᴠᴇʟᴏᴘᴍᴇɴᴛ sᴛᴀɢᴇ sᴏ ɪғ ʏᴏᴜ ɢᴇᴛ ᴜs ᴛɪᴍᴇ ᴀɴᴅ sᴜᴘᴘᴏʀᴛ ᴜs ᴡᴇ ᴡɪʟʟ sᴜʀᴇʟʏ ᴄᴏᴍᴇ ᴜᴘ ᴛᴏ ʏᴏᴜʀ ᴛʜᴏᴜɢʜᴛs ᴀɴᴅ ᴇxᴘᴇᴄᴛᴀᴛɪᴏɴs ᴛʜᴀɴᴋs~ᴛɪᴛᴀɴ</blockquote></b>"""
-
-PREPREMIUM = """
-ᴏᴏᴏᴏ ᴛʜᴀɴᴋs ғᴏʀ ᴍᴀᴋɪɴɢ ʏᴏᴜʀ ᴄʜᴏɪᴄᴇ ᴛᴏ ʙᴇ ᴡɪᴛʜ ᴜs ᴀɴᴅ ᴛʜᴀɴᴋs ғᴏʀ sᴜᴘᴘᴏʀᴛɪɴɢ
-
-🎖️ <u>ᴀᴠᴀɪʟᴀʙʟᴇ ᴘʟᴀɴs</u>
-
-● <code>10₹</code> ➛ <u>ʙʀᴏɴᴢᴇ ᴘʟᴀɴ</u> » <code>7 ᴅᴀʏꜱ</code>
-● <code>29₹</code> ➛ <u>ꜱɪʟᴠᴇʀ ᴘʟᴀɴ</u> » <code>30 ᴅᴀʏꜱ</code>
-● <code>129₹</code> ➛ <u>ɢᴏʟᴅ ᴘʟᴀɴ</u> » <code>90 ᴅᴀʏꜱ</code>
-● <code>370₹</code> ➛ <u>ᴘʟᴀᴛɪɴᴜᴍ ᴘʟᴀɴ</u> » <code>180 ᴅᴀʏꜱ</code>
-● <code>500₹</code> ➛ <u>ᴅɪᴀᴍᴏɴᴅ ᴘʟᴀɴ</u> » <code>365 ᴅᴀʏꜱ</code>
-
-💵 ᴜᴘɪ ɪᴅ - <code>titanindia@ibl</code>
-⚡ ǫʀ ᴄᴏᴅᴇ - <a href='https://telegra.ph/file/96be180072e7e004bf3f1.jpg'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
-
-‼️ ᴍᴜsᴛ sᴇɴᴅ sᴄʀᴇᴇɴsʜᴏᴛ ᴀғᴛᴇʀ ᴘᴀʏᴍᴇɴᴛ.
-<blockquote>⚡ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='http://t.me/Titan_Cinemas_Admin'>⚡ ᴛɪᴛᴀɴ ɪɴᴅɪᴀ</a></blockquote>"""
-
 from database.database import *
 from database.premium_db import db1
 from database.fsub_db import Fsub_DB
