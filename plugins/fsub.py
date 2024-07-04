@@ -187,11 +187,11 @@ async def Force_Sub(client: Client, message: Message):
 
     if need_to_join:
         btn.append([
-            InlineKeyboardButton(f"📌 ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=INVITE_LINKS[0]),
-            InlineKeyboardButton(f"📌 ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=INVITE_LINKS[1])
+            InlineKeyboardButton(f"⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=INVITE_LINKS[0]),
+            InlineKeyboardButton(f"⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=INVITE_LINKS[1])
         ])
         btn.append([
-            InlineKeyboardButton(f"⚡ᴛʀʏ ᴀɢᴀɪɴ ⚡", callback_data="checksub")
+            InlineKeyboardButton(f"✔ ᴄʜᴇᴄᴋ ᴀɢᴀɪɴ ✔", callback_data="checksub")
         ])
         await message.reply_photo(
             photo=random.choice(PICS),
