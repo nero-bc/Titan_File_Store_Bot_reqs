@@ -4,8 +4,8 @@ import logging
 from os import getenv, environ
 from logging.handlers import RotatingFileHandler
 
-shortner_url = os.environ.get("SHORTENER_SITE", "easysky.in")
-shortner_api = os.environ.get("SHORTENER_API", "e122c6f2d28d6e79ac214cb118700a2619131c39")
+shortner_url = os.environ.get("SHORTENER_SITE", "publicearn.com")
+shortner_api = os.environ.get("SHORTENER_API", "d5f94ad589541c8589b9f77957a628e0c7dc6381")
 
 # Get This Details From My telegram.org And From The @BotFather
 APP_ID = int(os.environ.get("APP_ID", "21821499"))
