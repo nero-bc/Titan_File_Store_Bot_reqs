@@ -14,7 +14,7 @@ async def stats(bot: Bot, message: Message):
 
 contact_button = [
     [
-        InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="http://t.me/Titan_Cinemas_Admin")
+        InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/+whP0B-ffw2hkZDU1")
     ]
 ]
 keyboard = InlineKeyboardMarkup(contact_button)
@@ -25,18 +25,15 @@ async def useless(bot: Bot, message: Message):
     user_id = message.from_user.id
     username = message.from_user.username
     user_first_name = message.from_user.first_name
-
+    
     if user_id in ADMINS:
         return
-
     await bot.send_message(
         chat_id=user_id,
         text=INCOMING_TXT.format(first=message.from_user.first_name),
         reply_markup=keyboard
     )
-
-    await bot.send_photo(
+    await bot.send_text(
         chat_id=LOG_CHANNEL,
-        photo="https://telegra.ph/file/d2b162dca637ca9ff54fb.jpg",
-        caption=f"User ID: {user_id}\nUsername: {username}\nContent: {content}"
+        text="User ID: {user_id}\nUsername: {username}\nContent: {content}"
     )
