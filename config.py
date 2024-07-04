@@ -14,7 +14,7 @@ TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7147069232:AAGqijmAeCxionrLzaCMS3
 
 # channels infomation
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002181649999"))
-LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
+LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002248503876"))
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002017829366"))
 REQUEST_CHANNEL = int(os.environ.get("REQUEST_CHANNEL", "-1002165483636"))
 REQUEST_CHANNEL2 = int(os.environ.get("REQUEST_CHANNEL2", "-1002171731524"))
