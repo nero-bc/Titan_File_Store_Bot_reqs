@@ -9,7 +9,6 @@ contact_button = InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡",
 keyboard = InlineKeyboardMarkup([[contact_button]])
 
 from database.database import *
-from database.premium_db import db1
 from database.fsub_db import Fsub_DB
 fsub_db = Fsub_DB()
 
