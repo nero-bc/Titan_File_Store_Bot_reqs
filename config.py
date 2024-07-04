@@ -8,8 +8,8 @@ shortner_url = os.environ.get("SHORTENER_SITE", "easysky.in")
 shortner_api = os.environ.get("SHORTENER_API", "e122c6f2d28d6e79ac214cb118700a2619131c39")
 
 # Get This Details From My telegram.org And From The @BotFather
-APP_ID = int(os.environ.get("APP_ID", "29663344"))
-API_HASH = os.environ.get("API_HASH", "1ce180a5008f81cb3e23fd4143fe0f6a")
+APP_ID = int(os.environ.get("APP_ID", "21821499"))
+API_HASH = os.environ.get("API_HASH", "31eda964c848701b76931b1a5446f301")
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7147069232:AAGqijmAeCxionrLzaCMS3WJhrWrKU0eKqY")
 
 # channels infomation
