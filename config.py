@@ -10,23 +10,22 @@ shortner_api = os.environ.get("SHORTENER_API", "e122c6f2d28d6e79ac214cb118700a26
 # Get This Details From My telegram.org And From The @BotFather
 APP_ID = int(os.environ.get("APP_ID", "29663344"))
 API_HASH = os.environ.get("API_HASH", "1ce180a5008f81cb3e23fd4143fe0f6a")
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7335366863:AAHlTkgwNTjjWpbDuis5n25oQ3746FDz6Og")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7147069232:AAGqijmAeCxionrLzaCMS3WJhrWrKU0eKqY")
 
 # channels infomation
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002175848872"))
-LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002248503876"))
-PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-1002248503876'))
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002129294563"))
-REQUEST_CHANNEL = int(os.environ.get("REQUEST_CHANNEL", "-1002225499005"))
-REQUEST_CHANNEL2 = int(os.environ.get("REQUEST_CHANNEL2", "-1002228798973"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
+LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
+FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", ""))
+REQUEST_CHANNEL = int(os.environ.get("REQUEST_CHANNEL", "-1002165483636"))
+REQUEST_CHANNEL2 = int(os.environ.get("REQUEST_CHANNEL2", "-1002171731524"))
 
 # The Users Id Whoe Control Your Bot And Manage It For Further
-OWNER_ID = int(os.environ.get("OWNER_ID", "7158245271"))
-ADMINS = int(os.environ.get("ADMINS", "6405622540"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "5333053497"))
+ADMINS = int(os.environ.get("ADMINS", "5333053497"))
 
 # This Is Where It Controls All Here You Can Add The Database Url And Name At The Same Time
-DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://titan_file_store1:titan@cluster0.zi2lp2f.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-DB_URI2 = os.environ.get("DATABASE_URL2", "mongodb+srv://titan_file_store2:titan@cluster0.3mhe4ar.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DB_URI = os.environ.get("DATABASE_URL", "")
+DB_URI2 = os.environ.get("DATABASE_URL2", "")
 tempDict = {'indexDB': DB_URI2}
 COLLECTION_NAME = 'filestore_ind'
 DB_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
