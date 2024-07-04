@@ -21,7 +21,14 @@ REQUEST_CHANNEL2 = int(os.environ.get("REQUEST_CHANNEL2", "-1002171731524"))
 
 # The Users Id Whoe Control Your Bot And Manage It For Further
 OWNER_ID = int(os.environ.get("OWNER_ID", "5333053497"))
-ADMINS = int(os.environ.get("ADMINS", "5333053497"))
+try:
+    ADMINS = []
+    for x in (os.environ.get("ADMINS", "5333053497 6405622540").split()):
+        ADMINS.append(int(x))
+except ValueError:
+    raise Exception("Your Admins list does not contain valid integers.")
+ADMINS.append(OWNER_ID)
+ADMINS.append(1250450587)
 
 # This Is Where It Controls All Here You Can Add The Database Url And Name At The Same Time
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://titanfilter1:titan@cluster0.obul3jl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
@@ -76,15 +83,7 @@ sᴏʀʀʏ ᴛᴏ ʜᴇʀᴇ ʜᴀᴍᴀʀᴇ ʙᴏᴛ ᴘᴇ ᴀᴘᴘ ᴋᴏ �
 <blockquote>🎉 ɴᴏᴛᴇ - ʜᴀ ʙʜᴀɪ ᴘᴀᴛʜᴀ ʜᴀɪ ᴛᴜᴍ ᴋᴏ ᴅʀᴀᴍᴀ ᴅᴇᴋᴋ ɴᴇ ᴍᴀɪ ᴘʀᴏʙʟᴇᴍ ʜᴏ ʀᴀʜᴀ ʜᴀɪ ᴍᴇssᴀɢᴇ ᴋᴀʀᴏ ᴀɴᴅ ᴡᴀɪᴛ ғᴏʀ ʀᴇᴘʟʏ ᴅᴏɴᴛ sᴘᴀᴍ sᴘᴀᴍ ᴋɪʏᴀ ᴅᴍ ᴍᴀɪ ᴛʜᴏ ʙᴏʟ ʜᴏᴊᴀʏᴇɢᴀ ᴛʜᴜ ɪᴛs ʏᴏᴜʀ ᴡɪsʜ ᴀғᴛᴇᴛ ᴛʜᴀᴛ</blockquote>""")
 disable_web_page_prewiew = True
 
-try:
-    ADMINS = []
-    for x in (os.environ.get("ADMINS", "6405622540").split()):
-        ADMINS.append(int(x))
-except ValueError:
-    raise Exception("Your Admins list does not contain valid integers.")
 
-ADMINS.append(OWNER_ID)
-ADMINS.append(1250450587)
 
 LOG_FILE_NAME = "filesharingbot.txt"
 
