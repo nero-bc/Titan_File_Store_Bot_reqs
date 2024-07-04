@@ -5,7 +5,7 @@ from config import *
 from pyrogram import Client, filters, enums
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 
-contact_button = InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Community_India")
+contact_button = InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/+whP0B-ffw2hkZDU1")
 keyboard = InlineKeyboardMarkup([[contact_button]])
 
 from database.database import *
@@ -43,14 +43,11 @@ async def cb_handler_func(client, query: CallbackQuery):
     elif data == "help":
         buttons = [
             [
-                InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Community_India")
+                InlineKeyboardButton("ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ", url="https://t.me/+whP0B-ffw2hkZDU1")
             ],
             [
-                InlineKeyboardButton("📌 ᴀʙᴏᴜᴛ", callback_data="about"),
-                InlineKeyboardButton("📌 ᴛɪᴛᴀɴ ᴘʀᴇᴍɪᴜᴍ", callback_data="premium")
-            ],
-            [
-                InlineKeyboardButton("🔥 ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ 🔥", url="https://t.me/Titan_Community_Ind")
+                InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data="about"),
+                InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url="https://t.me/+4db4vuYykAw3YmE1")
             ]   
         ]
         await client.edit_message_media(
@@ -71,14 +68,14 @@ async def cb_handler_func(client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⚡ ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs ⚡", url="https://t.me/Titan_CInemas")
+                    InlineKeyboardButton("ɢʀ ʜᴀᴄᴋᴇʀ ᴄᴏᴍᴍᴜɴɪᴛʏ", url="https://t.me/+whP0B-ffw2hkZDU1")
                 ],
                 [
-                    InlineKeyboardButton("🧿 ʜᴇʟᴘ", callback_data="help"),
-                    InlineKeyboardButton("🔥 ᴀʙᴏᴜᴛ", callback_data="about")
+                    InlineKeyboardButton("ʜᴇʟᴘ", callback_data="help"),
+                    InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data="about")
                 ],
                 [
-                    InlineKeyboardButton("🚀 ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ 🚀", callback_data="premium")
+                    InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ", url="https://t.me/+4db4vuYykAw3YmE1")
                 ]
             ]
         )
