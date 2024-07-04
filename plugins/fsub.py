@@ -4,7 +4,6 @@ from pyrogram.types import Message, ChatJoinRequest, InlineKeyboardButton, Inlin
 from pyrogram.errors import UserNotParticipant, MessageTooLong, FloodWait
 from config import *
 import random
-from database.premium_db import db1
 from database.fsub_db import Fsub_DB
 import logging
 
@@ -151,7 +150,7 @@ async def Force_Sub(client: Client, message: Message):
     user = message.from_user
     user_id = message.from_user.id
     
-    if await db1.has_premium_access(user_id) or user_id in ADMINS:
+    if user_id in ADMINS:
         return True
 
     global INVITE_LINKS
