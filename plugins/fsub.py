@@ -145,7 +145,6 @@ async def fetch_all_reqs(client: Client , message: Message):
             outputFile.write(msg)
         await message.reply_document(document="Requests.txt", caption="List of all Join Requests saved on DB.")
 
-
 async def Force_Sub(client, message, query=False):
     user = message.from_user
     user_id = message.from_user.id
@@ -163,9 +162,8 @@ async def Force_Sub(client, message, query=False):
         
         if user_in_channel1 and user_in_channel2:
             return True
-        elif not user_in_channel1 or not user_in_channel2:
+        else:
             if query:
-                #await query.answer("First join both of the channels then click here!", show_alert=True)
                 return False
 
             btn = []
