@@ -92,14 +92,17 @@ async def cb_handler_func(client, query: CallbackQuery):
         )
 
     elif data == "checksub":
-        msg = query.message
-        await query.answer('Checking.......')
-        is_req = await Force_Sub(client, msg, query=True)
+          data = callback_query.data
+
+    if data == "checksub":
+        msg = callback_query.message
+        await callback_query.answer('Checking.......')
+        is_req = await Force_Sub(client, msg, query=callback_query)
+        
         if is_req:
-            await query.answer("First join both of the channels then click here!") #, show_alert=True)          
-        elif not is_req:
-            await msg.edit_text("Thanks for subscribing, Now you can use me!") #, show_alert=True)          
-  
+            await callback_query.answer("Thanks for subscribing, Now you can use me!", show_alert=True)          
+        else:
+            await callback_query.answer("First join both of the channels then click here!", show_alert=True)
             
     elif data == "close":
         await query.message.delete()
