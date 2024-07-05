@@ -97,7 +97,7 @@ async def cb_handler_func(client, query: CallbackQuery):
     if data == "checksub":
         msg = callback_query.message
         await callback_query.answer('Checking.......')
-        is_req = await Force_Sub(client, msg, query=callback_query)
+        is_req = await Force_Sub(client, msg, query=query)
         
         if is_req:
             await callback_query.answer("Thanks for subscribing, Now you can use me!", show_alert=True)          
