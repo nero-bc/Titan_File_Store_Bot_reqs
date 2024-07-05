@@ -1,6 +1,6 @@
 from pyrogram import __version__
 from bot import Bot
-import random
+import random, asyncio
 from config import *
 from pyrogram import Client, filters, enums
 from plugins.fsub import Force_Sub
@@ -95,14 +95,16 @@ async def cb_handler_func(client, query: CallbackQuery):
           data = callback_query.data
 
     if data == "checksub":
-        msg = callback_query.message
-        await callback_query.answer('Checking.......')
+        msg = query.message
+        await query.answer('Checking.......')
         is_req = await Force_Sub(client, msg, query=query)
         
         if is_req:
-            await callback_query.answer("Thanks for subscribing, Now you can use me!", show_alert=True)          
+            await query.answer("Thanks for subscribing, Now you can use me!", show_alert=True)
+            await asyncio.sleep(120)
+            await msg.delete()
         else:
-            await callback_query.answer("First join both of the channels then click here!", show_alert=True)
+            await query.answer("First join both of the channels then click here!", show_alert=True)
             
     elif data == "close":
         await query.message.delete()
