@@ -94,11 +94,10 @@ async def cb_handler_func(client, query: CallbackQuery):
     elif data == "checksub":
         msg = query.message
         user_id = query.from_user.id
-        print("checking.......")
+        print("Checking.......")
         try:
             check1 = await fsub_db.get_user(REQUEST_CHANNELS[0], user_id)
             check2 = await fsub_db.get_user(REQUEST_CHANNELS[1], user_id)
-            
             if not check1 or not check2:
                 await query.answer("First join both of the channels then click here!", show_alert=True)
             else:
@@ -107,7 +106,7 @@ async def cb_handler_func(client, query: CallbackQuery):
                 await msg.delete()
         except Exception as e:
             print(f"Error: {e}")
-        
+            
     elif data == "close":
         await query.message.delete()
         try:
