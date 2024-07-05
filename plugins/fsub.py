@@ -163,10 +163,10 @@ async def Force_Sub(client, message, query=None):
         if user_in_channel1 and user_in_channel2:
             return True
         else:
-            if query != None and (not user_in_channel1 or not user_in_channel2):
-                return False
-            elif query != None and (user_in_channel1 and user_in_channel2):
+            if query != None and (user_in_channel1 and user_in_channel2):
                 return True
+            elif query != None and (not user_in_channel1 or not user_in_channel2):
+                return False   
             elif query is None:
                 btn = []
 
