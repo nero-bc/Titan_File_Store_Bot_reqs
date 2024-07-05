@@ -190,9 +190,8 @@ async def Force_Sub(client: Client, message: Message):
         btn.append([
             InlineKeyboardButton(f"✔ ᴄʜᴇᴄᴋ ᴀɢᴀɪɴ ✔", callback_data="checksub")
         ])
-        await message.reply_photo(
-            photo=random.choice(PICS),
-            caption=FSUB_TXT.format(first=message.from_user.first_name),
+        await message.reply_text(
+            text=FSUB_TXT.format(first=message.from_user.first_name),
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.HTML
         )
