@@ -93,8 +93,7 @@ async def cb_handler_func(client, query: CallbackQuery):
     elif data == "checksub":
             user_id = query.from_user.id
 
-            if await db1.has_premium_access(user_id) or user_id in ADMINS:
-                await query.message.reply_text("You have premium access.")
+            if user_id in ADMINS:
                 return True
 
             if not all(REQUEST_CHANNELS):
