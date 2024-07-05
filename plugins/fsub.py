@@ -165,7 +165,7 @@ async def Force_Sub(client, message, query=False):
             return True
         elif not user_in_channel1 or not user_in_channel2:
             if query:
-                await query.answer("First join both of the channels then click here!", show_alert=True)
+                #await query.answer("First join both of the channels then click here!", show_alert=True)
                 return False
 
             btn = []
