@@ -95,10 +95,11 @@ async def cb_handler_func(client, query: CallbackQuery):
         msg = query.message
         await query.answer('Checking.......')
         is_req = await Force_Sub(client, msg, query=True)
-        if not is_req:
+        if is_req:
+            await query.answer("First join both of the channels then click here!") #, show_alert=True)          
+        elif not is_req:
             await msg.edit_text("Thanks for subscribing, Now you can use me!") #, show_alert=True)          
-        elif is_req:
-            await query.answer("First join both of the channels then click here!") #, show_alert=True)
+  
             
     elif data == "close":
         await query.message.delete()
