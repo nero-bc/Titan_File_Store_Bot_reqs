@@ -90,18 +90,27 @@ async def cb_handler_func(client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-
+    
     elif data == "checksub":
         msg = query.message
         await query.answer('Checking.......')
-        is_req = await Force_Sub(client, msg, query=query)        
-        if is_req:
-            n = await msg.reply_text("First join both of the channels then click here!") #, show_alert=True)
-        elif not is_req:
-            n = await msg.reply_text("Thanks for subscribing, Now you can use me!") #, show_alert=True)                     
-        await asyncio.sleep(120)
-        await msg.delete()
-        await n.delete()
+        user_id = query.from_user.id
+    
+        try:
+            check1 = await fsub_db.get_user(REQUEST_CHANNELS[0], user_id)
+            check2 = await fsub_db.get_user(REQUEST_CHANNELS[1], user_id)
+        
+            if not check1 or not check2:
+                n = await msg.reply_text("First join both of the channels then click here!", show_alert=True)
+            else:
+                n = await msg.reply_text("Thanks for subscribing, Now you can use me!", show_alert=True)
+        
+            await asyncio.sleep(120)
+            await msg.delete()
+            await n.delete()
+        
+        except Exception as e:
+            print(f"Error: {e}")
 
     elif data == "close":
         await query.message.delete()
