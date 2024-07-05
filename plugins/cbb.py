@@ -99,9 +99,9 @@ async def cb_handler_func(client, query: CallbackQuery):
             check1 = await fsub_db.get_user(REQUEST_CHANNELS[0], user_id)
             check2 = await fsub_db.get_user(REQUEST_CHANNELS[1], user_id)
             if not check1 or not check2:
-                await query.answer("First join both of the channels then click here!", show_alert=True)
+                await query.answer("⚡ ᴏᴏᴏ ɪ ʟɪᴋᴇ ʏᴏᴜʀ sᴍᴀʀᴛɴᴇss ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ ᴊᴏɪɴ ʙᴏᴛʜ ᴄʜᴀɴɴᴇʟs ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴀᴄᴄᴇss ᴛʜᴇ ʙᴏᴛ ᴊᴜsᴛ ᴊᴏɪɴ ᴀɴᴅ ᴄʟɪᴄᴋ ᴛʜɪs ʙᴜᴛᴛᴏɴ ᴀɢᴀɪɴ", show_alert=True)
             else:
-                await msg.edit_text("Thanks for subscribing, Now you can use me!")
+                await msg.edit_text("ᴛʜᴀɴᴋs ғᴏʀ sᴜʙsᴄʀɪʙɪɴɢ, ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴍᴇ ᴀɴᴅ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇs!!!")
                 await asyncio.sleep(120)
                 await msg.delete()
         except Exception as e:
