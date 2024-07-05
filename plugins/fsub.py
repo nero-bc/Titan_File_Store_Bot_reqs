@@ -160,7 +160,7 @@ async def Force_Sub(client, message, query=None):
         user_in_channel1 = await fsub_db.get_user(REQUEST_CHANNELS[0], int(message.from_user.id))
         user_in_channel2 = await fsub_db.get_user(REQUEST_CHANNELS[1], int(message.from_user.id))
         
-        if user_in_channel1 and user_in_channel2:
+        if query is None and (user_in_channel1 and user_in_channel2):
             return True
         else:
             if query != None and (user_in_channel1 and user_in_channel2):
