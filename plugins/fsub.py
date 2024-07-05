@@ -145,7 +145,8 @@ async def fetch_all_reqs(client: Client , message: Message):
             outputFile.write(msg)
         await message.reply_document(document="Requests.txt", caption="List of all Join Requests saved on DB.")
 
-async def Force_Sub(client, message, query=None):
+
+async def Force_Sub(client: Client, message: Message):
     user = message.from_user
     user_id = message.from_user.id
     
@@ -160,44 +161,41 @@ async def Force_Sub(client, message, query=None):
         user_in_channel1 = await fsub_db.get_user(REQUEST_CHANNELS[0], int(message.from_user.id))
         user_in_channel2 = await fsub_db.get_user(REQUEST_CHANNELS[1], int(message.from_user.id))
         
-        if query is None and (user_in_channel1 and user_in_channel2):
+        if user_in_channel1 and user_in_channel2:
             return True
-        else:
-            if query != None and (user_in_channel1 and user_in_channel2):
-                return True
-            elif query != None and (not user_in_channel1 or not user_in_channel2):
-                return False   
-            elif query is None:
-                btn = []
-
-                for n, channel in enumerate(REQUEST_CHANNELS):
-                    try:
-                        if INVITE_LINKS[n] is None:
-                            link = await client.create_chat_invite_link(chat_id=channel, creates_join_request=True)
-                            INVITE_LINKS[n] = link.invite_link
-                            logger.info(f"Invite Link for Channel {n+1} Generated!")
-                    except Exception as e:
-                        logger.error(f"Unable to generate invite link for Channel {n+1}!\nError: {e}")
-                        return False
-
-                btn.append([
-                    InlineKeyboardButton(f"⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=INVITE_LINKS[0]),
-                    InlineKeyboardButton(f"⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=INVITE_LINKS[1])
-                ])
-                btn.append([
-                    InlineKeyboardButton(f"✔ ᴄʜᴇᴄᴋ ᴀɢᴀɪɴ ✔", callback_data="checksub")
-                ])
-                await message.reply_photo(
-                    photo=random.choice(PICS),
-                    caption=FSUB_TXT.format(first=message.from_user.first_name),
-                    reply_markup=InlineKeyboardMarkup(btn),
-                    parse_mode=enums.ParseMode.HTML
-                )
-                return False
-
     except Exception as e:
         logger.error(f"Error: {e}")
         await message.reply_text(f"Error: {e}")
+        return False
+        
+    need_to_join = False
+    btn = []
+
+    for n, channel in enumerate(REQUEST_CHANNELS):
+        try:
+            if INVITE_LINKS[n] is None:
+                link = await client.create_chat_invite_link(chat_id=channel, creates_join_request=True)
+                INVITE_LINKS[n] = link.invite_link
+                logger.info(f"Invite Link for Channel {n+1} Generated!")
+            need_to_join = True
+        except Exception as e:
+            logger.error(f"Unable to generate invite link for Channel {n+1}!\nError: {e}")
+            return False
+
+    if need_to_join:
+        btn.append([
+            InlineKeyboardButton(f"⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=INVITE_LINKS[0]),
+            InlineKeyboardButton(f"⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=INVITE_LINKS[1])
+        ])
+        btn.append([
+            InlineKeyboardButton(f"✔ ᴄʜᴇᴄᴋ ᴀɢᴀɪɴ ✔", callback_data="checksub")
+        ])
+        await message.reply_photo(
+            photo=random.choice(PICS),
+            caption=FSUB_TXT.format(first=message.from_user.first_name),
+            reply_markup=InlineKeyboardMarkup(btn),
+            parse_mode=enums.ParseMode.HTML
+        )
         return False
 
     return True
