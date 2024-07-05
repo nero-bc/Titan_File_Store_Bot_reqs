@@ -99,7 +99,7 @@ async def cb_handler_func(client, query: CallbackQuery):
         await query.answer('Checking.......')
         is_req = await Force_Sub(client, msg, query=query)
         
-        if is_req:
+        if not is_req:
             await query.answer("Thanks for subscribing, Now you can use me!", show_alert=True)
             await asyncio.sleep(120)
             await msg.delete()
