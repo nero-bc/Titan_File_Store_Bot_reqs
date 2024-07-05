@@ -3,6 +3,7 @@ from bot import Bot
 import random
 from config import *
 from pyrogram import Client, filters, enums
+from plugins.fsub import Force_Sub
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 
 contact_button = InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/+whP0B-ffw2hkZDU1")
@@ -91,36 +92,12 @@ async def cb_handler_func(client, query: CallbackQuery):
         )
 
     elif data == "checksub":
-            user_id = query.from_user.id
-
-            if user_id in ADMINS:
-                return True
-
-            if not all(REQUEST_CHANNELS):
-                await query.message.reply_text("Please provide the channels to check your subscription.")
-                return True
-
-            try:
-                user_in_channel1 = await fsub_db.get_user(REQUEST_CHANNELS[0], user_id)
-                user_in_channel2 = await fsub_db.get_user(REQUEST_CHANNELS[1], user_id)
-
-                if user_in_channel1 and user_in_channel2:
-                    await query.message.reply_text("⚡ ʏᴏᴜ ᴀʀᴇ ɴᴏᴡ ᴊᴏɪɴᴇᴅ ᴄʜᴀɴɴᴇʟs ᴘᴏsᴛ ᴘᴇ ᴊᴀᴏ ᴘʜɪʀ sᴇ ᴄʟɪᴄᴋ ᴋᴀʀᴏ ᴇɴᴊᴏʏ!!!")
-                    return True
-
-                elif user_in_channel1 or user_in_channel2:
-                    await query.message.reply_text("💫 ʟᴏᴏᴋɪɴɢ ɢᴏᴏᴅ sᴏ ғᴀʀ ʏᴏᴜ ᴊᴏɪɴᴇᴅ 1 ᴄʜᴀɴɴᴇʟ")
-                    return True
-
-                else:
-                    await query.message.reply_text("💞 ᴅᴏɴ'ᴛ ᴛʀʏ ᴛᴏ ʙᴇ ᴏᴠᴇʀ sᴍᴀʀᴛ ʙᴜᴅᴅʏ ᴊᴏɪɴ ᴛʜᴇ ᴄʜᴀɴɴᴇʟs ᴀʙᴏᴠᴇ")
-                    return False
-
-            except Exception as e:
-                logger.error(f"Error: {e}")
-                await query.message.reply_text(f"Error: {e}")
-                await query.message.reply_text("There was an error checking your subscription. Please try again later.")
-                return False
+        msg = query.message
+        await query.answer('Checking.......')
+        is_req = await Force_Sub(client, msg)
+        if not is_req:
+            return      
+        await query.answer("Thanks for subscribing, Now you can use me!", show_alert=True)          
 
     elif data == "close":
         await query.message.delete()
