@@ -93,7 +93,7 @@ async def cb_handler_func(client, query: CallbackQuery):
     
     elif data == "checksub":
         msg = query.message
-        await query.answer("Checking......", show_alert=True)
+        await query.answer('Checking......"')
         user_id = query.from_user.id
         try:
             check1 = await fsub_db.get_user(REQUEST_CHANNELS[0], user_id)
