@@ -106,7 +106,7 @@ async def cb_handler_func(client, query: CallbackQuery):
                 await asyncio.sleep(120)
                 await msg.delete()
         except Exception as e:
-        print(f"Error: {e}")
+            print(f"Error: {e}")
         
     elif data == "close":
         await query.message.delete()
