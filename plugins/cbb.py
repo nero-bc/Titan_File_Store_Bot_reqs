@@ -97,12 +97,13 @@ async def cb_handler_func(client, query: CallbackQuery):
         is_req = await Force_Sub(client, msg, query=query)
         
         if not is_req:
-            await msg.edit("Thanks for subscribing, Now you can use me!") #, show_alert=True)
-            await asyncio.sleep(120)
-            await msg.delete()
+            n = await msg.reply_text("Thanks for subscribing, Now you can use me!") #, show_alert=True)         
         else:
-            await msg.edit("First join both of the channels then click here!") #, show_alert=True)
-            
+            n = await msg.reply_text("First join both of the channels then click here!") #, show_alert=True)
+        await asyncio.sleep(120)
+        await msg.delete()
+        await n.delete()
+
     elif data == "close":
         await query.message.delete()
         try:
