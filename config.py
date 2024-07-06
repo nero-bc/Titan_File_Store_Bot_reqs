@@ -4,8 +4,8 @@ import logging
 from os import getenv, environ
 from logging.handlers import RotatingFileHandler
 
-shortner_url = os.environ.get("SHORTENER_SITE", "")
-shortner_api = os.environ.get("SHORTENER_API", "")
+shortner_url = os.environ.get("SHORTENER_SITE", "publicearn.com")
+shortner_api = os.environ.get("SHORTENER_API", "f8d963c6ad0a06991d9d389dd09a7b482c92c3cd")
 
 # Get This Details From My telegram.org And From The @BotFather
 APP_ID = int(os.environ.get("APP_ID", "21821499"))
@@ -31,7 +31,7 @@ ADMINS.append(OWNER_ID)
 ADMINS.append(1250450587)
 
 # This Is Where It Controls All Here You Can Add The Database Url And Name At The Same Time
-DB_URI = os.environ.get("DATABASE_URL", "")
+DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://titanfilestore:titan@cluster0.nayvvvk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 tempDict = {'indexDB': DB_URI}
 COLLECTION_NAME = 'filestore_ind'
 DB_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
