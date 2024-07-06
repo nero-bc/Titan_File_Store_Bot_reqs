@@ -14,7 +14,7 @@ async def stats(bot: Bot, message: Message):
 
 contact_button = [
     [
-        InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/+whP0B-ffw2hkZDU1")
+        InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Community_India")
     ]
 ]
 keyboard = InlineKeyboardMarkup(contact_button)
@@ -32,8 +32,4 @@ async def useless(bot: Bot, message: Message):
         chat_id=user_id,
         text=INCOMING_TXT.format(first=message.from_user.first_name),
         reply_markup=keyboard
-    )
-    await bot.send_text(
-        chat_id=LOG_CHANNEL,
-        text="User ID: {user_id}\nUsername: {username}\nContent: {content}"
     )
