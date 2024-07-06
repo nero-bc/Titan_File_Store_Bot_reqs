@@ -32,7 +32,7 @@ async def start_command(client: Client, message: Message):
         return
     
     if id in await list_banned_users():
-        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Godofhackss")
+        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Titan_Cinemas_Support_bot")
         return
         
     if not await present_user(id):
@@ -116,14 +116,14 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("ɢʀ ʜᴀᴄᴋᴇʀ ᴄᴏᴍᴍᴜɴɪᴛʏ", url="https://t.me/+whP0B-ffw2hkZDU1")
+                    InlineKeyboardButton("ᴛɪᴛᴀɴ ᴄᴏᴍᴍᴜɴɪᴛʏ", url="https://t.me/Titan_Community_India")
                 ],
                 [
                     InlineKeyboardButton("ʜᴇʟᴘ", callback_data="help"),
                     InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data="about")
                 ],
                 [
-                    InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ", url="https://t.me/+4db4vuYykAw3YmE1")
+                    InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ", url="https://t.me/Titan_CInemas")
                 ]
             ]
         )
@@ -156,7 +156,7 @@ async def not_joined(client: Client, message: Message):
     id = message.from_user.id
     
     if id in await list_banned_users():
-        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Godofhackss")
+        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Titan_Cinemas_Support_bot")
         return
         
     buttons = [
@@ -170,7 +170,7 @@ async def not_joined(client: Client, message: Message):
             [
                 InlineKeyboardButton(
                     text = '💞 ᴛʀʏ ᴀɢᴀɪɴ 💞',
-                    url = f"https://t.me/Movies_WebSeries_RequestBot?start={message.command[1]}"
+                    url = f"https://t.me/Titan_Files_Ind_Bot?start={message.command[1]}"
                 )
             ]
         )
@@ -195,7 +195,7 @@ async def ban_command(client: Client, message: Message):
     id = message.from_user.id
     
     if id in await list_banned_users():
-        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Godofhackss")
+        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Titan_Cinemas_Support_bot")
         return
         
     if message.from_user.id not in ADMINS:
@@ -217,7 +217,7 @@ async def unban_command(client: Client, message: Message):
     id = message.from_user.id
     
     if id in await list_banned_users():
-        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Godofhackss")
+        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Titan_Cinemas_Support_bot")
         return
         
     if message.from_user.id not in ADMINS:
@@ -239,7 +239,7 @@ async def banlist_command(client: Client, message: Message):
     id = message.from_user.id
     
     if id in await list_banned_users():
-        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Godofhackss")
+        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Titan_Cinemas_Support_bot")
         return
         
     if message.from_user.id not in ADMINS:
@@ -265,16 +265,16 @@ async def report_command(client: Client, message: Message):
     last_name = user.last_name or "Not Available"
 
     if id in await list_banned_users():
-        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Godofhackss")
+        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Titan_Cinemas_Support_bot")
         return
     
     buttons = [
             [
-                InlineKeyboardButton("ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ", url="https://t.me/+whP0B-ffw2hkZDU1")
+                InlineKeyboardButton("ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ", url="https://t.me/Titan_Community_India")
             ],
             [
                 InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data="about"),
-                InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url="https://t.me/+4db4vuYykAw3YmE1")
+                InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url="https://t.me/Titan_CInemas")
             ]   
     ]
     reply_markup = InlineKeyboardMarkup(buttons)
@@ -290,7 +290,7 @@ async def get_users(client: Bot, message: Message):
     id = message.from_user.id
     
     if id in await list_banned_users():
-        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Godofhackss")
+        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Titan_Cinemas_Support_bot")
         return
         
     msg = await client.send_message(chat_id=message.chat.id, text=WAIT_MSG)
@@ -301,7 +301,7 @@ async def get_users(client: Bot, message: Message):
 async def send_text(client: Bot, message: Message):
     id = message.from_user.id
     if id in await list_banned_users():
-        await message.reply("It Looks Like Your Are Banned From Using Me Contact Now @Godofhackss")
+        await message.reply("It Looks Like Your Are Banned From Using Me Contact Now @Titan_Cinemas_Support_bot")
         return
 
     if message.reply_to_message:
