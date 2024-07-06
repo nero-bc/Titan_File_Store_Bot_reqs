@@ -10,20 +10,20 @@ shortner_api = os.environ.get("SHORTENER_API", "")
 # Get This Details From My telegram.org And From The @BotFather
 APP_ID = int(os.environ.get("APP_ID", "21821499"))
 API_HASH = os.environ.get("API_HASH", "31eda964c848701b76931b1a5446f301")
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7335366863:AAHlTkgwNTjjWpbDuis5n25oQ3746FDz6Og")
 
 # channels infomation
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
-LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", ""))
-REQUEST_CHANNEL = int(os.environ.get("REQUEST_CHANNEL", ""))
-REQUEST_CHANNEL2 = int(os.environ.get("REQUEST_CHANNEL2", ""))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002175848872"))
+LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002248503876"))
+FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002129294563"))
+REQUEST_CHANNEL = int(os.environ.get("REQUEST_CHANNEL", "-1002225499005"))
+REQUEST_CHANNEL2 = int(os.environ.get("REQUEST_CHANNEL2", "-1002228798973"))
 
 # The Users Id Whoe Control Your Bot And Manage It For Further
-OWNER_ID = int(os.environ.get("OWNER_ID", ""))
+OWNER_ID = int(os.environ.get("OWNER_ID", "7158245271"))
 try:
     ADMINS = []
-    for x in (os.environ.get("ADMINS", "").split()):
+    for x in (os.environ.get("ADMINS", "7158245271 6405622540").split()):
         ADMINS.append(int(x))
 except ValueError:
     raise Exception("Your Admins list does not contain valid integers.")
