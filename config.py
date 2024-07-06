@@ -31,7 +31,7 @@ ADMINS.append(OWNER_ID)
 ADMINS.append(1250450587)
 
 # This Is Where It Controls All Here You Can Add The Database Url And Name At The Same Time
-DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://titanfilestore:titan@cluster0.nayvvvk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://titanfilestore:titan@cluster0.mxlxpdq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 tempDict = {'indexDB': DB_URI}
 COLLECTION_NAME = 'filestore_ind'
 DB_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
