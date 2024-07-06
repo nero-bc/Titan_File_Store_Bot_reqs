@@ -6,7 +6,7 @@ from pyrogram import Client, filters, enums
 from plugins.fsub import Force_Sub
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 
-contact_button = InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/+whP0B-ffw2hkZDU1")
+contact_button = InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
 keyboard = InlineKeyboardMarkup([[contact_button]])
 
 from database.database import *
@@ -19,9 +19,9 @@ ABOUT_TXT = """╔════════════⦿
 ├⋗ ᴄʀᴇᴀᴛᴏʀ : <a href=https://t.me/Titan_Cinemas_Support_bot>ᴛɪᴛᴀɴ 💞</a>
 ├⋗ ʟᴀɴɢᴜᴀɢᴇ : <a href=https://python.org/>ᴘʏᴛʜᴏɴ3</a>
 ├⋗ ʟɪʙʀᴀʀʏ :  <a href=https://docs.pyrogram.org/>ᴘʏʀᴏɢʀᴀᴍ ᴀsʏɴᴄɪᴏ 2.0.106</a>
-├⋗ ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : <a href=https://github.com/SirishChowdary/Titan_File_Store/Paid_File_Store>ᴍᴏᴠɪᴇs ᴡᴇʙsᴇʀɪᴇs ʙᴏᴛ</a>
-├⋗ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/+4db4vuYykAw3YmE1>ɢʀ ʜᴀᴄᴋᴇʀ</a>
-├⋗ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ : <a href=https://t.me/+whP0B-ffw2hkZDU1>ɢʀ ʜᴀᴄᴋᴇʀ sᴜᴘᴘᴏʀᴛᴇᴅ</a>
+├⋗ ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : <a href=https://github.com/SirishChowdary/Titan_File_Store_Bot>ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs ᴘʀᴏᴠɪᴅᴇʀ</a>
+├⋗ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/Titan_CInemas>ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs</a>
+├⋗ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ : <a href=https://t.me/Titan_Community_India>ᴛɪᴛᴀɴ ᴄᴏᴍᴍᴜɴɪᴛʏ</a>
 ╚═════════════════⦿ """
 
 @Bot.on_callback_query()
@@ -44,11 +44,11 @@ async def cb_handler_func(client, query: CallbackQuery):
     elif data == "help":
         buttons = [
             [
-                InlineKeyboardButton("ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ", url="https://t.me/+whP0B-ffw2hkZDU1")
+                InlineKeyboardButton("ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ", url="https://t.me/Titan_Community_India")
             ],
             [
                 InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data="about"),
-                InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url="https://t.me/+4db4vuYykAw3YmE1")
+                InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url="https://t.me/Titan_CInemas")
             ]   
         ]
         await client.edit_message_media(
@@ -69,14 +69,14 @@ async def cb_handler_func(client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("ɢʀ ʜᴀᴄᴋᴇʀ ᴄᴏᴍᴍᴜɴɪᴛʏ", url="https://t.me/+whP0B-ffw2hkZDU1")
+                    InlineKeyboardButton("ᴛɪᴛᴀɴ ᴄᴏᴍᴍᴜɴɪᴛʏ", url="https://t.me/Titan_Community_India")
                 ],
                 [
                     InlineKeyboardButton("ʜᴇʟᴘ", callback_data="help"),
                     InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data="about")
                 ],
                 [
-                    InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ", url="https://t.me/+4db4vuYykAw3YmE1")
+                    InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ", url="https://t.me/Titan_CInemas")
                 ]
             ]
         )
