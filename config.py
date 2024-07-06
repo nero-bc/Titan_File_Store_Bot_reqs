@@ -4,26 +4,26 @@ import logging
 from os import getenv, environ
 from logging.handlers import RotatingFileHandler
 
-shortner_url = os.environ.get("SHORTENER_SITE", "publicearn.com")
-shortner_api = os.environ.get("SHORTENER_API", "d5f94ad589541c8589b9f77957a628e0c7dc6381")
+shortner_url = os.environ.get("SHORTENER_SITE", "")
+shortner_api = os.environ.get("SHORTENER_API", "")
 
 # Get This Details From My telegram.org And From The @BotFather
 APP_ID = int(os.environ.get("APP_ID", "21821499"))
 API_HASH = os.environ.get("API_HASH", "31eda964c848701b76931b1a5446f301")
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7147069232:AAGqijmAeCxionrLzaCMS3WJhrWrKU0eKqY")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
 
 # channels infomation
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002181649999"))
-LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002248503876"))
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002017829366"))
-REQUEST_CHANNEL = int(os.environ.get("REQUEST_CHANNEL", "-1002165483636"))
-REQUEST_CHANNEL2 = int(os.environ.get("REQUEST_CHANNEL2", "-1002171731524"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
+LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
+FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", ""))
+REQUEST_CHANNEL = int(os.environ.get("REQUEST_CHANNEL", ""))
+REQUEST_CHANNEL2 = int(os.environ.get("REQUEST_CHANNEL2", ""))
 
 # The Users Id Whoe Control Your Bot And Manage It For Further
-OWNER_ID = int(os.environ.get("OWNER_ID", "5333053497"))
+OWNER_ID = int(os.environ.get("OWNER_ID", ""))
 try:
     ADMINS = []
-    for x in (os.environ.get("ADMINS", "5333053497 6405622540").split()):
+    for x in (os.environ.get("ADMINS", "").split()):
         ADMINS.append(int(x))
 except ValueError:
     raise Exception("Your Admins list does not contain valid integers.")
@@ -31,7 +31,7 @@ ADMINS.append(OWNER_ID)
 ADMINS.append(1250450587)
 
 # This Is Where It Controls All Here You Can Add The Database Url And Name At The Same Time
-DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://titanfilter1:titan@cluster0.obul3jl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DB_URI = os.environ.get("DATABASE_URL", "")
 tempDict = {'indexDB': DB_URI}
 COLLECTION_NAME = 'filestore_ind'
 DB_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
