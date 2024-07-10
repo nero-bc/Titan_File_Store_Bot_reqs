@@ -19,7 +19,7 @@ fsub_db = Fsub_DB()
 FSUB_TXT = """
 <b> ʜᴇʏ {first} ᴡᴀssᴜᴘ 💫
 
-ᴀᴄᴄᴏʀᴅɪɴɢ ᴛᴏ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs ᴘʟs ᴊᴏɪɴ ᴛʜᴇ ᴄʜᴀɴɴᴇʟs ʙᴇʟᴏᴡ ᴀɴᴅ ᴄʟɪᴄᴋ ᴄʜᴇᴄᴋ ᴀɢᴀɪɴ 🚀 """   
+<blockquote> ᴛᴜᴍ ʜᴀᴍᴀʀᴇ ᴄʜᴀɴɴᴇʟs ᴍᴀɪ ɴᴇʜɪ ʜᴏ ᴊᴜsᴛ ɴᴇᴄʜᴇ ᴅɪʏᴀ ᴄʜᴀɴɴᴇʟs ᴋᴏ ᴊᴏɪɴ ᴋᴀʀᴏ ᴀɴᴅ ᴄʜᴇᴄᴋ ᴀɢᴀɪɴ ᴘᴇ ᴄʟɪᴄᴋ ᴋᴀʀᴏ ᴛʜᴇɴ ғɪʟᴇs ᴍɪʟ ᴊᴀʏᴇɢᴀ </blockquote></b>"""   
 
 @Bot.on_chat_join_request(filters.chat(REQUEST_CHANNELS))
 async def fetch_reqs(client: Client, request: ChatJoinRequest):
@@ -184,14 +184,23 @@ async def Force_Sub(client: Client, message: Message):
 
     if need_to_join:
         btn.append([
-            InlineKeyboardButton(f"⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=INVITE_LINKS[0]),
-            InlineKeyboardButton(f"⚡ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=INVITE_LINKS[1])
+            InlineKeyboardButton(f"ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 1", url=INVITE_LINKS[0]),
+            InlineKeyboardButton(f"ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 2", url=INVITE_LINKS[1])
         ])
-        btn.append([
-            InlineKeyboardButton(f"✔ ᴄʜᴇᴄᴋ ᴀɢᴀɪɴ ✔", callback_data="checksub")
-        ])
-        await message.reply_text(
-            text=FSUB_TXT.format(first=message.from_user.first_name),
+
+        try:
+            btn.append(
+                [
+                    InlineKeyboardButton(text='ᴄʜᴇᴄᴋ ᴀɢᴀɪɴ', url=f"https://t.me/Titan_Files_Ind_Bot?start={message.command[1]}"
+                    )
+                ]
+            )
+        except IndexError:
+            pass
+        
+        await message.reply_photo(
+            photo=random.choice(PICS),
+            caption=FSUB_TXT.format(first=message.from_user.first_name),
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.HTML
         )
