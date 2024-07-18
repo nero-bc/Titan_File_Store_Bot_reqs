@@ -17,20 +17,13 @@ from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 from bot import Bot
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import *
-from database.fsub_db import Fsub_DB
-from plugins.fsub import Force_Sub
-fsub_db = Fsub_DB()
 
-REQUEST_CHANNELS = [REQUEST_CHANNEL, REQUEST_CHANNEL2]
-SECONDS = int(os.getenv("SECONDS", "600"))
+SECONDS = int(os.getenv("SECONDS", "600")
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     id = message.from_user.id
-    is_req = await Force_Sub(client, message)
-    if not is_req:
-        return
-    
+
     if id in await list_banned_users():
         await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Titan_Cinemas_Support_bot")
         return
@@ -162,6 +155,7 @@ async def not_joined(client: Client, message: Message):
     buttons = [
         [
             InlineKeyboardButton("ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ",url = client.invitelink),
+            InlineKeyboardButton("ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ",url = client.invitelink2),
         ]
     
     ]
@@ -169,7 +163,7 @@ async def not_joined(client: Client, message: Message):
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text = '💞 ᴛʀʏ ᴀɢᴀɪɴ 💞',
+                    text = 'ᴛʀʏ ᴀɢᴀɪɴ',
                     url = f"https://t.me/Titan_Files_Ind_Bot?start={message.command[1]}"
                 )
             ]
