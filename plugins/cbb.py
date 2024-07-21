@@ -3,7 +3,6 @@ from bot import Bot
 import random, asyncio
 from config import *
 from pyrogram import Client, filters, enums
-from plugins.fsub import Force_Sub
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 
 contact_button = InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡", url="https://t.me/Titan_Cinemas_Support_bot")
@@ -91,21 +90,6 @@ async def cb_handler_func(client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     
-    elif data == "checksub":
-        msg = query.message
-        user_id = query.from_user.id
-        print("Checking.......")
-        try:
-            check1 = await fsub_db.get_user(REQUEST_CHANNELS[0], user_id)
-            check2 = await fsub_db.get_user(REQUEST_CHANNELS[1], user_id)
-            if not check1 or not check2:
-                await query.answer("⚡ ᴏᴏᴏ ɪ ʟɪᴋᴇ ʏᴏᴜʀ sᴍᴀʀᴛɴᴇss ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ ᴊᴏɪɴ ʙᴏᴛʜ ᴄʜᴀɴɴᴇʟs ɪғ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴀᴄᴄᴇss ᴛʜᴇ ʙᴏᴛ ᴊᴜsᴛ ᴊᴏɪɴ ᴀɴᴅ ᴄʟɪᴄᴋ ᴛʜɪs ʙᴜᴛᴛᴏɴ ᴀɢᴀɪɴ", show_alert=True)
-            else:
-                await msg.edit_text("ᴛʜᴀɴᴋs ғᴏʀ sᴜʙsᴄʀɪʙɪɴɢ, ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴍᴇ ᴀɴᴅ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇs!!!")
-                await asyncio.sleep(120)
-                await msg.delete()
-        except Exception as e:
-            print(f"Error: {e}")
             
     elif data == "close":
         await query.message.delete()
