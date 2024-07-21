@@ -20,7 +20,7 @@ from pyrogram.types import ChatJoinRequest
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import *
 
-SECONDS = int(os.getenv("SECONDS", "600")
+SECONDS = int(os.getenv("SECONDS", "600"))
 
 @Bot.on_chat_join_request(filters.chat(FORCE_SUB_CHANNEL2))
 async def join_reqs(client: Client, message: ChatJoinRequest):
