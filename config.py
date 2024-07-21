@@ -14,8 +14,8 @@ TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7335366863:AAHlTkgwNTjjWpbDuis5n2
 
 # channels infomation
 LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002248503876"))
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
-FORCE_SUB_CHANNEL2 = int(os.environ.get("FORCE_SUB_CHANNEL2", "0"))
+FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002129294563"))
+FORCE_SUB_CHANNEL2 = int(os.environ.get("FORCE_SUB_CHANNEL2", "-1002228798973"))
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002175848872"))
 
 # The Users Id Whoe Control Your Bot And Manage It For Further
