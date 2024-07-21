@@ -1,7 +1,7 @@
 import datetime
 import pytz
 from motor.motor_asyncio import AsyncIOMotorClient
-from info import DATABASE_NAME, DATABASE_URI
+from config import DATABASE_NAME, DATABASE_URI
 
 class Database:
     def __init__(self):
