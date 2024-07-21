@@ -9,10 +9,7 @@ contact_button = InlineKeyboardButton("⚡ ᴄᴏɴᴛᴀᴄᴛ ʜᴇʀᴇ ⚡",
 keyboard = InlineKeyboardMarkup([[contact_button]])
 
 from database.database import *
-from database.fsub_db import Fsub_DB
-fsub_db = Fsub_DB()
 
-REQUEST_CHANNELS = [REQUEST_CHANNEL, REQUEST_CHANNEL2]
 
 ABOUT_TXT = """╔════════════⦿
 ├⋗ ᴄʀᴇᴀᴛᴏʀ : <a href=https://t.me/Titan_Cinemas_Support_bot>ᴛɪᴛᴀɴ 💞</a>
@@ -88,9 +85,8 @@ async def cb_handler_func(client, query: CallbackQuery):
             text=START_MSG.format(first=query.from_user.first_name),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
-        )
-    
-            
+        )    
+        
     elif data == "close":
         await query.message.delete()
         try:
