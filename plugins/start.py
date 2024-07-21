@@ -15,19 +15,20 @@ from config import *
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 
 from bot import Bot
+from database.join_req import *
 from pyrogram.types import ChatJoinRequest
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import *
 
 SECONDS = int(os.getenv("SECONDS", "600")
 
-@Client.on_chat_join_request(filters.chat(FORCE_SUB_CHANNEL2))
-async def join_reqs(client, message: ChatJoinRequest):
+@Bot.on_chat_join_request(filters.chat(FORCE_SUB_CHANNEL2))
+async def join_reqs(client: Client, message: ChatJoinRequest):
   if not await db.find_join_req(message.from_user.id):
     await db.add_join_req(message.from_user.id)
 
-@Client.on_message(filters.command("delreq") & filters.private & filters.user(ADMINS))
-async def del_requests(client, message):
+@Bot.on_message(filters.command("delreq") & filters.private & filters.user(ADMINS))
+async def del_requests(client: Client, message: Message):
     await db.del_join_req()    
     await message.reply("<b>⚙ ꜱᴜᴄᴄᴇꜱꜱғᴜʟʟʏ ᴄʜᴀɴɴᴇʟ ʟᴇғᴛ ᴜꜱᴇʀꜱ ᴅᴇʟᴇᴛᴇᴅ</b>")
 
