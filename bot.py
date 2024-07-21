@@ -3,21 +3,13 @@ from plugins import web_server
 
 import pyromod.listen
 from pyrogram import Client
+from config import *
 from pyrogram.enums import ParseMode
 import sys
 from datetime import datetime, date
 import pytz
-from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT, LOG_CHANNEL
 
-RESTART_TXT = """
-<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ ! @Titan_Files_Ind_Bot
-
-📅 Dᴀᴛᴇ : <code>{date}</code>
-⏰ Tɪᴍᴇ : <code>{time}</code>
-🌐 Tɪᴍᴇᴢᴏɴᴇ : <code>Asia/Kolkata</code>
-🛠️ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: <code>v4.2 [ Sᴛᴀʙʟᴇ ]</code>
-
-📌 ᴍᴀɴᴛᴀɪɴᴇᴅ ʙʏ : <a href="https://t.me/Titan_CInemas">ᴛɪᴛᴀɴ ᴄɪɴᴇᴍᴀs</a></b>"""
+RESTART_TXT = """<b> ✅ ʙᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ ! </b>"""
 
 class Bot(Client):
     def __init__(self):
@@ -49,6 +41,18 @@ class Bot(Client):
                 self.LOGGER(__name__).warning(f"Please Double check the FORCE_SUB_CHANNEL value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {FORCE_SUB_CHANNEL}")
                 self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/Titan_Cinemas for support")
                 sys.exit()
+
+        if FORCE_SUB_CHANNEL2:
+            try:
+                link2 = await self.create_chat_invite_link(chat_id=FORCE_SUB_CHANNEL2, creates_join_request=True)
+                self.invitelink2 = link2
+            except Exception as a:
+                self.LOGGER(__name__).warning(a)
+                self.LOGGER(__name__).warning("Bot can't create invite link for Force Sub Channel!")
+                self.LOGGER(__name__).warning(f"Please Double check the FORCE_SUB_CHANNEL2 value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {FORCE_SUB_CHANNEL}")
+                self.LOGGER(__name__).info("\nBot Stopped. Join https://t.me/Titan_Cinemas for support")
+                sys.exit()
+                
         try:
             db_channel = await self.get_chat(CHANNEL_ID)
             self.db_channel = db_channel
