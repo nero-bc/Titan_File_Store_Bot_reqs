@@ -1,12 +1,12 @@
 import datetime
 import pytz
 from motor.motor_asyncio import AsyncIOMotorClient
-from config import DATABASE_NAME, DATABASE_URI
+from config import DB_NAME, DB_URI
 
 class Database:
     def __init__(self):
-        self.client = AsyncIOMotorClient(DATABASE_URI)
-        self.db = self.client[DATABASE_NAME]
+        self.client = AsyncIOMotorClient(DB_URI)
+        self.db = self.client[DB_NAME]
         self.req = self.db.requests
 
     async def find_join_req(self, id):
