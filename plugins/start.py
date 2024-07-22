@@ -15,7 +15,6 @@ from config import *
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 
 from bot import Bot
-from database.join_req import *
 from pyrogram.types import ChatJoinRequest
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import *
