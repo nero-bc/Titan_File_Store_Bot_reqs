@@ -9,20 +9,25 @@ from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.errors import FloodWait
 
 async def is_subscribed(filter, client, update):
-    user_id = update.from_user.id    
-    if not FORCE_SUB_CHANNEL:
-        return False
-    
+    if not (FORCE_SUB_CHANNEL_1 or FORCE_SUB_CHANNEL_2):
+        return True
+
+    user_id = update.from_user.id
     if user_id in ADMINS:
-        return True    
-    try:
-        member = await client.get_chat_member(chat_id=FORCE_SUB_CHANNEL, user_id=user_id)
-        if member.status in {ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER}:
-            if await db.find_join_req(user_id):
-                return True
-        return False
-    except UserNotParticipant:
-        return False
+        return True
+
+    member_status = ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER
+    for channel_id in [FORCE_SUB_CHANNEL_1, FORCE_SUB_CHANNEL_2]:
+        if not channel_id:
+            continue
+        try:
+            member = await client.get_chat_member(chat_id=channel_id, user_id=user_id)
+        except UserNotParticipant:
+            return False
+        if member.status not in member_status:
+            return False
+    return True
+
 
 async def encode(string):
     string_bytes = string.encode("ascii")
