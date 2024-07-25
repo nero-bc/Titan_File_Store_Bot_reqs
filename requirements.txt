@@ -10,3 +10,7 @@ motor==2.5.1
 pymongo
 dnspython
 cloudscraper
+
+gunicorn==20.1.0
+werkzeug==2.0.2
+Flask
