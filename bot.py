@@ -89,7 +89,7 @@ class Bot(Client):
 
     async def send_restart_message(self):
         restart_message = RESTART_TXT
-        await self.send_message(chat_id=LOG_CHANNEL, text==restart_message)
+        await self.send_message(chat_id=LOG_CHANNEL, text=restart_message)
 
     async def stop(self, *args):
         await super().stop()
