@@ -17,6 +17,6 @@ jobs:
       with:
         type: git
         app: heuek
-        environment: Unknown
+        environment: jejsk
         username: ${{ secrets.APTIBLE_USERNAME }}
         password: ${{ secrets.APTIBLE_PASSWORD }}
