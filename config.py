@@ -37,7 +37,7 @@ DB_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", "📌 ᴍᴀɴᴛᴀɪɴᴇᴅ ʙʏ : @Titan_CInemas")
 PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "False") == "True" else False
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", "False") == 'True'
-PICS = os.environ.get('PICS', '').split()
+PICS = os.environ.get('PICS', 'https://telegra.ph/file/bb014365b46e7e389bc7e.jpg https://telegra.ph/file/8c95521f442fb9a4b0db4.jpg https://telegra.ph/file/d7970bc443bdb7a6bd4c1.jpg https://telegra.ph/file/bbfe4884fdfbea2ed85e4.jpg https://telegra.ph/file/9688d9dc5ffa30920dda4.jpg').split()
 PORT = os.environ.get("PORT", "8080")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "500"))
 INCOMING_TXT = os.environ.get("INCOMING_TXT", """<b>ʜᴇʏ ʙʜᴀɪ {first} 💞
