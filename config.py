@@ -10,7 +10,7 @@ shortner_api = os.environ.get("SHORTENER_API", "f8d963c6ad0a06991d9d389dd09a7b48
 # Get This Details From My telegram.org And From The @BotFather
 APP_ID = int(os.environ.get("APP_ID", "25695562"))
 API_HASH = os.environ.get("API_HASH", "0b691c3e86603a7e34aae0b5927d725a")
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7055274982:AAGgRNmc0kUqH9BUrVYyPXiDQl1whtk6tOk")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7055274982:AAFb2myJ7kOi6IzYM7zdn_lctSgrg7wMbPk")
 
 # channels infomation
 LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002177491453"))
