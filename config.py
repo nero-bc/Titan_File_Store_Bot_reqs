@@ -8,26 +8,26 @@ shortner_url = os.environ.get("SHORTENER_SITE", "publicearn.com")
 shortner_api = os.environ.get("SHORTENER_API", "f8d963c6ad0a06991d9d389dd09a7b482c92c3cd")
 
 # Get This Details From My telegram.org And From The @BotFather
-APP_ID = int(os.environ.get("APP_ID", "21821499"))
-API_HASH = os.environ.get("API_HASH", "31eda964c848701b76931b1a5446f301")
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7335366863:AAHlTkgwNTjjWpbDuis5n25oQ3746FDz6Og")
+APP_ID = int(os.environ.get("APP_ID", "25695562"))
+API_HASH = os.environ.get("API_HASH", "0b691c3e86603a7e34aae0b5927d725a")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7055274982:AAGgRNmc0kUqH9BUrVYyPXiDQl1whtk6tOk")
 
 # channels infomation
-LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002248503876"))
-FORCE_SUB_CHANNEL_1 = int(os.environ.get("FORCE_SUB_CHANNEL_1", "-1002129294563"))
-FORCE_SUB_CHANNEL_2 = int(os.environ.get("FORCE_SUB_CHANNEL_2", "-1002225499005"))
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002175848872"))
+LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002177491453"))
+FORCE_SUB_CHANNEL_1 = int(os.environ.get("FORCE_SUB_CHANNEL_1", "-1002020304266"))
+FORCE_SUB_CHANNEL_2 = int(os.environ.get("FORCE_SUB_CHANNEL_2", "-1002020304266"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002117941809"))
 
 # The Users Id Whoe Control Your Bot And Manage It For Further
-OWNER_ID = int(os.environ.get("OWNER_ID", "7158245271"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "1895952308"))
 try:
     ADMINS = []
-    for x in (os.environ.get("ADMINS", "7158245271 6405622540").split()):
+    for x in (os.environ.get("ADMINS", "1895952308").split()):
         ADMINS.append(int(x))
 except ValueError:
     raise Exception("Your Admins list does not contain valid integers.")
 ADMINS.append(OWNER_ID)
-ADMINS.append(1250450587)
+ADMINS.append(1895952308)
 
 # This Is Where It Controls All Here You Can Add The Database Url And Name At The Same Time
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://titanfilestore:titan@cluster0.mxlxpdq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
@@ -97,3 +97,5 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 def LOGGER(name: str) -> logging.Logger:
     return logging.getLogger(name)
+
+
