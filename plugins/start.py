@@ -8,6 +8,8 @@ import re
 import string
 import time
 import datetime, time
+from datetime import datetime
+from helper_func import get_readable_time
 from pyrogram import Client, filters,enums, __version__
 from pyrogram.enums import ParseMode
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
@@ -15,21 +17,10 @@ from config import *
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 
 from bot import Bot
-from pyrogram.types import ChatJoinRequest
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import *
 
 SECONDS = int(os.getenv("SECONDS", "600"))
-
-@Bot.on_chat_join_request(filters.chat(FORCE_SUB_CHANNEL2))
-async def join_reqs(client: Client, message: ChatJoinRequest):
-  if not await db.find_join_req(message.from_user.id):
-    await db.add_join_req(message.from_user.id)
-
-@Bot.on_message(filters.command("delreq") & filters.private & filters.user(ADMINS))
-async def del_requests(client: Client, message: Message):
-    await db.del_join_req()    
-    await message.reply("<b>⚙ ꜱᴜᴄᴄᴇꜱꜱғᴜʟʟʏ ᴄʜᴀɴɴᴇʟ ʟᴇғᴛ ᴜꜱᴇʀꜱ ᴅᴇʟᴇᴛᴇᴅ</b>")
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
@@ -287,17 +278,29 @@ async def report_command(client: Client, message: Message):
         reply_markup=reply_markup,
     )
 
-@Bot.on_message(filters.command('users') & filters.private & filters.user(ADMINS))
+STATS_TEXT = """
+<b>Bot Statistics</b>
+
+<blockquote>
+  <b>Users:</b> {users}
+  <b>Uptime:</b> {uptime}
+</blockquote>
+"""
+
+@Bot.on_message(filters.command('stats') & filters.private & filters.user(ADMINS))
 async def get_users(client: Bot, message: Message):
-    id = message.from_user.id
-    
-    if id in await list_banned_users():
-        await message.reply("ɪᴛ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜʀ ᴀʀᴇ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴍᴇ ᴄᴏɴᴛᴀᴄᴛ ɴᴏᴡ @Titan_Cinemas_Support_bot")
+    if message.from_user.id in await list_banned_users():
+        await message.reply("You are banned from using this bot. Contact @Titan_Cinemas_Support_bot for assistance.")
         return
-        
-    msg = await client.send_message(chat_id=message.chat.id, text=WAIT_MSG)
+
+    msg = await client.send_message(chat_id=message.chat.id, text="Fetching bot statistics...")
+
     users = await full_userbase()
-    await msg.edit(f"{len(users)} users are using this bot")
+    uptime = get_readable_time((datetime.datetime.now() - client.uptime).seconds)
+
+    stats_text = STATS_TEXT.format(users=len(users), uptime=uptime)
+
+    await msg.edit(stats_text)
 
 @Bot.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
 async def send_text(client: Bot, message: Message):

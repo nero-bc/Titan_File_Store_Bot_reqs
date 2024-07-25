@@ -31,21 +31,15 @@ ADMINS.append(1250450587)
 
 # This Is Where It Controls All Here You Can Add The Database Url And Name At The Same Time
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://titanfilestore:titan@cluster0.mxlxpdq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-tempDict = {'indexDB': DB_URI}
-COLLECTION_NAME = 'filestore_ind'
 DB_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
 
 # kind of important
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", "📌 ᴍᴀɴᴛᴀɪɴᴇᴅ ʙʏ : @Titan_CInemas")
 PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "False") == "True" else False
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", "False") == 'True'
-BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
-PICS = os.environ.get('PICS', 'https://te.legra.ph/file/432b65512d6b20e164a75.jpg').split() #
-RSTART = os.environ.get('RSTART', 'https://te.legra.ph/file/d301eb1eac43a66390f91.jpg')
-BOT_USERS = os.environ.get('BOT_USERS', 'https://te.legra.ph/file/81bd8053e505e45bdfe8f.jpg')
+PICS = os.environ.get('PICS', '').split()
 PORT = os.environ.get("PORT", "8080")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "500"))
-
 INCOMING_TXT = os.environ.get("INCOMING_TXT", """<b>ʜᴇʏ ʙʜᴀɪ {first} 💞
 
 <blockquote>ʏᴇ ʙᴀss ᴇᴋᴋ ʙᴏᴛ ʜᴀɪ sᴏ ᴅᴏɴᴛ sᴘᴀᴍ ᴀɢᴀʀ ᴋᴏɪ ᴘʀᴏʙʟᴇᴍ ʜᴀɪ ᴀᴜʀ ʀᴇǫᴜᴇsᴛ ᴋᴀʀ ɴᴀ ʜᴀɪ ᴛʜᴏ ɴᴇᴄʜᴇ ʙᴜᴛᴛᴏɴ ᴘᴇʀ ᴄʟɪᴄᴋ ᴋᴀʀ ᴋᴇ ᴊᴏɪɴ ʜᴏᴊᴀᴏ</blockquote></b>""")

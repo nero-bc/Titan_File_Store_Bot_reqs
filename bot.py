@@ -1,13 +1,13 @@
-from aiohttp import web
-from plugins import web_server
-
-import pyromod.listen
-from pyrogram import Client
-from config import *
-from pyrogram.enums import ParseMode
 import sys
-from datetime import datetime, date
 import pytz
+from config import *
+import pyromod.listen
+from aiohttp import web
+from pyrogram import Client
+from plugins import web_server
+from datetime import datetime, date
+from pyrogram.enums import ParseMode
+
 
 RESTART_TXT = """<b> ✅ ʙᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ ! </b>"""
 
@@ -88,13 +88,8 @@ class Bot(Client):
         await web.TCPSite(app, bind_address, PORT).start()
 
     async def send_restart_message(self):
-        tz = pytz.timezone('Asia/Kolkata')
-        today = date.today()
-        now = datetime.now(tz)
-        time = now.strftime("%H:%M:%S %p")
-        restart_message = RESTART_TXT.format(date=today, time=time)
-        image_path = "https://te.legra.ph/file/adffa4e75e4b8c645a53d.jpg"
-        await self.send_photo(chat_id=LOG_CHANNEL, photo=image_path, caption=restart_message)
+        restart_message = RESTART_TXT
+        await self.send_message(chat_id=LOG_CHANNEL, text==restart_message)
 
     async def stop(self, *args):
         await super().stop()
