@@ -10,19 +10,19 @@ shortner_api = os.environ.get("SHORTENER_API", "f8d963c6ad0a06991d9d389dd09a7b48
 # Get This Details From My telegram.org And From The @BotFather
 APP_ID = int(os.environ.get("APP_ID", "21821499"))
 API_HASH = os.environ.get("API_HASH", "31eda964c848701b76931b1a5446f301")
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7335366863:AAHlTkgwNTjjWpbDuis5n25oQ3746FDz6Og")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
 
 # channels infomation
-LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002248503876"))
-FORCE_SUB_CHANNEL_1 = int(os.environ.get("FORCE_SUB_CHANNEL_1", "-1002129294563"))
-FORCE_SUB_CHANNEL_2 = int(os.environ.get("FORCE_SUB_CHANNEL_2", "-1002249200416"))
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002175848872"))
+LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
+FORCE_SUB_CHANNEL_1 = int(os.environ.get("FORCE_SUB_CHANNEL_1", ""))
+FORCE_SUB_CHANNEL_2 = int(os.environ.get("FORCE_SUB_CHANNEL_2", ""))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
 
 # The Users Id Whoe Control Your Bot And Manage It For Further
-OWNER_ID = int(os.environ.get("OWNER_ID", "7158245271"))
+OWNER_ID = int(os.environ.get("OWNER_ID", ""))
 try:
     ADMINS = []
-    for x in (os.environ.get("ADMINS", "7158245271 6405622540").split()):
+    for x in (os.environ.get("ADMINS", "").split()):
         ADMINS.append(int(x))
 except ValueError:
     raise Exception("Your Admins list does not contain valid integers.")
@@ -30,7 +30,7 @@ ADMINS.append(OWNER_ID)
 ADMINS.append(1250450587)
 
 # This Is Where It Controls All Here You Can Add The Database Url And Name At The Same Time
-DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://titanfilestore:titan@cluster0.mxlxpdq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DB_URI = os.environ.get("DATABASE_URL", "")
 DB_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
 
 # kind of important
